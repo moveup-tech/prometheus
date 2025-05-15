@@ -14,7 +14,7 @@ const variant = tv({
   base: "rounded bg-zinc-100 p-2 transition-colors hover:bg-zinc-200",
   variants: {
     selected: {
-      true: "bg-yellow-600 hover:bg-yellow-700 text-zinc-50",
+      true: "bg-primary-dark hover:bg-primary-dark text-zinc-50",
     },
   },
 });

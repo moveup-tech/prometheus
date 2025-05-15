@@ -6,7 +6,7 @@ const variants = tv({
   base: "w-5 h-5 rounded border border-zinc-200 bg-zinc-100",
   variants: {
     checked: {
-      true: "border border-yellow-700 bg-yellow-700 text-zinc-50",
+      true: "border border-primary-dark bg-primary-dark text-zinc-50",
       indeterminated: "",
     },
     disabled: {

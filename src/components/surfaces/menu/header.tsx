@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
 
 const menuHeaderVariant = tv({
-  base: "p-4 flex gap-4 items-center border-b border-b-zinc-200 rounded-t bg-zinc-50",
+  base: "p-4 flex gap-4 items-center border-b border-b-zinc-200 rounded-t bg-bakcground",
 });
 
 export type MenuHeaderProps = {} & HTMLAttributes<HTMLElement>;

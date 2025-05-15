@@ -8,4 +8,8 @@ export default {
   tags: ["autodocs"],
 } as Meta<FooterProps>;
 
-export const Default: StoryObj = {};
+export const Default: StoryObj = {
+  args: {
+    title: "Moveup Tecnologia",
+  },
+};

@@ -25,7 +25,7 @@ export function Footer({ user, children, ...rest }: SidebarFooterProps) {
       className="w-full rounded-b data-[state=close]:max-w-24"
     >
       {children}
-      <div className="flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4">
+      <div className="flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-background p-4">
         <Avatar image={user.image} username={user.name} />
         <div
           data-state={state}

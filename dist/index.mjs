@@ -60,40 +60,44 @@ var iconVariant = tv3({
   base: "rounded bg-zinc-500/25 p-2 text-zinc-500",
   variants: {
     variant: {
-      alert: "rounded bg-yellow-500/25 p-2 text-yellow-500",
+      alert: "rounded bg-primary-main0/25 p-2 text-primary-main0",
       info: "rounded bg-blue-500/25 p-2 text-blue-500",
       success: "rounded bg-green-500/25 p-2 text-green-500",
-      destructive: "rounded bg-red-500/25 p-2 text-red-500"
-    }
-  }
+      destructive: "rounded bg-red-500/25 p-2 text-red-500",
+    },
+  },
 });
-var Header = ({
-  children,
-  iconColor,
-  icon: Icon4,
-  className
-}) => {
-  return /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between rounded-t bg-zinc-200 p-4", children: [
-    children,
-    Icon4 && /* @__PURE__ */ jsx3("div", { className: iconVariant({ variant: iconColor, className }), children: /* @__PURE__ */ jsx3(Icon4, { size: 16 }) })
-  ] });
+var Header = ({ children, iconColor, icon: Icon4, className }) => {
+  return /* @__PURE__ */ jsxs("div", {
+    className: "flex items-start justify-between rounded-t bg-zinc-200 p-4",
+    children: [
+      children,
+      Icon4 &&
+        /* @__PURE__ */ jsx3("div", {
+          className: iconVariant({ variant: iconColor, className }),
+          children: /* @__PURE__ */ jsx3(Icon4, { size: 16 }),
+        }),
+    ],
+  });
 };
 
 // src/components/ui/card/footer.tsx
 import { tv as tv4 } from "tailwind-variants";
 import { jsx as jsx4 } from "react/jsx-runtime";
 var cardfooterVariant = tv4({
-  base: "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200"
+  base: "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200",
 });
 var CardFooter = (_a) => {
-  var _b = _a, {
-    children,
-    className
-  } = _b, rest = __objRest(_b, [
-    "children",
-    "className"
-  ]);
-  return /* @__PURE__ */ jsx4("div", __spreadProps(__spreadValues({ className: cardfooterVariant({ className }) }, rest), { children }));
+  var _b = _a,
+    { children, className } = _b,
+    rest = __objRest(_b, ["children", "className"]);
+  return /* @__PURE__ */ jsx4(
+    "div",
+    __spreadProps(
+      __spreadValues({ className: cardfooterVariant({ className }) }, rest),
+      { children }
+    )
+  );
 };
 
 // src/components/ui/card/index.tsx
@@ -101,7 +105,7 @@ var Card = {
   Root,
   Header,
   Body,
-  CardFooter
+  CardFooter,
 };
 
 // src/components/ui/table/index.tsx
@@ -113,62 +117,126 @@ var cellHeadVariant = tv5({
   variants: {
     position: {
       first: "rounded-tl-lg",
-      last: "rounded-tr-lg"
-    }
-  }
+      last: "rounded-tr-lg",
+    },
+  },
 });
 var Table = {
   Root: (_a) => {
-    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsx5("table", __spreadProps(__spreadValues({ className: "m-auto mt-6 w-full max-w-[1120px]" }, rest), { children }));
+    var _b = _a,
+      { children } = _b,
+      rest = __objRest(_b, ["children"]);
+    return /* @__PURE__ */ jsx5(
+      "table",
+      __spreadProps(
+        __spreadValues(
+          { className: "m-auto mt-6 w-full max-w-[1120px]" },
+          rest
+        ),
+        { children }
+      )
+    );
   },
   Caption: (_c) => {
-    var _d = _c, { children } = _d, rest = __objRest(_d, ["children"]);
+    var _d = _c,
+      { children } = _d,
+      rest = __objRest(_d, ["children"]);
     return /* @__PURE__ */ jsx5(
       "caption",
-      __spreadProps(__spreadValues({
-        className: "rounded-t-lg border-b border-b-zinc-300 bg-zinc-950 p-4"
-      }, rest), {
-        children
-      })
+      __spreadProps(
+        __spreadValues(
+          {
+            className:
+              "rounded-t-lg border-b border-b-zinc-300 bg-zinc-950 p-4",
+          },
+          rest
+        ),
+        {
+          children,
+        }
+      )
     );
   },
   THead: (_e) => {
-    var _f = _e, { children } = _f, rest = __objRest(_f, ["children"]);
-    return /* @__PURE__ */ jsx5("thead", __spreadProps(__spreadValues({ className: "rounded-t" }, rest), { children }));
+    var _f = _e,
+      { children } = _f,
+      rest = __objRest(_f, ["children"]);
+    return /* @__PURE__ */ jsx5(
+      "thead",
+      __spreadProps(__spreadValues({ className: "rounded-t" }, rest), {
+        children,
+      })
+    );
   },
   TBody: (_g) => {
-    var _h = _g, { children } = _h, rest = __objRest(_h, ["children"]);
-    return /* @__PURE__ */ jsx5("tbody", __spreadProps(__spreadValues({}, rest), { children }));
+    var _h = _g,
+      { children } = _h,
+      rest = __objRest(_h, ["children"]);
+    return /* @__PURE__ */ jsx5(
+      "tbody",
+      __spreadProps(__spreadValues({}, rest), { children })
+    );
   },
   Tr: (_i) => {
-    var _j = _i, { children } = _j, rest = __objRest(_j, ["children"]);
-    return /* @__PURE__ */ jsx5("tr", __spreadProps(__spreadValues({ className: "rounded-t bg-zinc-50" }, rest), { children }));
+    var _j = _i,
+      { children } = _j,
+      rest = __objRest(_j, ["children"]);
+    return /* @__PURE__ */ jsx5(
+      "tr",
+      __spreadProps(
+        __spreadValues({ className: "rounded-t bg-zinc-50" }, rest),
+        { children }
+      )
+    );
   },
   Th: (_k) => {
-    var _l = _k, { children, position, onClick } = _l, rest = __objRest(_l, ["children", "position", "onClick"]);
-    return /* @__PURE__ */ jsxs2("th", __spreadProps(__spreadValues({}, rest), { className: cellHeadVariant({ position }), children: [
-      children,
-      onClick && /* @__PURE__ */ jsx5("button", { onClick, className: "ml-4", children: /* @__PURE__ */ jsx5(ArrowDownUp, { size: 12 }) })
-    ] }));
+    var _l = _k,
+      { children, position, onClick } = _l,
+      rest = __objRest(_l, ["children", "position", "onClick"]);
+    return /* @__PURE__ */ jsxs2(
+      "th",
+      __spreadProps(__spreadValues({}, rest), {
+        className: cellHeadVariant({ position }),
+        children: [
+          children,
+          onClick &&
+            /* @__PURE__ */ jsx5("button", {
+              onClick,
+              className: "ml-4",
+              children: /* @__PURE__ */ jsx5(ArrowDownUp, { size: 12 }),
+            }),
+        ],
+      })
+    );
   },
   Td: (_m) => {
-    var _n = _m, { children } = _n, rest = __objRest(_n, ["children"]);
-    return /* @__PURE__ */ jsx5("td", __spreadProps(__spreadValues({ className: "border-b border-b-zinc-200 px-4 py-2" }, rest), { children }));
-  }
+    var _n = _m,
+      { children } = _n,
+      rest = __objRest(_n, ["children"]);
+    return /* @__PURE__ */ jsx5(
+      "td",
+      __spreadProps(
+        __spreadValues(
+          { className: "border-b border-b-zinc-200 px-4 py-2" },
+          rest
+        ),
+        { children }
+      )
+    );
+  },
 };
 
 // src/components/ui/avatar/index.tsx
 import { jsx as jsx6 } from "react/jsx-runtime";
 function Avatar({ image, username }) {
-  return /* @__PURE__ */ jsx6("div", { className: "h-14 w-14 rounded-full border-[3px] border-yellow-700 p-1", children: /* @__PURE__ */ jsx6(
-    "img",
-    {
+  return /* @__PURE__ */ jsx6("div", {
+    className: "h-14 w-14 rounded-full border-[3px] border-primary-dark p-1",
+    children: /* @__PURE__ */ jsx6("img", {
       src: image,
       alt: username,
-      className: "h-full w-full rounded-full object-cover"
-    }
-  ) });
+      className: "h-full w-full rounded-full object-cover",
+    }),
+  });
 }
 
 // src/components/ui/dialog/index.tsx
@@ -177,122 +245,207 @@ import { X } from "lucide-react";
 import { tv as tv6 } from "tailwind-variants";
 import { jsx as jsx7, jsxs as jsxs3 } from "react/jsx-runtime";
 var overlayVariant = tv6({
-  base: "fixed inset-0 bg-blackA6 data-[state=open]:animate-overlayShow bg-zinc-950/25 backdrop-blur"
+  base: "fixed inset-0 bg-blackA6 data-[state=open]:animate-overlayShow bg-zinc-950/25 backdrop-blur",
 });
 var containerVariant = tv6({
-  base: "max-w-[500px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white focus:outline-none"
+  base: "max-w-[500px] fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white focus:outline-none",
 });
 var contentVariant = tv6({
-  base: "p-4"
+  base: "p-4",
 });
 var footerVariant = tv6({
-  base: "flex gap-4 p-4 border-t border-t-zinc-200"
+  base: "flex gap-4 p-4 border-t border-t-zinc-200",
 });
 var headerVariant2 = tv6({
-  base: "p-4"
+  base: "p-4",
 });
 var Dialog = {
   Root: (_a) => {
-    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsx7(DialogPrimitive.Root, __spreadProps(__spreadValues({}, rest), { children }));
+    var _b = _a,
+      { children } = _b,
+      rest = __objRest(_b, ["children"]);
+    return /* @__PURE__ */ jsx7(
+      DialogPrimitive.Root,
+      __spreadProps(__spreadValues({}, rest), { children })
+    );
   },
   Portal: (_c) => {
-    var _d = _c, { children } = _d, rest = __objRest(_d, ["children"]);
-    return /* @__PURE__ */ jsx7(DialogPrimitive.Portal, __spreadProps(__spreadValues({}, rest), { children }));
+    var _d = _c,
+      { children } = _d,
+      rest = __objRest(_d, ["children"]);
+    return /* @__PURE__ */ jsx7(
+      DialogPrimitive.Portal,
+      __spreadProps(__spreadValues({}, rest), { children })
+    );
   },
   Trigger: (_e) => {
-    var _f = _e, { children } = _f, rest = __objRest(_f, ["children"]);
-    return /* @__PURE__ */ jsx7(DialogPrimitive.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+    var _f = _e,
+      { children } = _f,
+      rest = __objRest(_f, ["children"]);
+    return /* @__PURE__ */ jsx7(
+      DialogPrimitive.Trigger,
+      __spreadProps(__spreadValues({}, rest), { children })
+    );
   },
   Overlay: (_g) => {
-    var _h = _g, { children, className } = _h, rest = __objRest(_h, ["children", "className"]);
+    var _h = _g,
+      { children, className } = _h,
+      rest = __objRest(_h, ["children", "className"]);
     return /* @__PURE__ */ jsx7(
       DialogPrimitive.Overlay,
-      __spreadProps(__spreadValues({
-        className: overlayVariant({ className })
-      }, rest), {
-        children
+      __spreadProps(
+        __spreadValues(
+          {
+            className: overlayVariant({ className }),
+          },
+          rest
+        ),
+        {
+          children,
+        }
+      )
+    );
+  },
+  Header: ({ children, className }) =>
+    /* @__PURE__ */ jsxs3("div", {
+      className: headerVariant2({ className }),
+      children: [
+        /* @__PURE__ */ jsx7(DialogPrimitive.Close, {
+          asChild: true,
+          children: /* @__PURE__ */ jsx7("button", {
+            className:
+              "absolute right-4 top-4 rounded border border-zinc-200 bg-zinc-100 p-1 text-zinc-400",
+            "aria-label": "Close",
+            children: /* @__PURE__ */ jsx7(X, { size: 16 }),
+          }),
+        }),
+        children,
+      ],
+    }),
+  Content: (_i) => {
+    var _j = _i,
+      { children, as = "form", className } = _j,
+      rest = __objRest(_j, ["children", "as", "className"]);
+    const As = as;
+    return /* @__PURE__ */ jsx7(
+      As,
+      __spreadProps(__spreadValues({}, rest), {
+        className: contentVariant({ className }),
+        children,
       })
     );
   },
-  Header: ({ children, className }) => /* @__PURE__ */ jsxs3("div", { className: headerVariant2({ className }), children: [
-    /* @__PURE__ */ jsx7(DialogPrimitive.Close, { asChild: true, children: /* @__PURE__ */ jsx7(
-      "button",
-      {
-        className: "absolute right-4 top-4 rounded border border-zinc-200 bg-zinc-100 p-1 text-zinc-400",
-        "aria-label": "Close",
-        children: /* @__PURE__ */ jsx7(X, { size: 16 })
-      }
-    ) }),
-    children
-  ] }),
-  Content: (_i) => {
-    var _j = _i, { children, as = "form", className } = _j, rest = __objRest(_j, ["children", "as", "className"]);
-    const As = as;
-    return /* @__PURE__ */ jsx7(As, __spreadProps(__spreadValues({}, rest), { className: contentVariant({ className }), children }));
-  },
   Container: (_k) => {
-    var _l = _k, { children, className } = _l, rest = __objRest(_l, ["children", "className"]);
+    var _l = _k,
+      { children, className } = _l,
+      rest = __objRest(_l, ["children", "className"]);
     return /* @__PURE__ */ jsx7(
       DialogPrimitive.Content,
-      __spreadProps(__spreadValues({
-        className: containerVariant({ className })
-      }, rest), {
-        children
-      })
+      __spreadProps(
+        __spreadValues(
+          {
+            className: containerVariant({ className }),
+          },
+          rest
+        ),
+        {
+          children,
+        }
+      )
     );
   },
   Title: (_m) => {
-    var _n = _m, { children } = _n, rest = __objRest(_n, ["children"]);
+    var _n = _m,
+      { children } = _n,
+      rest = __objRest(_n, ["children"]);
     return /* @__PURE__ */ jsx7(
       DialogPrimitive.Title,
-      __spreadProps(__spreadValues({
-        className: "text-xl font-bold text-zinc-500"
-      }, rest), {
-        children
-      })
+      __spreadProps(
+        __spreadValues(
+          {
+            className: "text-xl font-bold text-zinc-500",
+          },
+          rest
+        ),
+        {
+          children,
+        }
+      )
     );
   },
   Description: (_o) => {
-    var _p = _o, { children } = _p, rest = __objRest(_p, ["children"]);
-    return /* @__PURE__ */ jsx7(DialogPrimitive.Description, __spreadProps(__spreadValues({ className: "text-zinc-400" }, rest), { children }));
+    var _p = _o,
+      { children } = _p,
+      rest = __objRest(_p, ["children"]);
+    return /* @__PURE__ */ jsx7(
+      DialogPrimitive.Description,
+      __spreadProps(__spreadValues({ className: "text-zinc-400" }, rest), {
+        children,
+      })
+    );
   },
   Close: (_q) => {
-    var _r = _q, { children } = _r, rest = __objRest(_r, ["children"]);
-    return /* @__PURE__ */ jsx7(DialogPrimitive.Close, __spreadProps(__spreadValues({}, rest), { children }));
+    var _r = _q,
+      { children } = _r,
+      rest = __objRest(_r, ["children"]);
+    return /* @__PURE__ */ jsx7(
+      DialogPrimitive.Close,
+      __spreadProps(__spreadValues({}, rest), { children })
+    );
   },
   Footer: (_s) => {
-    var _t = _s, { children, className } = _t, rest = __objRest(_t, ["children", "className"]);
-    return /* @__PURE__ */ jsx7("div", __spreadProps(__spreadValues({}, rest), { className: footerVariant({ className }), children }));
-  }
+    var _t = _s,
+      { children, className } = _t,
+      rest = __objRest(_t, ["children", "className"]);
+    return /* @__PURE__ */ jsx7(
+      "div",
+      __spreadProps(__spreadValues({}, rest), {
+        className: footerVariant({ className }),
+        children,
+      })
+    );
+  },
 };
 
 // src/components/ui/alert-dialog/action.tsx
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { jsx as jsx8 } from "react/jsx-runtime";
 function Action2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx8(AlertDialogPrimitive.Action, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx8(
+    AlertDialogPrimitive.Action,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/alert-dialog/cancel.tsx
 import * as AlertDialogPrimitive2 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx9 } from "react/jsx-runtime";
 function Cancel2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx9(AlertDialogPrimitive2.Cancel, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx9(
+    AlertDialogPrimitive2.Cancel,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/alert-dialog/content.tsx
 import * as AlertDialogPrimitive3 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx10 } from "react/jsx-runtime";
 function Content3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
   return /* @__PURE__ */ jsx10(
     AlertDialogPrimitive3.Content,
     __spreadProps(__spreadValues({}, rest), {
-      className: "data-[state=open]:animate-contentShow fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none",
-      children
+      className:
+        "data-[state=open]:animate-contentShow fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none",
+      children,
     })
   );
 }
@@ -301,24 +454,31 @@ function Content3(_a) {
 import * as AlertDialogPrimitive4 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx11 } from "react/jsx-runtime";
 function Description3(_a) {
-  var _b = _a, {
-    children
-  } = _b, rest = __objRest(_b, [
-    "children"
-  ]);
-  return /* @__PURE__ */ jsx11(AlertDialogPrimitive4.Description, __spreadProps(__spreadValues({}, rest), { className: "text-zinc-500", children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx11(
+    AlertDialogPrimitive4.Description,
+    __spreadProps(__spreadValues({}, rest), {
+      className: "text-zinc-500",
+      children,
+    })
+  );
 }
 
 // src/components/ui/alert-dialog/overlay.tsx
 import * as AlertDialogPrimitive5 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx12 } from "react/jsx-runtime";
 function Overlay3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
   return /* @__PURE__ */ jsx12(
     AlertDialogPrimitive5.Overlay,
     __spreadProps(__spreadValues({}, rest), {
-      className: "data-[state=open]:animate-overlay-show fixed inset-0 bg-zinc-950/25",
-      children
+      className:
+        "data-[state=open]:animate-overlay-show fixed inset-0 bg-zinc-950/25",
+      children,
     })
   );
 }
@@ -327,28 +487,40 @@ function Overlay3(_a) {
 import * as AlertDialogPrimitive6 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx13 } from "react/jsx-runtime";
 function Portal3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx13(AlertDialogPrimitive6.Portal, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx13(
+    AlertDialogPrimitive6.Portal,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/alert-dialog/root.tsx
 import * as AlertDialogPrimitive7 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx14 } from "react/jsx-runtime";
 function Root4(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx14(AlertDialogPrimitive7.Root, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx14(
+    AlertDialogPrimitive7.Root,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/alert-dialog/title.tsx
 import * as AlertDialogPrimitive8 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx15 } from "react/jsx-runtime";
 function Title3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
   return /* @__PURE__ */ jsx15(
     AlertDialogPrimitive8.Title,
     __spreadProps(__spreadValues({}, rest), {
       className: "text-xl font-bold text-zinc-600",
-      children
+      children,
     })
   );
 }
@@ -357,8 +529,13 @@ function Title3(_a) {
 import * as AlertDialogPrimitive9 from "@radix-ui/react-alert-dialog";
 import { jsx as jsx16 } from "react/jsx-runtime";
 function Trigger3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx16(AlertDialogPrimitive9.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx16(
+    AlertDialogPrimitive9.Trigger,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/alert-dialog/index.tsx
@@ -371,7 +548,7 @@ var AlertDialog = {
   Description: Description3,
   Action: Action2,
   Cancel: Cancel2,
-  Content: Content3
+  Content: Content3,
 };
 
 // src/components/ui/form/input/index.tsx
@@ -383,54 +560,85 @@ var variants = tv7({
   base: "w-full bg-zinc-50 p-2 rounded",
   variants: {
     variant: {
-      default: "border-2 border-zinc-200 focus-within:border-yellow-700"
+      default: "border-2 border-zinc-200 focus-within:border-primary-dark",
     },
     hasError: {
-      true: "border-2 border-rose-500 focus-within:border-rose-500"
-    }
+      true: "border-2 border-rose-500 focus-within:border-rose-500",
+    },
   },
   defaultVariants: {
-    variant: "default"
-  }
+    variant: "default",
+  },
 });
-var Input = forwardRef(
-  (_a, ref) => {
-    var _b = _a, { mask, error, className } = _b, rest = __objRest(_b, ["mask", "error", "className"]);
-    return /* @__PURE__ */ jsxs4(Fragment, { children: [
-      /* @__PURE__ */ jsx17("div", { className: variants({ className, hasError: !!error }), children: mask ? /* @__PURE__ */ jsx17(
-        InputMask,
-        __spreadProps(__spreadValues({
-          ref
-        }, rest), {
-          mask,
-          replacement: {
-            _: /\d/
-          },
-          className: "w-full bg-transparent outline-none"
-        })
-      ) : /* @__PURE__ */ jsx17(
-        "input",
-        __spreadProps(__spreadValues({
-          ref
-        }, rest), {
-          className: "w-full bg-transparent outline-none"
-        })
-      ) }),
-      error && /* @__PURE__ */ jsx17("p", { className: "mt-1 text-xs text-rose-600", children: error })
-    ] });
-  }
-);
+var Input = forwardRef((_a, ref) => {
+  var _b = _a,
+    { mask, error, className } = _b,
+    rest = __objRest(_b, ["mask", "error", "className"]);
+  return /* @__PURE__ */ jsxs4(Fragment, {
+    children: [
+      /* @__PURE__ */ jsx17("div", {
+        className: variants({ className, hasError: !!error }),
+        children: mask
+          ? /* @__PURE__ */ jsx17(
+              InputMask,
+              __spreadProps(
+                __spreadValues(
+                  {
+                    ref,
+                  },
+                  rest
+                ),
+                {
+                  mask,
+                  replacement: {
+                    _: /\d/,
+                  },
+                  className: "w-full bg-transparent outline-none",
+                }
+              )
+            )
+          : /* @__PURE__ */ jsx17(
+              "input",
+              __spreadProps(
+                __spreadValues(
+                  {
+                    ref,
+                  },
+                  rest
+                ),
+                {
+                  className: "w-full bg-transparent outline-none",
+                }
+              )
+            ),
+      }),
+      error &&
+        /* @__PURE__ */ jsx17("p", {
+          className: "mt-1 text-xs text-rose-600",
+          children: error,
+        }),
+    ],
+  });
+});
 Input.displayName = "Input";
 
 // src/components/ui/form/label/index.tsx
 import { tv as tv8 } from "tailwind-variants";
 import { jsx as jsx18 } from "react/jsx-runtime";
 var labelVariant = tv8({
-  base: "font-bold text-zinc-600"
+  base: "font-bold text-zinc-600",
 });
 function Label(_a) {
-  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx18("label", __spreadProps(__spreadValues({}, rest), { className: labelVariant({ className }), children }));
+  var _b = _a,
+    { children, className } = _b,
+    rest = __objRest(_b, ["children", "className"]);
+  return /* @__PURE__ */ jsx18(
+    "label",
+    __spreadProps(__spreadValues({}, rest), {
+      className: labelVariant({ className }),
+      children,
+    })
+  );
 }
 
 // src/components/ui/form/select/icon.tsx
@@ -439,7 +647,12 @@ import { ChevronDown } from "lucide-react";
 import { jsx as jsx19 } from "react/jsx-runtime";
 function Icon2(_a) {
   var rest = __objRest(_a, []);
-  return /* @__PURE__ */ jsx19(SelectPrimitive.Icon, __spreadProps(__spreadValues({}, rest), { children: /* @__PURE__ */ jsx19(ChevronDown, {}) }));
+  return /* @__PURE__ */ jsx19(
+    SelectPrimitive.Icon,
+    __spreadProps(__spreadValues({}, rest), {
+      children: /* @__PURE__ */ jsx19(ChevronDown, {}),
+    })
+  );
 }
 
 // src/components/ui/form/select/item.tsx
@@ -447,41 +660,57 @@ import * as SelectPrimitive2 from "@radix-ui/react-select";
 import { CheckIcon } from "lucide-react";
 import { forwardRef as forwardRef2 } from "react";
 import { jsx as jsx20, jsxs as jsxs5 } from "react/jsx-runtime";
-var Item2 = forwardRef2(
-  (_a, ref) => {
-    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsxs5(
-      SelectPrimitive2.Item,
-      __spreadProps(__spreadValues({
-        ref
-      }, rest), {
-        className: "flex cursor-pointer items-center justify-between border-b border-b-zinc-100 px-4 py-2 outline-none hover:bg-zinc-100",
+var Item2 = forwardRef2((_a, ref) => {
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsxs5(
+    SelectPrimitive2.Item,
+    __spreadProps(
+      __spreadValues(
+        {
+          ref,
+        },
+        rest
+      ),
+      {
+        className:
+          "flex cursor-pointer items-center justify-between border-b border-b-zinc-100 px-4 py-2 outline-none hover:bg-zinc-100",
         children: [
           /* @__PURE__ */ jsx20(SelectPrimitive2.ItemText, { children }),
-          /* @__PURE__ */ jsx20(SelectPrimitive2.ItemIndicator, { children: /* @__PURE__ */ jsx20(CheckIcon, { size: 14, className: "text-yellow-600" }) })
-        ]
-      })
-    );
-  }
-);
+          /* @__PURE__ */ jsx20(SelectPrimitive2.ItemIndicator, {
+            children: /* @__PURE__ */ jsx20(CheckIcon, {
+              size: 14,
+              className: "text-primary-dark",
+            }),
+          }),
+        ],
+      }
+    )
+  );
+});
 
 // src/components/ui/form/select/root.tsx
 import * as SelectPrimitive3 from "@radix-ui/react-select";
 import { jsx as jsx21, jsxs as jsxs6 } from "react/jsx-runtime";
 function Root6(_a) {
-  var _b = _a, {
-    children,
-    error,
-    defaultValue
-  } = _b, rest = __objRest(_b, [
-    "children",
-    "error",
-    "defaultValue"
-  ]);
-  return /* @__PURE__ */ jsxs6(SelectPrimitive3.Root, __spreadProps(__spreadValues({}, rest), { defaultValue, children: [
-    children,
-    error && /* @__PURE__ */ jsx21("small", { className: "mt-1 text-xs text-rose-600", children: error })
-  ] }));
+  var _b = _a,
+    { children, error, defaultValue } = _b,
+    rest = __objRest(_b, ["children", "error", "defaultValue"]);
+  return /* @__PURE__ */ jsxs6(
+    SelectPrimitive3.Root,
+    __spreadProps(__spreadValues({}, rest), {
+      defaultValue,
+      children: [
+        children,
+        error &&
+          /* @__PURE__ */ jsx21("small", {
+            className: "mt-1 text-xs text-rose-600",
+            children: error,
+          }),
+      ],
+    })
+  );
 }
 
 // src/components/ui/form/select/value.tsx
@@ -489,51 +718,83 @@ import * as SelectPrimitive4 from "@radix-ui/react-select";
 import { jsx as jsx22 } from "react/jsx-runtime";
 function Value2(_a) {
   var rest = __objRest(_a, []);
-  return /* @__PURE__ */ jsx22(SelectPrimitive4.Value, __spreadValues({}, rest));
+  return /* @__PURE__ */ jsx22(
+    SelectPrimitive4.Value,
+    __spreadValues({}, rest)
+  );
 }
 
 // src/components/ui/form/select/group.tsx
 import * as SelectPrimitive5 from "@radix-ui/react-select";
 import { jsx as jsx23 } from "react/jsx-runtime";
 function Group2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx23(SelectPrimitive5.Group, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx23(
+    SelectPrimitive5.Group,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/form/select/label.tsx
 import * as SelectPrimitive6 from "@radix-ui/react-select";
 import { jsx as jsx24 } from "react/jsx-runtime";
 function Label3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx24(SelectPrimitive6.Label, __spreadProps(__spreadValues({}, rest), { className: "mt-4 text-center text-zinc-500", children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx24(
+    SelectPrimitive6.Label,
+    __spreadProps(__spreadValues({}, rest), {
+      className: "mt-4 text-center text-zinc-500",
+      children,
+    })
+  );
 }
 
 // src/components/ui/form/select/portal.tsx
 import * as SelectPrimitive7 from "@radix-ui/react-select";
 import { jsx as jsx25 } from "react/jsx-runtime";
 function Portal5(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx25(SelectPrimitive7.Portal, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx25(
+    SelectPrimitive7.Portal,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/form/select/content.tsx
 import * as SelectPrimitive8 from "@radix-ui/react-select";
 import { jsx as jsx26 } from "react/jsx-runtime";
 function Content5(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx26(SelectPrimitive8.Content, __spreadProps(__spreadValues({}, rest), { className: "rounded bg-zinc-50", children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx26(
+    SelectPrimitive8.Content,
+    __spreadProps(__spreadValues({}, rest), {
+      className: "rounded bg-zinc-50",
+      children,
+    })
+  );
 }
 
 // src/components/ui/form/select/trigger.tsx
 import * as SelectPrimitive9 from "@radix-ui/react-select";
 import { jsx as jsx27 } from "react/jsx-runtime";
 function Trigger5(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
   return /* @__PURE__ */ jsx27(
     SelectPrimitive9.Trigger,
     __spreadProps(__spreadValues({}, rest), {
-      className: "flex w-full items-start justify-between rounded border-2 border-zinc-200 bg-zinc-50 p-2 outline-yellow-700",
-      children
+      className:
+        "flex w-full items-start justify-between rounded border-2 border-zinc-200 bg-zinc-50 p-2 outline-primary-dark",
+      children,
     })
   );
 }
@@ -542,24 +803,39 @@ function Trigger5(_a) {
 import * as SelectPrimitive10 from "@radix-ui/react-select";
 import { jsx as jsx28 } from "react/jsx-runtime";
 function Viewport2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx28(SelectPrimitive10.Viewport, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx28(
+    SelectPrimitive10.Viewport,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/form/select/item-text.tsx
 import * as SelectPrimitive11 from "@radix-ui/react-select";
 import { jsx as jsx29 } from "react/jsx-runtime";
 function ItemText3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx29(SelectPrimitive11.ItemText, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx29(
+    SelectPrimitive11.ItemText,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/form/select/item-indicator.tsx
 import * as SelectPrimitive12 from "@radix-ui/react-select";
 import { jsx as jsx30 } from "react/jsx-runtime";
 function ItemIndicator3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx30(SelectPrimitive12.ItemIndicator, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx30(
+    SelectPrimitive12.ItemIndicator,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/form/select/index.tsx
@@ -575,7 +851,7 @@ var Select = {
   Item: Item2,
   Label: Label3,
   Value: Value2,
-  Icon: Icon2
+  Icon: Icon2,
 };
 
 // src/components/ui/form/button/index.tsx
@@ -586,53 +862,64 @@ var buttonVariant = tv9({
   base: "px-4 py-2 rounded text-zinc-50 transition-colors flex gap-2 items-center justify-center",
   variants: {
     variant: {
-      default: "bg-yellow-600 hover:bg-yellow-700",
+      default: "bg-primary-dark hover:bg-primary-dark",
       secondary: "bg-zinc-800 text-zinc-400 hover:bg-zinc-800/75",
-      link: "bg-zin-100 text-yellow-600 underline",
+      link: "bg-zin-100 text-primary-dark underline",
       destructive: "bg-rose-600 text-rose-200 hover:bg-rose-700",
-      ghost: "bg-zinc-200 text-zinc-500 hover:bg-zinc-200/75"
+      ghost: "bg-zinc-200 text-zinc-500 hover:bg-zinc-200/75",
     },
     disabled: {
-      true: "bg-zinc-600 hover:bg-zinc-700 cursor-not-allowed"
-    }
+      true: "bg-zinc-600 hover:bg-zinc-700 cursor-not-allowed",
+    },
   },
   defaultVariants: {
-    variant: "default"
-  }
+    variant: "default",
+  },
 });
 function Button(_a) {
-  var _b = _a, {
-    as,
-    asChild,
-    variant: variant4,
-    children,
-    disabled,
-    className,
-    iconLeft,
-    iconRight
-  } = _b, rest = __objRest(_b, [
-    "as",
-    "asChild",
-    "variant",
-    "children",
-    "disabled",
-    "className",
-    "iconLeft",
-    "iconRight"
-  ]);
+  var _b = _a,
+    {
+      as,
+      asChild,
+      variant: variant4,
+      children,
+      disabled,
+      className,
+      iconLeft,
+      iconRight,
+    } = _b,
+    rest = __objRest(_b, [
+      "as",
+      "asChild",
+      "variant",
+      "children",
+      "disabled",
+      "className",
+      "iconLeft",
+      "iconRight",
+    ]);
   const As = as || "button";
   const IconLeft = iconLeft;
   const IconRight = iconRight;
   if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children, __spreadProps(__spreadValues({}, rest), {
-      className: buttonVariant({ className, variant: variant4, disabled })
-    }));
+    return React.cloneElement(
+      children,
+      __spreadProps(__spreadValues({}, rest), {
+        className: buttonVariant({ className, variant: variant4, disabled }),
+      })
+    );
   }
-  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant4, disabled }), children: [
-    IconLeft && /* @__PURE__ */ jsx31(IconLeft, {}),
-    children,
-    IconRight && /* @__PURE__ */ jsx31(IconRight, {})
-  ] }));
+  return /* @__PURE__ */ jsxs7(
+    As,
+    __spreadProps(__spreadValues({}, rest), {
+      className: buttonVariant({ className, variant: variant4, disabled }),
+      children: [
+        IconLeft && /* @__PURE__ */ jsx31(IconLeft, {}),
+        children,
+        IconRight && /* @__PURE__ */ jsx31(IconRight, {}),
+      ],
+    })
+  );
 }
 Button.displayName = "Button";
 
@@ -645,126 +932,172 @@ var variants2 = tv10({
   base: "w-5 h-5 rounded border border-zinc-200 bg-zinc-100",
   variants: {
     checked: {
-      true: "border border-yellow-700 bg-yellow-700 text-zinc-50",
-      indeterminated: ""
+      true: "border border-primary-dark bg-primary-dark text-zinc-50",
+      indeterminated: "",
     },
     disabled: {
-      true: "bg-zinc-200 border-zinc-300 cursor-not-allowed"
-    }
+      true: "bg-zinc-200 border-zinc-300 cursor-not-allowed",
+    },
   },
   defaultVariants: {
-    checked: false
-  }
+    checked: false,
+  },
 });
-function Checkbox({
-  checked = false,
-  disabled = false,
-  onValueChange
-}) {
-  const [isChecked, setIsChecked] = useState(
-    checked
-  );
+function Checkbox({ checked = false, disabled = false, onValueChange }) {
+  const [isChecked, setIsChecked] = useState(checked);
   const toggleCheck = () => {
     setIsChecked(!isChecked);
     if (onValueChange) {
       onValueChange(!isChecked);
     }
   };
-  return /* @__PURE__ */ jsx32(
-    "button",
-    {
-      type: "button",
-      disabled,
-      onClick: toggleCheck,
-      className: variants2({ checked: isChecked, disabled }),
-      children: isChecked && /* @__PURE__ */ jsx32(Check, { size: 18 })
-    }
-  );
+  return /* @__PURE__ */ jsx32("button", {
+    type: "button",
+    disabled,
+    onClick: toggleCheck,
+    className: variants2({ checked: isChecked, disabled }),
+    children: isChecked && /* @__PURE__ */ jsx32(Check, { size: 18 }),
+  });
 }
 
 // src/components/ui/form/textarea/index.tsx
 import { tv as tv11 } from "tailwind-variants";
 import { forwardRef as forwardRef3 } from "react";
-import { Fragment as Fragment2, jsx as jsx33, jsxs as jsxs8 } from "react/jsx-runtime";
+import {
+  Fragment as Fragment2,
+  jsx as jsx33,
+  jsxs as jsxs8,
+} from "react/jsx-runtime";
 var variants3 = tv11({
-  base: "w-full p-2 bg-zinc-50 border border-zinc-100 rounded outline-yellow-700",
+  base: "w-full p-2 bg-zinc-50 border border-zinc-100 rounded outline-primary-dark",
   variants: {
     variant: {
-      default: "border-2 border-zinc-200 focus-within:border-yellow-700"
-    }
+      default: "border-2 border-zinc-200 focus-within:border-primary-dark",
+    },
   },
   defaultVariants: {
-    variant: "default"
-  }
+    variant: "default",
+  },
 });
-var TextArea = forwardRef3(
-  (_a, ref) => {
-    var _b = _a, { error, name, className } = _b, rest = __objRest(_b, ["error", "name", "className"]);
-    return /* @__PURE__ */ jsxs8(Fragment2, { children: [
-      /* @__PURE__ */ jsx33("div", { className: variants3({ className }), children: /* @__PURE__ */ jsx33(
-        "textarea",
-        __spreadProps(__spreadValues({
-          ref
-        }, rest), {
-          name,
-          className: "w-full bg-transparent outline-none"
-        })
-      ) }),
-      error && /* @__PURE__ */ jsx33("p", { className: "mt-1 text-xs text-red-600", children: error })
-    ] });
-  }
-);
+var TextArea = forwardRef3((_a, ref) => {
+  var _b = _a,
+    { error, name, className } = _b,
+    rest = __objRest(_b, ["error", "name", "className"]);
+  return /* @__PURE__ */ jsxs8(Fragment2, {
+    children: [
+      /* @__PURE__ */ jsx33("div", {
+        className: variants3({ className }),
+        children: /* @__PURE__ */ jsx33(
+          "textarea",
+          __spreadProps(
+            __spreadValues(
+              {
+                ref,
+              },
+              rest
+            ),
+            {
+              name,
+              className: "w-full bg-transparent outline-none",
+            }
+          )
+        ),
+      }),
+      error &&
+        /* @__PURE__ */ jsx33("p", {
+          className: "mt-1 text-xs text-red-600",
+          children: error,
+        }),
+    ],
+  });
+});
 TextArea.displayName = "TextArea";
 
 // src/components/ui/form/input-file/index.tsx
 import { UploadIcon } from "lucide-react";
 import { forwardRef as forwardRef4, useState as useState2 } from "react";
 import { jsx as jsx34, jsxs as jsxs9 } from "react/jsx-runtime";
-var InputFile = forwardRef4(
-  (_a, ref) => {
-    var _b = _a, { accept = ".pdf" } = _b, rest = __objRest(_b, ["accept"]);
-    const [files, setFiles] = useState2(null);
-    const onInputChange = (e) => setFiles(e.currentTarget.files);
-    return /* @__PURE__ */ jsxs9("div", { className: "flex w-full items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100 text-zinc-950", children: [
-      /* @__PURE__ */ jsx34(
-        "label",
-        {
-          htmlFor: "file",
-          className: "flex h-full w-full cursor-pointer items-center justify-center text-center",
-          children: /* @__PURE__ */ jsx34("div", { className: "flex w-full items-center justify-center", children: /* @__PURE__ */ jsx34("small", { children: !files ? /* @__PURE__ */ jsxs9("div", { className: "p-4", children: [
-            /* @__PURE__ */ jsx34("p", { children: "Clique aqui para inserir um documento" }),
-            /* @__PURE__ */ jsx34("div", { className: "flex items-center justify-center p-4", children: /* @__PURE__ */ jsx34(UploadIcon, { className: "text-zinc-400" }) }),
-            /* @__PURE__ */ jsxs9("small", { className: "text-zinc-500", children: [
-              "(Somente arquivos ",
-              accept,
-              ")"
-            ] })
-          ] }) : /* @__PURE__ */ jsxs9("div", { className: "p-4", children: [
-            /* @__PURE__ */ jsx34("p", { children: "Arquivos selecionados:" }),
-            /* @__PURE__ */ jsx34("div", { className: "mt-4", children: Array.from(files).map((item, index) => /* @__PURE__ */ jsxs9("small", { children: [
-              item.name,
-              " ",
-              index > 0 && ", "
-            ] }, item.name)) }),
-            /* @__PURE__ */ jsx34("small", { className: "text-zinc-500" })
-          ] }) }) })
-        }
-      ),
+var InputFile = forwardRef4((_a, ref) => {
+  var _b = _a,
+    { accept = ".pdf" } = _b,
+    rest = __objRest(_b, ["accept"]);
+  const [files, setFiles] = useState2(null);
+  const onInputChange = (e) => setFiles(e.currentTarget.files);
+  return /* @__PURE__ */ jsxs9("div", {
+    className:
+      "flex w-full items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100 text-zinc-950",
+    children: [
+      /* @__PURE__ */ jsx34("label", {
+        htmlFor: "file",
+        className:
+          "flex h-full w-full cursor-pointer items-center justify-center text-center",
+        children: /* @__PURE__ */ jsx34("div", {
+          className: "flex w-full items-center justify-center",
+          children: /* @__PURE__ */ jsx34("small", {
+            children: !files
+              ? /* @__PURE__ */ jsxs9("div", {
+                  className: "p-4",
+                  children: [
+                    /* @__PURE__ */ jsx34("p", {
+                      children: "Clique aqui para inserir um documento",
+                    }),
+                    /* @__PURE__ */ jsx34("div", {
+                      className: "flex items-center justify-center p-4",
+                      children: /* @__PURE__ */ jsx34(UploadIcon, {
+                        className: "text-zinc-400",
+                      }),
+                    }),
+                    /* @__PURE__ */ jsxs9("small", {
+                      className: "text-zinc-500",
+                      children: ["(Somente arquivos ", accept, ")"],
+                    }),
+                  ],
+                })
+              : /* @__PURE__ */ jsxs9("div", {
+                  className: "p-4",
+                  children: [
+                    /* @__PURE__ */ jsx34("p", {
+                      children: "Arquivos selecionados:",
+                    }),
+                    /* @__PURE__ */ jsx34("div", {
+                      className: "mt-4",
+                      children: Array.from(files).map((item, index) =>
+                        /* @__PURE__ */ jsxs9(
+                          "small",
+                          { children: [item.name, " ", index > 0 && ", "] },
+                          item.name
+                        )
+                      ),
+                    }),
+                    /* @__PURE__ */ jsx34("small", {
+                      className: "text-zinc-500",
+                    }),
+                  ],
+                }),
+          }),
+        }),
+      }),
       /* @__PURE__ */ jsx34(
         "input",
-        __spreadProps(__spreadValues({
-          id: "file",
-          ref
-        }, rest), {
-          type: "file",
-          className: "hidden",
-          accept,
-          onChange: onInputChange
-        })
-      )
-    ] });
-  }
-);
+        __spreadProps(
+          __spreadValues(
+            {
+              id: "file",
+              ref,
+            },
+            rest
+          ),
+          {
+            type: "file",
+            className: "hidden",
+            accept,
+            onChange: onInputChange,
+          }
+        )
+      ),
+    ],
+  });
+});
 
 // src/components/ui/form/date-picker/index.tsx
 import { useState as useState3 } from "react";
@@ -793,28 +1126,27 @@ function Calendar(_a) {
         month_grid: "w-full bg-zinc-10",
         range_middle: "bg-amber-500/25",
         selected: "bg-amber-500 text-white",
-        root: "bg-zinc-50 p-4 rounded relative border border-zinc-200 shadow-lg"
-      }
+        root: "bg-zinc-50 p-4 rounded relative border border-zinc-200 shadow-lg",
+      },
     })
   );
 }
 
 // src/components/ui/form/date-picker/index.tsx
 import { jsx as jsx36, jsxs as jsxs10 } from "react/jsx-runtime";
-function DatePicker({
-  defaultValue,
-  onValueChange,
-  mode = "single"
-}) {
+function DatePicker({ defaultValue, onValueChange, mode = "single" }) {
   const [selected, setSelected] = useState3(() => {
     if (mode === "single") {
       return /* @__PURE__ */ new Date();
     }
     return {
       from: defaultValue ? defaultValue.from : /* @__PURE__ */ new Date(),
-      to: defaultValue && defaultValue.to ? defaultValue.to : add(/* @__PURE__ */ new Date(), {
-        days: 15
-      })
+      to:
+        defaultValue && defaultValue.to
+          ? defaultValue.to
+          : add(/* @__PURE__ */ new Date(), {
+              days: 15,
+            }),
     };
   });
   const onRangeSelected = (data) => {
@@ -826,51 +1158,78 @@ function DatePicker({
       onValueChange(data);
     }
   };
-  return /* @__PURE__ */ jsxs10(Popover.Root, { children: [
-    /* @__PURE__ */ jsx36(Popover.Trigger, { children: /* @__PURE__ */ jsxs10(
-      Button,
-      {
-        variant: "ghost",
-        className: "w-full border border-zinc-300",
-        type: "button",
-        children: [
-          /* @__PURE__ */ jsx36(Calendar1, { size: 14 }),
-          mode === "single" ? format(selected, "dd/LL/yyyy") : format(selected.from || /* @__PURE__ */ new Date(), "dd/LL/yyyy") + " - " + format(selected.to || /* @__PURE__ */ new Date(), "dd/LL/yyyy")
-        ]
-      }
-    ) }),
-    /* @__PURE__ */ jsx36(Popover.Portal, { children: /* @__PURE__ */ jsx36(Popover.Content, { align: "start", children: /* @__PURE__ */ jsx36(
-      Calendar,
-      {
-        required: true,
-        className: "mt-2",
-        mode,
-        selected,
-        onSelect: onRangeSelected
-      }
-    ) }) })
-  ] });
+  return /* @__PURE__ */ jsxs10(Popover.Root, {
+    children: [
+      /* @__PURE__ */ jsx36(Popover.Trigger, {
+        children: /* @__PURE__ */ jsxs10(Button, {
+          variant: "ghost",
+          className: "w-full border border-zinc-300",
+          type: "button",
+          children: [
+            /* @__PURE__ */ jsx36(Calendar1, { size: 14 }),
+            mode === "single"
+              ? format(selected, "dd/LL/yyyy")
+              : format(
+                  selected.from || /* @__PURE__ */ new Date(),
+                  "dd/LL/yyyy"
+                ) +
+                " - " +
+                format(selected.to || /* @__PURE__ */ new Date(), "dd/LL/yyyy"),
+          ],
+        }),
+      }),
+      /* @__PURE__ */ jsx36(Popover.Portal, {
+        children: /* @__PURE__ */ jsx36(Popover.Content, {
+          align: "start",
+          children: /* @__PURE__ */ jsx36(Calendar, {
+            required: true,
+            className: "mt-2",
+            mode,
+            selected,
+            onSelect: onRangeSelected,
+          }),
+        }),
+      }),
+    ],
+  });
 }
 
 // src/components/ui/form/year-picker/index.tsx
 import { useState as useState4 } from "react";
 import { tv as tv14 } from "tailwind-variants";
-import { Calendar1 as Calendar12, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Calendar1 as Calendar12,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 // src/components/ui/popover/root.tsx
 import * as Popover2 from "@radix-ui/react-popover";
 import { jsx as jsx37 } from "react/jsx-runtime";
 function Root9(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx37(Popover2.Root, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx37(
+    Popover2.Root,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/popover/arrow.tsx
 import * as Popover3 from "@radix-ui/react-popover";
 import { jsx as jsx38 } from "react/jsx-runtime";
 function Arrow2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx38(Popover3.Arrow, __spreadProps(__spreadValues({}, rest), { className: "fill-zinc-50", children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx38(
+    Popover3.Arrow,
+    __spreadProps(__spreadValues({}, rest), {
+      className: "fill-zinc-50",
+      children,
+    })
+  );
 }
 
 // src/components/ui/popover/close.tsx
@@ -878,16 +1237,18 @@ import * as Popover4 from "@radix-ui/react-popover";
 import { tv as tv12 } from "tailwind-variants";
 import { jsx as jsx39 } from "react/jsx-runtime";
 var popoverCloseVariant = tv12({
-  base: "absolute right-2 top-2 inline-flex cursor-pointer items-center justify-center text-zinc-400 outline-none border border-zinc-400 rounded hover:bg-zinc-100 transition-colors"
+  base: "absolute right-2 top-2 inline-flex cursor-pointer items-center justify-center text-zinc-400 outline-none border border-zinc-400 rounded hover:bg-zinc-100 transition-colors",
 });
 function Close3(_a) {
-  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
+  var _b = _a,
+    { children, className } = _b,
+    rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ jsx39(
     Popover4.Close,
     __spreadProps(__spreadValues({}, rest), {
       className: popoverCloseVariant({ className }),
       "aria-label": "Close",
-      children
+      children,
     })
   );
 }
@@ -896,16 +1257,26 @@ function Close3(_a) {
 import * as Popover5 from "@radix-ui/react-popover";
 import { jsx as jsx40 } from "react/jsx-runtime";
 function Anchor2(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx40(Popover5.Anchor, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx40(
+    Popover5.Anchor,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/popover/portal.tsx
 import * as Popover6 from "@radix-ui/react-popover";
 import { jsx as jsx41 } from "react/jsx-runtime";
 function Portal8(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx41(Popover6.Portal, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx41(
+    Popover6.Portal,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/popover/content.tsx
@@ -913,16 +1284,18 @@ import * as Popover7 from "@radix-ui/react-popover";
 import { tv as tv13 } from "tailwind-variants";
 import { jsx as jsx42 } from "react/jsx-runtime";
 var popoverContentVariation = tv13({
-  base: "bg-zinc-100 rounded shadow-lg"
+  base: "bg-zinc-100 rounded shadow-lg",
 });
 function Content8(_a) {
-  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
+  var _b = _a,
+    { children, className } = _b,
+    rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ jsx42(
     Popover7.Content,
     __spreadProps(__spreadValues({}, rest), {
       className: popoverContentVariation({ className }),
       sideOffset: 5,
-      children
+      children,
     })
   );
 }
@@ -931,8 +1304,13 @@ function Content8(_a) {
 import * as Popover8 from "@radix-ui/react-popover";
 import { jsx as jsx43 } from "react/jsx-runtime";
 function Trigger8(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx43(Popover8.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+  var _b = _a,
+    { children } = _b,
+    rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx43(
+    Popover8.Trigger,
+    __spreadProps(__spreadValues({}, rest), { children })
+  );
 }
 
 // src/components/ui/popover/index.tsx
@@ -943,7 +1321,7 @@ var Popover9 = {
   Content: Content8,
   Portal: Portal8,
   Root: Root9,
-  Trigger: Trigger8
+  Trigger: Trigger8,
 };
 
 // src/components/ui/form/year-picker/index.tsx
@@ -952,18 +1330,18 @@ var variant2 = tv14({
   base: "rounded bg-zinc-100 p-2 transition-colors hover:bg-zinc-200",
   variants: {
     selected: {
-      true: "bg-yellow-600 hover:bg-yellow-700 text-zinc-50"
-    }
-  }
+      true: "bg-primary-dark hover:bg-primary-dark text-zinc-50",
+    },
+  },
 });
 var YearPicker = ({
   onValueChange,
-  defaultValue = (/* @__PURE__ */ new Date()).getFullYear()
+  defaultValue = /* @__PURE__ */ new Date().getFullYear(),
 }) => {
   const [year, setYear] = useState4(defaultValue);
-  const [years] = useState4(
-    () => Array.from({
-      length: 9
+  const [years] = useState4(() =>
+    Array.from({
+      length: 9,
     })
   );
   const handleYearChange = (value) => {
@@ -974,41 +1352,66 @@ var YearPicker = ({
   };
   const handleNextYearChange = () => setYear(year + 1);
   const handlePreviousYearChange = () => setYear(year - 1);
-  return /* @__PURE__ */ jsxs11(Popover9.Root, { children: [
-    /* @__PURE__ */ jsx44(Popover9.Trigger, { children: /* @__PURE__ */ jsxs11(
-      Button,
-      {
-        variant: "ghost",
-        className: "w-full border border-zinc-300",
-        type: "button",
-        children: [
-          /* @__PURE__ */ jsx44(Calendar12, { size: 14 }),
-          /* @__PURE__ */ jsx44("p", { children: year })
-        ]
-      }
-    ) }),
-    /* @__PURE__ */ jsx44(Popover9.Portal, { children: /* @__PURE__ */ jsx44(Popover9.Content, { align: "start", children: /* @__PURE__ */ jsxs11("div", { children: [
-      /* @__PURE__ */ jsxs11("div", { className: "flex items-center justify-between border-b border-b-zinc-200 p-2", children: [
-        /* @__PURE__ */ jsx44("button", { onClick: handlePreviousYearChange, children: /* @__PURE__ */ jsx44(ChevronLeft, {}) }),
-        /* @__PURE__ */ jsx44("button", { onClick: handleNextYearChange, children: /* @__PURE__ */ jsx44(ChevronRight, {}) })
-      ] }),
-      /* @__PURE__ */ jsx44("div", { className: "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2", children: years.map((_, index) => /* @__PURE__ */ jsx44(
-        "button",
-        {
-          onClick: () => handleYearChange(year + index),
-          className: variant2({ selected: year === year + index }),
-          children: year + index
-        }
-      )) })
-    ] }) }) })
-  ] });
+  return /* @__PURE__ */ jsxs11(Popover9.Root, {
+    children: [
+      /* @__PURE__ */ jsx44(Popover9.Trigger, {
+        children: /* @__PURE__ */ jsxs11(Button, {
+          variant: "ghost",
+          className: "w-full border border-zinc-300",
+          type: "button",
+          children: [
+            /* @__PURE__ */ jsx44(Calendar12, { size: 14 }),
+            /* @__PURE__ */ jsx44("p", { children: year }),
+          ],
+        }),
+      }),
+      /* @__PURE__ */ jsx44(Popover9.Portal, {
+        children: /* @__PURE__ */ jsx44(Popover9.Content, {
+          align: "start",
+          children: /* @__PURE__ */ jsxs11("div", {
+            children: [
+              /* @__PURE__ */ jsxs11("div", {
+                className:
+                  "flex items-center justify-between border-b border-b-zinc-200 p-2",
+                children: [
+                  /* @__PURE__ */ jsx44("button", {
+                    onClick: handlePreviousYearChange,
+                    children: /* @__PURE__ */ jsx44(ChevronLeft, {}),
+                  }),
+                  /* @__PURE__ */ jsx44("button", {
+                    onClick: handleNextYearChange,
+                    children: /* @__PURE__ */ jsx44(ChevronRight, {}),
+                  }),
+                ],
+              }),
+              /* @__PURE__ */ jsx44("div", {
+                className:
+                  "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2",
+                children: years.map((_, index) =>
+                  /* @__PURE__ */ jsx44("button", {
+                    onClick: () => handleYearChange(year + index),
+                    className: variant2({ selected: year === year + index }),
+                    children: year + index,
+                  })
+                ),
+              }),
+            ],
+          }),
+        }),
+      }),
+    ],
+  });
 };
 YearPicker.displayName = "YearPicker";
 
 // src/components/ui/form/month-picker/index.tsx
 import { tv as tv15 } from "tailwind-variants";
 import { useState as useState5 } from "react";
-import { Calendar1 as Calendar13, ChevronLeft as ChevronLeft2, ChevronRight as ChevronRight2 } from "lucide-react";
+import {
+  Calendar1 as Calendar13,
+  ChevronLeft as ChevronLeft2,
+  ChevronRight as ChevronRight2,
+} from "lucide-react";
 import { format as format2 } from "date-fns";
 import { jsx as jsx45, jsxs as jsxs12 } from "react/jsx-runtime";
 var months = [
@@ -1023,15 +1426,15 @@ var months = [
   { label: "Setembro", value: 9 },
   { label: "Outubro", value: 10 },
   { label: "Novembro", value: 11 },
-  { label: "Dezembro", value: 12 }
+  { label: "Dezembro", value: 12 },
 ];
 var variant3 = tv15({
   base: "rounded bg-zinc-100 p-2 transition-colors hover:bg-zinc-200",
   variants: {
     selected: {
-      true: "bg-yellow-600 hover:bg-yellow-700 text-zinc-50"
-    }
-  }
+      true: "bg-primary-dark hover:bg-primary-dark text-zinc-50",
+    },
+  },
 });
 var MonthPicker = ({
   onValueChange,
@@ -1176,11 +1579,12 @@ var Item3 = forwardRef6(
       "a",
       __spreadProps(__spreadValues({}, rest), {
         ref,
-        className: "flex w-full items-center gap-2 p-4 transition-colors hover:bg-zinc-100/75 hover:text-yellow-700",
+        className:
+          "flex w-full items-center gap-2 p-4 transition-colors hover:bg-zinc-100/75 hover:text-primary-dark",
         children: [
           Icon4 && /* @__PURE__ */ jsx52(Icon4, { size: 14 }),
-          children
-        ]
+          children,
+        ],
       })
     );
   }

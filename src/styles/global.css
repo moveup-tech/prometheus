@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: #fff;
+  --foreground:
+
+  --primary-light: #A4F4CF;
+  --primary-main: #00BC7D;
+  --primary-dark: #004F3B;
+
+  --secondary-light: #B8E6FE;
+  --secondary-main: #00A6F4;
+  --secondary-dark: #024A70;
+}

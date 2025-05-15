@@ -13,7 +13,7 @@ export const Item = forwardRef<HTMLDivElement, SelectItemProps>(
     >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
       <SelectPrimitive.ItemIndicator>
-        <CheckIcon size={14} className="text-yellow-600" />
+        <CheckIcon size={14} className="text-primary-dark" />
       </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
   )

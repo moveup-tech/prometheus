@@ -17,8 +17,8 @@ export function Calendar({ ...rest }: CalendarProps) {
         day: "px-4 py-3 text-center",
         nav: "absolute right-4 top-8",
         month_grid: "w-full bg-zinc-10",
-        range_middle: "bg-amber-500/25",
-        selected: "bg-amber-500 text-white",
+        range_middle: "bg-primary-main",
+        selected: "bg-primary-main text-white",
         root: "bg-zinc-50 p-4 rounded relative border border-zinc-200 shadow-lg",
       }}
     />

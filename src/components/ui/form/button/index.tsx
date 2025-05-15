@@ -10,9 +10,9 @@ const buttonVariant = tv({
   base: "px-4 py-2 rounded text-zinc-50 transition-colors flex gap-2 items-center justify-center",
   variants: {
     variant: {
-      default: "bg-yellow-600 hover:bg-yellow-700",
-      secondary: "bg-zinc-800 text-zinc-400 hover:bg-zinc-800/75",
-      link: "bg-zin-100 text-yellow-600 underline",
+      default: "bg-primary-main hover:bg-primary-dark",
+      secondary: "bg-secondary-main text-background hover:bg-secondary-main/75",
+      link: "bg-transparent text-primary-main underline w-fit",
       destructive: "bg-rose-600 text-rose-200 hover:bg-rose-700",
       ghost: "bg-zinc-200 text-zinc-500 hover:bg-zinc-200/75",
     },

@@ -8,7 +8,12 @@ import{j as e}from"./jsx-runtime-BjgbQsUx.js";import{c as x}from"./index-DW2zCSF
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const v=h("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]]),q={component:s.Root,title:"Surfaces/Header",tags:["autodocs"]},o={render:({...n})=>e.jsxs(s.Root,{...n,children:[e.jsxs("div",{className:"flex items-center gap-4",children:[e.jsx(s.Image,{src:w,alt:"Super Festval"}),e.jsxs(r.Root,{children:[e.jsx(r.Trigger,{children:e.jsx(v,{size:24,className:"text-zinc-50"})}),e.jsxs(r.Portal,{children:[e.jsx(r.Header,{children:e.jsx(j,{children:"Indicações RH"})}),e.jsxs(r.Content,{children:[e.jsx(r.Item,{href:"#",icon:a,className:"rounded-t",children:"Home"}),e.jsx(r.Item,{href:"#",icon:i,className:"rounded-b",children:"Indicações"})]})]})]})]}),e.jsxs(r.Root,{children:[e.jsx(r.Trigger,{children:e.jsx(l,{image:"https://placehold.co/600x400",username:"User"})}),e.jsxs(r.Portal,{children:[e.jsxs(r.Header,{children:[e.jsx(l,{image:"https://placehold.co/600x400",username:"User"}),e.jsxs("div",{className:"flex flex-col",children:[e.jsx(c,{as:"strong",children:"Jhon Doe"}),e.jsx(c,{size:"xs",as:"small",children:"Administrador"})]})]}),e.jsxs(r.Content,{children:[e.jsx(r.Item,{href:"#",icon:a,children:"Perfil"}),e.jsx(r.Item,{href:"#",icon:i,children:"Notificações"}),e.jsx(r.Item,{href:"#",icon:I,children:"Configurações"})]}),e.jsxs(r.Footer,{children:[e.jsx(r.Item,{href:"#",icon:y,children:"Ajuda"}),e.jsx(M,{iconLeft:R,className:"w-full rounded-none rounded-b bg-yellow-600/25 text-yellow-800 hover:bg-yellow-600/50",children:"Sair"})]})]})]})]})};var m,d,u;o.parameters={...o.parameters,docs:{...(m=o.parameters)==null?void 0:m.docs,source:{originalSource:`{
+ */const v=h("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]]),q={component:s.Root,title:"Surfaces/Header",tags:["autodocs"]},o={render:({...n})=>e.jsxs(s.Root,{...n,children:[e.jsxs("div",{className:"flex items-center gap-4",children:[e.jsx(s.Image,{src:w,alt:"Super Festval"}),e.jsxs(r.Root,{children:[e.jsx(r.Trigger,{children:e.jsx(v,{size:24,className:"text-zinc-50"})}),e.jsxs(r.Portal,{children:[e.jsx(r.Header,{children:e.jsx(j,{children:"Indicações RH"})}),e.jsxs(r.Content,{children:[e.jsx(r.Item,{href:"#",icon:a,className:"rounded-t",children:"Home"}),e.jsx(r.Item,{href:"#",icon:i,className:"rounded-b",children:"Indicações"})]})]})]})]}),e.jsxs(r.Root,{children:[e.jsx(r.Trigger,{children:e.jsx(l,{image:"https://placehold.co/600x400",username:"User"})}),e.jsxs(r.Portal,{children:[e.jsxs(r.Header,{children:[e.jsx(l,{image:"https://placehold.co/600x400",username:"User"}),e.jsxs("div",{className:"flex flex-col",children:[e.jsx(c,{as:"strong",children:"Jhon Doe"}),e.jsx(c,{size:"xs",as:"small",children:"Administrador"})]})]}),e.jsxs(r.Content,{children:[e.jsx(r.Item,{href:"#",icon:a,children:"Perfil"}),e.jsx(r.Item,{href:"#",icon:i,children:"Notificações"}),e.jsx(r.Item,{href:"#",icon:I,children:"Configurações"})]}),e.jsxs(r.Footer,{children:[e.jsx(r.Item,{href:"#",icon:y,children:"Ajuda"}),e.jsx(M,{iconLeft:R,className:"w-full rounded-none rounded-b bg-primary-dark/25 text-yellow-800 hover:bg-primary-dark/50",children:"Sair"})]})]})]})]})};var m,d,u;o.parameters = {
+   ...o.parameters,
+   docs: {
+     ...((m = o.parameters) == null ? void 0 : m.docs),
+     source: {
+       originalSource: `{
   render: ({
     ...rest
   }) => <Header.Root {...rest}>\r
@@ -65,11 +70,17 @@ import{j as e}from"./jsx-runtime-BjgbQsUx.js";import{c as x}from"./index-DW2zCSF
             <Menu.Item href="#" icon={LifeBuoy}>\r
               Ajuda\r
             </Menu.Item>\r
-            <Button iconLeft={LogOut} className="w-full rounded-none rounded-b bg-yellow-600/25 text-yellow-800 hover:bg-yellow-600/50">\r
+            <Button iconLeft={LogOut} className="w-full rounded-none rounded-b bg-primary-dark/25 text-yellow-800 hover:bg-primary-dark/50">\r
               Sair\r
             </Button>\r
           </Menu.Footer>\r
         </Menu.Portal>\r
       </Menu.Root>\r
     </Header.Root>
-}`,...(u=(d=o.parameters)==null?void 0:d.docs)==null?void 0:u.source}}};const G=["Default"];export{o as Default,G as __namedExportsOrder,q as default};
+}`,
+       ...((u = (d = o.parameters) == null ? void 0 : d.docs) == null
+         ? void 0
+         : u.source),
+     },
+   },
+ };const G=["Default"];export{o as Default,G as __namedExportsOrder,q as default};

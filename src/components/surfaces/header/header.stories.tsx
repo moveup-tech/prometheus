@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Header } from "./index";
 
-import Logo from "@/assets/logo-white.svg";
+import Logo from "@/assets/logo.svg";
 import { Menu } from "../menu";
 import { Avatar } from "@/components/ui/avatar";
 import { Text } from "@/components/typograph/text";
@@ -74,7 +74,7 @@ export const Default: StoryObj<typeof Header> = {
             </Menu.Item>
             <Button
               iconLeft={LogOut}
-              className="w-full rounded-none rounded-b bg-yellow-600/25 text-yellow-800 hover:bg-yellow-600/50"
+              className="w-full rounded-none rounded-b bg-primary-dark/25 text-yellow-800 hover:bg-primary-dark/50"
             >
               Sair
             </Button>

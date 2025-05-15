@@ -2,10 +2,10 @@ import { tv } from "tailwind-variants";
 import { forwardRef, TextareaHTMLAttributes } from "react";
 
 const variants = tv({
-  base: "w-full p-2 bg-zinc-50 border border-zinc-100 rounded outline-yellow-700",
+  base: "w-full p-2 bg-zinc-50 border border-zinc-100 rounded outline-primary-dark",
   variants: {
     variant: {
-      default: "border-2 border-zinc-200 focus-within:border-yellow-700",
+      default: "border-2 border-zinc-200 focus-within:border-primary-dark",
     },
   },
   defaultVariants: {
