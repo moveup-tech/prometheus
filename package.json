@@ -1,11 +1,11 @@
 {
-  "name": "festval-ui",
+  "name": "prometheus",
   "version": "1.36.2",
-  "description": "",
+  "description": "An simple ui lib from moveup tecnology",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage": "https://superfestval.github.io/festval-ui/",
+  "homepage": "https://daniellvaz.github.io/prometheus/",
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.2",
     "@rollup/plugin-alias": "^5.1.1",
