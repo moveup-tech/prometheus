@@ -582,8 +582,10 @@ declare const Menu: {
     Footer: typeof Footer$2;
 };
 
-type FooterProps = {};
-declare function Footer$1(): react_jsx_runtime.JSX.Element;
+type FooterProps = {
+    title: string;
+};
+declare function Footer$1({ title }: FooterProps): react_jsx_runtime.JSX.Element;
 
 declare const imageVariation: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "w-24", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "w-24", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type ImageProps = {} & React.ImgHTMLAttributes<HTMLImageElement> & VariantProps<typeof imageVariation>;

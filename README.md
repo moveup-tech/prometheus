@@ -1,12 +1,12 @@
-# Festval UI
+# Prometheus
 
-Festval UI é um Design System desenvolvido para a empresa **Festval**, utilizando **React**, **TailwindCSS** e **Radix UI**. Ele fornece componentes reutilizáveis e acessíveis para a construção de interfaces consistentes e modernas.
+Prometheus é um Design System desenvolvido para a empresa **Festval**, utilizando **React**, **TailwindCSS** e **Radix UI**. Ele fornece componentes reutilizáveis e acessíveis para a construção de interfaces consistentes e modernas.
 
 ## 📖 Documentação
 
-A documentação completa do Festval UI pode ser encontrada no seguinte link:
+A documentação completa do Prometheus pode ser encontrada no seguinte link:
 
-🔗 [Festval UI Documentation](https://superfestval.github.io/festval-ui/)
+🔗 [Prometheus Documentation](https://moveup-tech.github.io/festval-ui/)
 
 ## 📌 Índice
 
@@ -59,7 +59,7 @@ A documentação completa do Festval UI pode ser encontrada no seguinte link:
 
 ## 📌 Instalação
 
-Para instalar o Festval UI em seu projeto, utilize:
+Para instalar o Prometheus em seu projeto, utilize:
 
 ```sh
 npm install festval-ui
