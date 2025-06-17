@@ -6,7 +6,7 @@ Prometheus é um Design System desenvolvido para a empresa **Festval**, utilizan
 
 A documentação completa do Prometheus pode ser encontrada no seguinte link:
 
-🔗 [Prometheus Documentation](https://moveup-tech.github.io/festval-ui/)
+🔗 [Prometheus Documentation](https://moveup-tech.github.io/prometheus/)
 
 ## 📌 Índice
 
