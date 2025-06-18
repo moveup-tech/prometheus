@@ -1,7 +1,7 @@
 import { tv, VariantProps } from "tailwind-variants";
 
 export const rootVariation = tv({
-  base: "fixed left-0 top-0 w-full bg-zinc-950",
+  base: "fixed left-0 top-0 w-full bg-foreground/5 border-b border-b-foreground/10",
 });
 
 export type HeaderRootProps = {} & React.HTMLAttributes<HTMLElement> &

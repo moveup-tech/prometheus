@@ -1297,7 +1297,7 @@ function HeaderMenu(_a) {
           Button,
           {
             iconLeft: LogOut,
-            className: "w-full rounded-none rounded-b bg-primary-dark/25 text-primary-main hover:bg-primary-dark/30",
+            className: "w-full rounded-none rounded-b bg-foreground/10 text-primary-main hover:bg-foreground/25",
             children: "Sair"
           }
         )
@@ -1321,7 +1321,7 @@ function Image(_a) {
 import { tv as tv21 } from "tailwind-variants";
 import { jsx as jsx58 } from "react/jsx-runtime";
 var rootVariation = tv21({
-  base: "fixed left-0 top-0 w-full bg-zinc-950"
+  base: "fixed left-0 top-0 w-full bg-foreground/5 border-b border-b-foreground/10"
 });
 function Root12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);

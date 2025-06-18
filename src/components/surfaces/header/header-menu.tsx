@@ -39,7 +39,7 @@ export function HeaderMenu({
           </Menu.Item>
           <Button
             iconLeft={LogOut}
-            className="w-full rounded-none rounded-b bg-primary-dark/25 text-primary-main hover:bg-primary-dark/30"
+            className="w-full rounded-none rounded-b bg-foreground/10 text-primary-main hover:bg-foreground/25"
           >
             Sair
           </Button>
