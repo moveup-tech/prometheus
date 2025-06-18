@@ -42,10 +42,14 @@ declare const Card: {
     CardFooter: ({ children, className, ...rest }: CardFooterProps) => react_jsx_runtime.JSX.Element;
 };
 
-type TableRootProps = {} & React.TableHTMLAttributes<HTMLTableElement>;
-type THeadProps = {} & React.TableHTMLAttributes<HTMLTableSectionElement>;
-type TBodyProps = {} & React.TableHTMLAttributes<HTMLTableSectionElement>;
-type RowProps = {} & React.TableHTMLAttributes<HTMLTableRowElement>;
+declare const rootVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "m-auto mt-6 w-full max-w-[1120px]", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "m-auto mt-6 w-full max-w-[1120px]", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+type TableRootProps = {} & React.TableHTMLAttributes<HTMLTableElement> & VariantProps<typeof rootVariant>;
+declare const tHeadVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "rounded-t", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "rounded-t", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+type THeadProps = {} & React.TableHTMLAttributes<HTMLTableSectionElement> & VariantProps<typeof tHeadVariant>;
+declare const tBodyVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "rounded-t-lg border-b border-b-zinc-300 bg-zinc-950 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "rounded-t-lg border-b border-b-zinc-300 bg-zinc-950 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+type TBodyProps = {} & React.TableHTMLAttributes<HTMLTableSectionElement> & VariantProps<typeof tBodyVariant>;
+declare const rowVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "rounded-t bg-zinc-50", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "rounded-t bg-zinc-50", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+type RowProps = {} & React.TableHTMLAttributes<HTMLTableRowElement> & VariantProps<typeof rowVariant>;
 declare const cellHeadVariant: tailwind_variants.TVReturnType<{
     position: {
         first: string;
@@ -85,15 +89,16 @@ declare const cellHeadVariant: tailwind_variants.TVReturnType<{
 type CellHeadProps = {
     onClick?: () => void;
 } & React.TableHTMLAttributes<HTMLTableCellElement> & VariantProps<typeof cellHeadVariant>;
-type CellBodyProps = {} & React.TableHTMLAttributes<HTMLTableCellElement>;
+declare const cellVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "border-b border-b-zinc-200 px-4 py-2", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "border-b border-b-zinc-200 px-4 py-2", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+type CellBodyProps = {} & React.TableHTMLAttributes<HTMLTableCellElement> & VariantProps<typeof cellVariant>;
 declare const Table: {
-    Root: ({ children, ...rest }: TableRootProps) => react_jsx_runtime.JSX.Element;
-    Caption: ({ children, ...rest }: TableRootProps) => react_jsx_runtime.JSX.Element;
-    THead: ({ children, ...rest }: THeadProps) => react_jsx_runtime.JSX.Element;
-    TBody: ({ children, ...rest }: TBodyProps) => react_jsx_runtime.JSX.Element;
-    Tr: ({ children, ...rest }: RowProps) => react_jsx_runtime.JSX.Element;
-    Th: ({ children, position, onClick, ...rest }: CellHeadProps) => react_jsx_runtime.JSX.Element;
-    Td: ({ children, ...rest }: CellBodyProps) => react_jsx_runtime.JSX.Element;
+    Root: ({ children, className, ...rest }: TableRootProps) => react_jsx_runtime.JSX.Element;
+    Caption: ({ children, className, ...rest }: TableRootProps) => react_jsx_runtime.JSX.Element;
+    THead: ({ children, className, ...rest }: THeadProps) => react_jsx_runtime.JSX.Element;
+    TBody: ({ children, className, ...rest }: TBodyProps) => react_jsx_runtime.JSX.Element;
+    Tr: ({ children, className, ...rest }: RowProps) => react_jsx_runtime.JSX.Element;
+    Th: ({ children, position, onClick, className, ...rest }: CellHeadProps) => react_jsx_runtime.JSX.Element;
+    Td: ({ children, className, ...rest }: CellBodyProps) => react_jsx_runtime.JSX.Element;
 };
 
 type AvatarProps = {
@@ -523,6 +528,12 @@ type MonthPickerProps = {
 };
 declare const MonthPicker: React.FC<MonthPickerProps>;
 
+type TooltipProps = {
+    children?: ReactNode;
+    value: string;
+};
+declare const Tooltip: ({ children, value }: TooltipProps) => react_jsx_runtime.JSX.Element;
+
 type PopoverRootProps = {} & Popover$1.PopoverProps;
 declare function Root$4({ children, ...rest }: PopoverRootProps): react_jsx_runtime.JSX.Element;
 
@@ -751,6 +762,15 @@ declare const NavigationMenu: {
     Trigger: typeof Trigger;
 };
 
+type PaginationProps = {
+    currentPage?: number;
+    perPage?: number;
+    totalCount: number;
+    onPageChange?: (page: number) => void;
+    onPerPageChange?: (perPage: number) => void;
+};
+declare function Pagination({ currentPage, totalCount, perPage: defaultPerpage, onPageChange, onPerPageChange, }: PaginationProps): react_jsx_runtime.JSX.Element;
+
 declare const textVariant: tailwind_variants.TVReturnType<{
     size: {
         xs: string;
@@ -827,4 +847,4 @@ type TextProps = {
 } & React.HTMLAttributes<HTMLParagraphElement> & VariantProps<typeof textVariant>;
 declare function Text({ as, children, size, ...rest }: TextProps): react_jsx_runtime.JSX.Element;
 
-export { AlertDialog, type AlertDialogActionProps, type AlertDialogCancelProps, type AlertDialogContentProps, type AlertDialogDescriptionProps, type AlertDialogOverlayProps, type AlertDialogPortalProps, type AlertDialogRootProps, type AlertDialogTitleProps, type AlertDialogTriggerProps, Avatar, type AvatarProps, type BodyProps, Button, type ButtonProps, Calendar, type CalendarProps, Card, type CardFooterProps, type CellBodyProps, type CellHeadProps, Checkbox, type CheckboxProps, DatePicker, type DatePickerProps, Dialog, type DialogCloseProps, type DialogContainerProps, type DialogContentProps, type DialogDescriptionProps, type DialogFooterProps, type DialogHeaderProps, type DialogOverlayProps, type DialogPortalProps, type DialogRootProps, type DialogTitleProps, type DialogTriggerProps, Footer$1 as Footer, type FooterProps, Header$1 as Header, type HeaderProps, Heading, type HeadingProps, Input, InputFile, type InputFileProps, type InputProps, Label$1 as Label, type LabelProps, Menu, MonthPicker, type MonthPickerProps, NavigationMenu, type NavigationMenuContentProps, type NavigationMenuItemProps, type NavigationMenuLinkProps, type NavigationMenuListProps, type NavigationMenuRootProps, type NavigationMenuTriggerProps, Popover, type PopoverAnchorProps, type PopoverArrowProps, type PopoverCloseProps, type PopoverContentProps, type PopoverPortalProps, type PopoverRootProps, type PopoverTriggerProps, type RootProps, type RowProps, Select, type SelectContentProps, type SelectGroupProps, type SelectIconProps, type SelectItemIndicatorProps, type SelectItemProps, type SelectItemTextProps, type SelectLabelProps, type SelectPortalProps, type SelectRootProps, type SelectTriggerProps, type SelectValueProps, type SelectViewportProps, Sidebar, type SidebarContainerProps, type SidebarContentProps, type SidebarFooterProps, type SidebarHeaderProps, type SidebarIconProps, type SidebarItemProps, type SidebarRootProps, type SidebarTitleProps, type TBodyProps, type THeadProps, Table, type TableRootProps, Text, TextArea, type TextAreaProps, type TextProps, YearPicker, type YearPickerProps };
+export { AlertDialog, type AlertDialogActionProps, type AlertDialogCancelProps, type AlertDialogContentProps, type AlertDialogDescriptionProps, type AlertDialogOverlayProps, type AlertDialogPortalProps, type AlertDialogRootProps, type AlertDialogTitleProps, type AlertDialogTriggerProps, Avatar, type AvatarProps, type BodyProps, Button, type ButtonProps, Calendar, type CalendarProps, Card, type CardFooterProps, type CellBodyProps, type CellHeadProps, Checkbox, type CheckboxProps, DatePicker, type DatePickerProps, Dialog, type DialogCloseProps, type DialogContainerProps, type DialogContentProps, type DialogDescriptionProps, type DialogFooterProps, type DialogHeaderProps, type DialogOverlayProps, type DialogPortalProps, type DialogRootProps, type DialogTitleProps, type DialogTriggerProps, Footer$1 as Footer, type FooterProps, Header$1 as Header, type HeaderProps, Heading, type HeadingProps, Input, InputFile, type InputFileProps, type InputProps, Label$1 as Label, type LabelProps, Menu, MonthPicker, type MonthPickerProps, NavigationMenu, type NavigationMenuContentProps, type NavigationMenuItemProps, type NavigationMenuLinkProps, type NavigationMenuListProps, type NavigationMenuRootProps, type NavigationMenuTriggerProps, Pagination, type PaginationProps, Popover, type PopoverAnchorProps, type PopoverArrowProps, type PopoverCloseProps, type PopoverContentProps, type PopoverPortalProps, type PopoverRootProps, type PopoverTriggerProps, type RootProps, type RowProps, Select, type SelectContentProps, type SelectGroupProps, type SelectIconProps, type SelectItemIndicatorProps, type SelectItemProps, type SelectItemTextProps, type SelectLabelProps, type SelectPortalProps, type SelectRootProps, type SelectTriggerProps, type SelectValueProps, type SelectViewportProps, Sidebar, type SidebarContainerProps, type SidebarContentProps, type SidebarFooterProps, type SidebarHeaderProps, type SidebarIconProps, type SidebarItemProps, type SidebarRootProps, type SidebarTitleProps, type TBodyProps, type THeadProps, Table, type TableRootProps, Text, TextArea, type TextAreaProps, type TextProps, Tooltip, type TooltipProps, YearPicker, type YearPickerProps };
