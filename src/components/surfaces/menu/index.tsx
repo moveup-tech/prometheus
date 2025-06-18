@@ -1,10 +1,10 @@
-import { Trigger } from "./trigger";
-import { Content } from "./content";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { Root } from "./root";
-import { Portal } from "./portal";
-import { Item } from "./item";
+import { Trigger, MenuTriggerProps } from "./trigger";
+import { Content, MenuContentProps } from "./content";
+import { Header, MenuHeaderProps } from "./header";
+import { Footer, MenuFooterProps } from "./footer";
+import { Root, MenuRootProps } from "./root";
+import { Portal, MenuPortalProps } from "./portal";
+import { Item, MenuItemProps } from "./item";
 
 export const Menu = {
   Root,
@@ -14,4 +14,14 @@ export const Menu = {
   Content,
   Item,
   Footer,
+};
+
+export type {
+  MenuTriggerProps,
+  MenuContentProps,
+  MenuHeaderProps,
+  MenuFooterProps,
+  MenuRootProps,
+  MenuPortalProps,
+  MenuItemProps,
 };

@@ -62,21 +62,29 @@ A documentação completa do Prometheus pode ser encontrada no seguinte link:
 Para instalar o Prometheus em seu projeto, utilize:
 
 ```sh
-npm install festval-ui
+npm install prometheus-ui-library
 ```
 
 Ou com Yarn:
 
 ```sh
-yarn add festval-ui
+yarn add prometheus-ui-library
 ```
 
 ## 🛠️ Uso
 
+```js
+** @type {import('tailwindcss').Config} */
+  module.exports = {
+    content: ["./src/**/*.{js,ts,jsx,tsx}", "./node_modules/**/*.{js,ts,jsx,tsx}"], // add node_modules file to tailwind content
+    // ...rest of your code
+  }
+```
+
 ### AlertDialog
 
 ```tsx
-import { AlertDialog } from "festval-ui";
+import { AlertDialog } from "prometheus-ui-library";
 
 function AlertExample() {
   return (
@@ -96,7 +104,7 @@ function AlertExample() {
 ### Avatar
 
 ```tsx
-import { Avatar } from "festval-ui";
+import { Avatar } from "prometheus-ui-library";
 
 function AvatarExample() {
   return <Avatar src="https://via.placeholder.com/150" alt="Usuário" />;
@@ -106,7 +114,7 @@ function AvatarExample() {
 ### Button
 
 ```tsx
-import { Button } from "festval-ui";
+import { Button } from "prometheus-ui-library";
 
 function ButtonExample() {
   return <Button variant="primary">Clique Aqui</Button>;
@@ -116,7 +124,7 @@ function ButtonExample() {
 ### Calendar
 
 ```tsx
-import { Calendar } from "festval-ui";
+import { Calendar } from "prometheus-ui-library";
 
 function CalendarExample() {
   return <Calendar />;
@@ -126,7 +134,7 @@ function CalendarExample() {
 ### Card
 
 ```tsx
-import { Card } from "festval-ui";
+import { Card } from "prometheus-ui-library";
 
 function CardExample() {
   return (

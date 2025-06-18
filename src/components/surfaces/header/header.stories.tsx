@@ -19,68 +19,22 @@ export default {
 export const Default: StoryObj<typeof Header> = {
   render: ({ ...rest }) => (
     <Header.Root {...rest}>
-      <div className="flex items-center gap-4">
-        <Header.Image src={Logo} alt="Super Festval" />
-        <Menu.Root>
-          <Menu.Trigger>
-            <MenuIcon size={24} className="text-zinc-50" />
-          </Menu.Trigger>
-
-          <Menu.Portal>
-            <Menu.Header>
-              <Heading>Indicações RH</Heading>
-            </Menu.Header>
-            <Menu.Content>
-              <Menu.Item href="#" icon={User} className="rounded-t">
-                Home
-              </Menu.Item>
-              <Menu.Item href="#" icon={Bell} className="rounded-b">
-                Indicações
-              </Menu.Item>
-            </Menu.Content>
-          </Menu.Portal>
-        </Menu.Root>
-      </div>
-
-      <Menu.Root>
-        <Menu.Trigger>
-          <Avatar image="https://placehold.co/600x400" username="User" />
-        </Menu.Trigger>
-
-        <Menu.Portal>
-          <Menu.Header>
-            <Avatar image="https://placehold.co/600x400" username="User" />
-            <div className="flex flex-col">
-              <Text as="strong">Jhon Doe</Text>
-              <Text size="xs" as="small">
-                Administrador
-              </Text>
-            </div>
-          </Menu.Header>
-          <Menu.Content>
-            <Menu.Item href="#" icon={User}>
-              Perfil
-            </Menu.Item>
-            <Menu.Item href="#" icon={Bell}>
-              Notificações
-            </Menu.Item>
-            <Menu.Item href="#" icon={Settings}>
-              Configurações
-            </Menu.Item>
-          </Menu.Content>
-          <Menu.Footer>
-            <Menu.Item href="#" icon={LifeBuoy}>
-              Ajuda
-            </Menu.Item>
-            <Button
-              iconLeft={LogOut}
-              className="w-full rounded-none rounded-b bg-primary-dark/25 text-yellow-800 hover:bg-primary-dark/50"
-            >
-              Sair
-            </Button>
-          </Menu.Footer>
-        </Menu.Portal>
-      </Menu.Root>
+      <Header.Image src={Logo} alt="Super Festval" />
+      <Header.Menu
+        role="Admin"
+        username="User"
+        image="https://placehold.co/600x400"
+      >
+        <Header.Item href="#" icon={User}>
+          Perfil
+        </Header.Item>
+        <Header.Item href="#" icon={Bell}>
+          Notificações
+        </Header.Item>
+        <Header.Item href="#" icon={Settings}>
+          Configurações
+        </Header.Item>
+      </Header.Menu>
     </Header.Root>
   ),
 };
