@@ -615,7 +615,7 @@ function Button(_a) {
   var _b = _a, {
     as,
     asChild,
-    variant: variant7,
+    variant: variant12,
     children,
     disabled,
     className,
@@ -636,10 +636,10 @@ function Button(_a) {
   const IconRight = iconRight;
   if (asChild && React.isValidElement(children)) {
     return React.cloneElement(children, __spreadProps(__spreadValues({}, rest), {
-      className: buttonVariant({ className, variant: variant7, disabled })
+      className: buttonVariant({ className, variant: variant12, disabled })
     }));
   }
-  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant7, disabled }), children: [
+  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant12, disabled }), children: [
     IconLeft && /* @__PURE__ */ jsx31(IconLeft, {}),
     children,
     IconRight && /* @__PURE__ */ jsx31(IconRight, {})
@@ -1371,30 +1371,27 @@ function Icon3(_a) {
 }
 
 // src/components/surfaces/sidebar/item.tsx
+import { tv as tv22 } from "tailwind-variants";
 import { jsx as jsx61, jsxs as jsxs18 } from "react/jsx-runtime";
+var variant5 = tv22({
+  base: "flex w-full gap-2 p-4 text-left transition-colors data-[state=close]:max-w-24 data-[state=close]:justify-center hover:bg-foreground/5"
+});
 function Item4(_a) {
-  var _b = _a, { children, icon } = _b, rest = __objRest(_b, ["children", "icon"]);
+  var _b = _a, { children, icon, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
   const Icon4 = icon;
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsxs18(
-    "button",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "flex w-full gap-2 bg-foreground/5 p-4 text-left transition-colors hover:bg-foreground/10 data-[state=close]:max-w-24 data-[state=close]:justify-center",
-      children: [
-        Icon4 && /* @__PURE__ */ jsx61(Icon4, {}),
-        /* @__PURE__ */ jsx61(
-          Text,
-          {
-            as: "strong",
-            "data-state": state,
-            className: "data-[state=close]:hidden",
-            children
-          }
-        )
-      ]
-    })
-  );
+  return /* @__PURE__ */ jsxs18("button", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
+    Icon4 && /* @__PURE__ */ jsx61(Icon4, {}),
+    /* @__PURE__ */ jsx61(
+      Text,
+      {
+        as: "strong",
+        "data-state": state,
+        className: "data-[state=close]:hidden",
+        children
+      }
+    )
+  ] }));
 }
 
 // src/components/surfaces/sidebar/root.tsx
@@ -1405,9 +1402,9 @@ function Root13(_a) {
 }
 
 // src/components/typograph/heading/index.tsx
-import { tv as tv22 } from "tailwind-variants";
+import { tv as tv23 } from "tailwind-variants";
 import { jsx as jsx63 } from "react/jsx-runtime";
-var headingVariant = tv22({
+var headingVariant = tv23({
   variants: {
     size: {
       xs: "text-base font-bold",
@@ -1457,61 +1454,69 @@ function Title4(_a) {
 }
 
 // src/components/surfaces/sidebar/footer.tsx
+import { tv as tv24 } from "tailwind-variants";
 import { jsx as jsx65 } from "react/jsx-runtime";
+var variant6 = tv24({
+  base: "w-full rounded-b data-[state=close]:max-w-24"
+});
 function Footer3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx65(
-    "div",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "w-full rounded-b data-[state=close]:max-w-24",
-      children
-    })
-  );
+  return /* @__PURE__ */ jsx65("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/header.tsx
+import { tv as tv25 } from "tailwind-variants";
 import { jsx as jsx66 } from "react/jsx-runtime";
+var variant7 = tv25({
+  base: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center"
+});
 function Header4(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
   return /* @__PURE__ */ jsx66(
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
-      className: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center",
+      className: variant7({ className }),
       children
     })
   );
 }
 
 // src/components/surfaces/sidebar/content.tsx
+import { tv as tv26 } from "tailwind-variants";
 import { jsx as jsx67 } from "react/jsx-runtime";
+var variant8 = tv26({
+  base: "w-full"
+});
 function Content11(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx67("div", __spreadProps(__spreadValues({}, rest), { className: "w-full", children }));
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
+  return /* @__PURE__ */ jsx67("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/container.tsx
+import { tv as tv27 } from "tailwind-variants";
 import { jsx as jsx68 } from "react/jsx-runtime";
+var variant9 = tv27({
+  base: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-white data-[state=close]:max-w-24"
+});
 function Container(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, {
+    children,
+    className
+  } = _b, rest = __objRest(_b, [
+    "children",
+    "className"
+  ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx68(
-    "div",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-foreground/5 data-[state=close]:max-w-24",
-      children
-    })
-  );
+  return /* @__PURE__ */ jsx68("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/user-container.tsx
-import { tv as tv23 } from "tailwind-variants";
+import { tv as tv28 } from "tailwind-variants";
 import { jsx as jsx69 } from "react/jsx-runtime";
-var variant5 = tv23({
+var variant10 = tv28({
   base: "flex flex-col data-[state=close]:hidden"
 });
 function UserContainer(_a) {
@@ -1523,14 +1528,14 @@ function UserContainer(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx69("div", { "data-state": state, className: variant5({ className }), children });
+  return /* @__PURE__ */ jsx69("div", { "data-state": state, className: variant10({ className }), children });
 }
 
 // src/components/surfaces/sidebar/footer-content.tsx
-import { tv as tv24 } from "tailwind-variants";
+import { tv as tv29 } from "tailwind-variants";
 import { jsx as jsx70 } from "react/jsx-runtime";
-var variant6 = tv24({
-  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4"
+var variant11 = tv29({
+  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4"
 });
 function FooterContent(_a) {
   var _b = _a, {
@@ -1540,7 +1545,7 @@ function FooterContent(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({ className: variant6({ className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/index.tsx
@@ -1594,9 +1599,9 @@ function Link2(_a) {
 
 // src/components/ui/navigation-menu/trigger.tsx
 import * as Navigation5 from "@radix-ui/react-navigation-menu";
-import { tv as tv25 } from "tailwind-variants";
+import { tv as tv30 } from "tailwind-variants";
 import { jsx as jsx75 } from "react/jsx-runtime";
-var navigationMenuContentVariant = tv25({
+var navigationMenuContentVariant = tv30({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
 function Trigger12(_a) {
@@ -1618,9 +1623,9 @@ function Trigger12(_a) {
 
 // src/components/ui/navigation-menu/content.tsx
 import * as Navigation6 from "@radix-ui/react-navigation-menu";
-import { tv as tv26 } from "tailwind-variants";
+import { tv as tv31 } from "tailwind-variants";
 import { jsx as jsx76 } from "react/jsx-runtime";
-var navigationMenuContentVariant2 = tv26({
+var navigationMenuContentVariant2 = tv31({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
 function Content13(_a) {
@@ -1657,7 +1662,7 @@ import {
   ChevronsLeft,
   ChevronsRight
 } from "lucide-react";
-import { tv as tv27 } from "tailwind-variants";
+import { tv as tv32 } from "tailwind-variants";
 
 // src/components/ui/pagination/hooks/usePagination.tsx
 import { useState as useState7 } from "react";
@@ -1710,7 +1715,7 @@ function usePagination({
 
 // src/components/ui/pagination/index.tsx
 import { jsx as jsx77, jsxs as jsxs19 } from "react/jsx-runtime";
-var pageItemVariant = tv27({
+var pageItemVariant = tv32({
   base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
   variants: {
     disabled: {

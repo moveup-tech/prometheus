@@ -635,7 +635,7 @@ declare function Icon({ ...rest }: SidebarIconProps): react_jsx_runtime.JSX.Elem
 type SidebarItemProps = {
     icon?: ElementType;
 } & HTMLAttributes<HTMLElement>;
-declare function Item({ children, icon, ...rest }: SidebarItemProps): react_jsx_runtime.JSX.Element;
+declare function Item({ children, icon, className, ...rest }: SidebarItemProps): react_jsx_runtime.JSX.Element;
 
 type SidebarRootProps = {} & HTMLAttributes<HTMLElement>;
 declare function Root$1({ children, ...rest }: SidebarRootProps): react_jsx_runtime.JSX.Element;
@@ -720,22 +720,22 @@ type SidebarTitleProps = {} & HeadingProps;
 declare function Title({ children, ...rest }: SidebarTitleProps): react_jsx_runtime.JSX.Element;
 
 type SidebarFooterProps = {} & HTMLAttributes<HTMLElement>;
-declare function Footer({ children, ...rest }: SidebarFooterProps): react_jsx_runtime.JSX.Element;
+declare function Footer({ children, className, ...rest }: SidebarFooterProps): react_jsx_runtime.JSX.Element;
 
 type SidebarHeaderProps = {} & HTMLAttributes<HTMLElement>;
-declare function Header({ children, ...rest }: SidebarHeaderProps): react_jsx_runtime.JSX.Element;
+declare function Header({ children, className, ...rest }: SidebarHeaderProps): react_jsx_runtime.JSX.Element;
 
 type SidebarContentProps = {} & HTMLAttributes<HTMLElement>;
-declare function Content$1({ children, ...rest }: SidebarContentProps): react_jsx_runtime.JSX.Element;
+declare function Content$1({ children, className, ...rest }: SidebarContentProps): react_jsx_runtime.JSX.Element;
 
 type SidebarContainerProps = {} & HTMLAttributes<HTMLElement>;
-declare function Container({ children, ...rest }: SidebarContainerProps): react_jsx_runtime.JSX.Element;
+declare function Container({ children, className, ...rest }: SidebarContainerProps): react_jsx_runtime.JSX.Element;
 
 declare const variant$1: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex flex-col data-[state=close]:hidden", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex flex-col data-[state=close]:hidden", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type SidebarUserContainerProps = {} & HTMLAttributes<HTMLElement> & VariantProps<typeof variant$1>;
 declare function UserContainer({ children, className, ...rest }: SidebarUserContainerProps): react_jsx_runtime.JSX.Element;
 
-declare const variant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+declare const variant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type SidebarFooterContentProps = {} & HTMLAttributes<HTMLElement> & VariantProps<typeof variant>;
 declare function FooterContent({ children, className, ...rest }: SidebarFooterContentProps): react_jsx_runtime.JSX.Element;
 

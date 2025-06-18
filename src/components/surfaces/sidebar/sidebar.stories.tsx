@@ -31,7 +31,9 @@ export default {
               <Menu.Portal>
                 <Menu.Content>
                   <Menu.Item>
-                    <Sidebar.Item icon={Plus}>Novo</Sidebar.Item>
+                    <Sidebar.Item icon={Plus} className="w-full">
+                      Novo
+                    </Sidebar.Item>
                   </Menu.Item>
                 </Menu.Content>
               </Menu.Portal>

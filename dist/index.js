@@ -673,7 +673,7 @@ function Button(_a) {
   var _b = _a, {
     as,
     asChild,
-    variant: variant7,
+    variant: variant12,
     children,
     disabled,
     className,
@@ -694,10 +694,10 @@ function Button(_a) {
   const IconRight = iconRight;
   if (asChild && import_react3.default.isValidElement(children)) {
     return import_react3.default.cloneElement(children, __spreadProps(__spreadValues({}, rest), {
-      className: buttonVariant({ className, variant: variant7, disabled })
+      className: buttonVariant({ className, variant: variant12, disabled })
     }));
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant7, disabled }), children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant12, disabled }), children: [
     IconLeft && /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(IconLeft, {}),
     children,
     IconRight && /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(IconRight, {})
@@ -1429,30 +1429,27 @@ function Icon3(_a) {
 }
 
 // src/components/surfaces/sidebar/item.tsx
+var import_tailwind_variants22 = require("tailwind-variants");
 var import_jsx_runtime62 = require("react/jsx-runtime");
+var variant5 = (0, import_tailwind_variants22.tv)({
+  base: "flex w-full gap-2 p-4 text-left transition-colors data-[state=close]:max-w-24 data-[state=close]:justify-center hover:bg-foreground/5"
+});
 function Item4(_a) {
-  var _b = _a, { children, icon } = _b, rest = __objRest(_b, ["children", "icon"]);
+  var _b = _a, { children, icon, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
   const Icon4 = icon;
   const { state } = useSidebar();
-  return /* @__PURE__ */ (0, import_jsx_runtime62.jsxs)(
-    "button",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "flex w-full gap-2 bg-foreground/5 p-4 text-left transition-colors hover:bg-foreground/10 data-[state=close]:max-w-24 data-[state=close]:justify-center",
-      children: [
-        Icon4 && /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(Icon4, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(
-          Text,
-          {
-            as: "strong",
-            "data-state": state,
-            className: "data-[state=close]:hidden",
-            children
-          }
-        )
-      ]
-    })
-  );
+  return /* @__PURE__ */ (0, import_jsx_runtime62.jsxs)("button", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
+    Icon4 && /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(Icon4, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(
+      Text,
+      {
+        as: "strong",
+        "data-state": state,
+        className: "data-[state=close]:hidden",
+        children
+      }
+    )
+  ] }));
 }
 
 // src/components/surfaces/sidebar/root.tsx
@@ -1463,9 +1460,9 @@ function Root13(_a) {
 }
 
 // src/components/typograph/heading/index.tsx
-var import_tailwind_variants22 = require("tailwind-variants");
+var import_tailwind_variants23 = require("tailwind-variants");
 var import_jsx_runtime64 = require("react/jsx-runtime");
-var headingVariant = (0, import_tailwind_variants22.tv)({
+var headingVariant = (0, import_tailwind_variants23.tv)({
   variants: {
     size: {
       xs: "text-base font-bold",
@@ -1515,61 +1512,69 @@ function Title4(_a) {
 }
 
 // src/components/surfaces/sidebar/footer.tsx
+var import_tailwind_variants24 = require("tailwind-variants");
 var import_jsx_runtime66 = require("react/jsx-runtime");
+var variant6 = (0, import_tailwind_variants24.tv)({
+  base: "w-full rounded-b data-[state=close]:max-w-24"
+});
 function Footer3(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ (0, import_jsx_runtime66.jsx)(
-    "div",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "w-full rounded-b data-[state=close]:max-w-24",
-      children
-    })
-  );
+  return /* @__PURE__ */ (0, import_jsx_runtime66.jsx)("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/header.tsx
+var import_tailwind_variants25 = require("tailwind-variants");
 var import_jsx_runtime67 = require("react/jsx-runtime");
+var variant7 = (0, import_tailwind_variants25.tv)({
+  base: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center"
+});
 function Header4(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
   return /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
-      className: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center",
+      className: variant7({ className }),
       children
     })
   );
 }
 
 // src/components/surfaces/sidebar/content.tsx
+var import_tailwind_variants26 = require("tailwind-variants");
 var import_jsx_runtime68 = require("react/jsx-runtime");
+var variant8 = (0, import_tailwind_variants26.tv)({
+  base: "w-full"
+});
 function Content11(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime68.jsx)("div", __spreadProps(__spreadValues({}, rest), { className: "w-full", children }));
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime68.jsx)("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/container.tsx
+var import_tailwind_variants27 = require("tailwind-variants");
 var import_jsx_runtime69 = require("react/jsx-runtime");
+var variant9 = (0, import_tailwind_variants27.tv)({
+  base: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-white data-[state=close]:max-w-24"
+});
 function Container(_a) {
-  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  var _b = _a, {
+    children,
+    className
+  } = _b, rest = __objRest(_b, [
+    "children",
+    "className"
+  ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
-    "div",
-    __spreadProps(__spreadValues({}, rest), {
-      "data-state": state,
-      className: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-foreground/5 data-[state=close]:max-w-24",
-      children
-    })
-  );
+  return /* @__PURE__ */ (0, import_jsx_runtime69.jsx)("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/user-container.tsx
-var import_tailwind_variants23 = require("tailwind-variants");
+var import_tailwind_variants28 = require("tailwind-variants");
 var import_jsx_runtime70 = require("react/jsx-runtime");
-var variant5 = (0, import_tailwind_variants23.tv)({
+var variant10 = (0, import_tailwind_variants28.tv)({
   base: "flex flex-col data-[state=close]:hidden"
 });
 function UserContainer(_a) {
@@ -1581,14 +1586,14 @@ function UserContainer(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)("div", { "data-state": state, className: variant5({ className }), children });
+  return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)("div", { "data-state": state, className: variant10({ className }), children });
 }
 
 // src/components/surfaces/sidebar/footer-content.tsx
-var import_tailwind_variants24 = require("tailwind-variants");
+var import_tailwind_variants29 = require("tailwind-variants");
 var import_jsx_runtime71 = require("react/jsx-runtime");
-var variant6 = (0, import_tailwind_variants24.tv)({
-  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4"
+var variant11 = (0, import_tailwind_variants29.tv)({
+  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4"
 });
 function FooterContent(_a) {
   var _b = _a, {
@@ -1598,7 +1603,7 @@ function FooterContent(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)("div", __spreadProps(__spreadValues({ className: variant6({ className }) }, rest), { children }));
+  return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/index.tsx
@@ -1652,9 +1657,9 @@ function Link2(_a) {
 
 // src/components/ui/navigation-menu/trigger.tsx
 var Navigation5 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_tailwind_variants25 = require("tailwind-variants");
+var import_tailwind_variants30 = require("tailwind-variants");
 var import_jsx_runtime76 = require("react/jsx-runtime");
-var navigationMenuContentVariant = (0, import_tailwind_variants25.tv)({
+var navigationMenuContentVariant = (0, import_tailwind_variants30.tv)({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
 function Trigger12(_a) {
@@ -1676,9 +1681,9 @@ function Trigger12(_a) {
 
 // src/components/ui/navigation-menu/content.tsx
 var Navigation6 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_tailwind_variants26 = require("tailwind-variants");
+var import_tailwind_variants31 = require("tailwind-variants");
 var import_jsx_runtime77 = require("react/jsx-runtime");
-var navigationMenuContentVariant2 = (0, import_tailwind_variants26.tv)({
+var navigationMenuContentVariant2 = (0, import_tailwind_variants31.tv)({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
 function Content13(_a) {
@@ -1710,7 +1715,7 @@ var NavigationMenu = {
 
 // src/components/ui/pagination/index.tsx
 var import_lucide_react12 = require("lucide-react");
-var import_tailwind_variants27 = require("tailwind-variants");
+var import_tailwind_variants32 = require("tailwind-variants");
 
 // src/components/ui/pagination/hooks/usePagination.tsx
 var import_react15 = require("react");
@@ -1763,7 +1768,7 @@ function usePagination({
 
 // src/components/ui/pagination/index.tsx
 var import_jsx_runtime78 = require("react/jsx-runtime");
-var pageItemVariant = (0, import_tailwind_variants27.tv)({
+var pageItemVariant = (0, import_tailwind_variants32.tv)({
   base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
   variants: {
     disabled: {

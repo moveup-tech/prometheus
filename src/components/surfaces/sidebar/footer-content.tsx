@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const variant = tv({
-  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4",
+  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4",
 });
 
 export type SidebarFooterContentProps = {} & HTMLAttributes<HTMLElement> &
