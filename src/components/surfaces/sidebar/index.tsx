@@ -7,6 +7,7 @@ import { Header, SidebarHeaderProps } from "./header";
 import { Content, SidebarContentProps } from "./content";
 import { Container, SidebarContainerProps } from "./container";
 import { UserContainer, SidebarUserContainerProps } from "./user-container";
+import { FooterContent, SidebarFooterContentProps } from "./footer-content";
 
 export const Sidebar = {
   Root,
@@ -14,6 +15,7 @@ export const Sidebar = {
   Container,
   Header,
   Footer,
+  FooterContent,
   Item,
   Title,
   Icon,
@@ -30,4 +32,5 @@ export type {
   SidebarTitleProps,
   SidebarIconProps,
   SidebarUserContainerProps,
+  SidebarFooterContentProps,
 };

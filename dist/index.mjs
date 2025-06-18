@@ -615,7 +615,7 @@ function Button(_a) {
   var _b = _a, {
     as,
     asChild,
-    variant: variant5,
+    variant: variant6,
     children,
     disabled,
     className,
@@ -636,10 +636,10 @@ function Button(_a) {
   const IconRight = iconRight;
   if (asChild && React.isValidElement(children)) {
     return React.cloneElement(children, __spreadProps(__spreadValues({}, rest), {
-      className: buttonVariant({ className, variant: variant5, disabled })
+      className: buttonVariant({ className, variant: variant6, disabled })
     }));
   }
-  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant5, disabled }), children: [
+  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant6, disabled }), children: [
     IconLeft && /* @__PURE__ */ jsx31(IconLeft, {}),
     children,
     IconRight && /* @__PURE__ */ jsx31(IconRight, {})
@@ -1406,32 +1406,16 @@ function Title4(_a) {
 }
 
 // src/components/surfaces/sidebar/footer.tsx
-import { jsx as jsx63, jsxs as jsxs18 } from "react/jsx-runtime";
+import { jsx as jsx63 } from "react/jsx-runtime";
 function Footer3(_a) {
-  var _b = _a, { user, children } = _b, rest = __objRest(_b, ["user", "children"]);
+  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsxs18(
+  return /* @__PURE__ */ jsx63(
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
       className: "w-full rounded-b data-[state=close]:max-w-24",
-      children: [
-        children,
-        /* @__PURE__ */ jsxs18("div", { className: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-background p-4", children: [
-          /* @__PURE__ */ jsx63(Avatar, { image: user.image, username: user.name }),
-          /* @__PURE__ */ jsxs18(
-            "div",
-            {
-              "data-state": state,
-              className: "flex flex-col data-[state=close]:hidden",
-              children: [
-                /* @__PURE__ */ jsx63(Text, { size: "lg", as: "strong", children: user.name }),
-                /* @__PURE__ */ jsx63(Text, { size: "xs", as: "small", className: "-mt-1 text-zinc-400", children: user.role })
-              ]
-            }
-          )
-        ] })
-      ]
+      children
     })
   );
 }
@@ -1491,6 +1475,23 @@ function UserContainer(_a) {
   return /* @__PURE__ */ jsx67("div", { "data-state": state, className: variant4({ className }), children });
 }
 
+// src/components/surfaces/sidebar/footer-content.tsx
+import { tv as tv23 } from "tailwind-variants";
+import { jsx as jsx68 } from "react/jsx-runtime";
+var variant5 = tv23({
+  base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-zinc-50 p-4"
+});
+function FooterContent(_a) {
+  var _b = _a, {
+    children,
+    className
+  } = _b, rest = __objRest(_b, [
+    "children",
+    "className"
+  ]);
+  return /* @__PURE__ */ jsx68("div", __spreadProps(__spreadValues({ className: variant5({ className }) }, rest), { children }));
+}
+
 // src/components/surfaces/sidebar/index.tsx
 var Sidebar = {
   Root: Root13,
@@ -1498,6 +1499,7 @@ var Sidebar = {
   Container,
   Header: Header4,
   Footer: Footer3,
+  FooterContent,
   Item: Item4,
   Title: Title4,
   Icon: Icon3,
@@ -1507,43 +1509,43 @@ var Sidebar = {
 // src/components/ui/navigation-menu/item.tsx
 import * as Navigation from "@radix-ui/react-navigation-menu";
 import { forwardRef as forwardRef7 } from "react";
-import { jsx as jsx68 } from "react/jsx-runtime";
+import { jsx as jsx69 } from "react/jsx-runtime";
 var Item6 = forwardRef7(
   (_a) => {
     var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsx68(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
+    return /* @__PURE__ */ jsx69(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
   }
 );
 
 // src/components/ui/navigation-menu/list.tsx
 import * as Navigation2 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx69 } from "react/jsx-runtime";
+import { jsx as jsx70 } from "react/jsx-runtime";
 function List2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx69(Navigation2.List, { id: "navigation", children });
+  return /* @__PURE__ */ jsx70(Navigation2.List, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/root.tsx
 import * as Navigation3 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx70 } from "react/jsx-runtime";
+import { jsx as jsx71 } from "react/jsx-runtime";
 function Root15(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx70(Navigation3.Root, { id: "navigation", children });
+  return /* @__PURE__ */ jsx71(Navigation3.Root, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/link.tsx
 import * as Navigation4 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx71 } from "react/jsx-runtime";
+import { jsx as jsx72 } from "react/jsx-runtime";
 function Link2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx71(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx72(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/navigation-menu/trigger.tsx
 import * as Navigation5 from "@radix-ui/react-navigation-menu";
-import { tv as tv23 } from "tailwind-variants";
-import { jsx as jsx72 } from "react/jsx-runtime";
-var navigationMenuContentVariant = tv23({
+import { tv as tv24 } from "tailwind-variants";
+import { jsx as jsx73 } from "react/jsx-runtime";
+var navigationMenuContentVariant = tv24({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
 function Trigger12(_a) {
@@ -1554,7 +1556,7 @@ function Trigger12(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx72(
+  return /* @__PURE__ */ jsx73(
     Navigation5.Trigger,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant({ className }),
@@ -1565,9 +1567,9 @@ function Trigger12(_a) {
 
 // src/components/ui/navigation-menu/content.tsx
 import * as Navigation6 from "@radix-ui/react-navigation-menu";
-import { tv as tv24 } from "tailwind-variants";
-import { jsx as jsx73 } from "react/jsx-runtime";
-var navigationMenuContentVariant2 = tv24({
+import { tv as tv25 } from "tailwind-variants";
+import { jsx as jsx74 } from "react/jsx-runtime";
+var navigationMenuContentVariant2 = tv25({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
 function Content13(_a) {
@@ -1578,7 +1580,7 @@ function Content13(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx73(
+  return /* @__PURE__ */ jsx74(
     Navigation6.Content,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant2({ className }),
@@ -1604,7 +1606,7 @@ import {
   ChevronsLeft,
   ChevronsRight
 } from "lucide-react";
-import { tv as tv25 } from "tailwind-variants";
+import { tv as tv26 } from "tailwind-variants";
 
 // src/components/ui/pagination/hooks/usePagination.tsx
 import { useState as useState7 } from "react";
@@ -1656,8 +1658,8 @@ function usePagination({
 }
 
 // src/components/ui/pagination/index.tsx
-import { jsx as jsx74, jsxs as jsxs19 } from "react/jsx-runtime";
-var pageItemVariant = tv25({
+import { jsx as jsx75, jsxs as jsxs18 } from "react/jsx-runtime";
+var pageItemVariant = tv26({
   base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
   variants: {
     disabled: {
@@ -1688,53 +1690,53 @@ function Pagination({
     perPage: defaultPerpage
   });
   const totalPages = totalCount / perPage;
-  return /* @__PURE__ */ jsxs19("div", { className: "flex w-full items-center justify-between py-4", children: [
-    /* @__PURE__ */ jsxs19("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
+  return /* @__PURE__ */ jsxs18("div", { className: "flex w-full items-center justify-between py-4", children: [
+    /* @__PURE__ */ jsxs18("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
       page,
       " de ",
       Math.ceil(totalCount / perPage),
       " p\xE1ginas"
     ] }),
-    /* @__PURE__ */ jsxs19("div", { className: "flex gap-2", children: [
-      /* @__PURE__ */ jsxs19(
+    /* @__PURE__ */ jsxs18("div", { className: "flex gap-2", children: [
+      /* @__PURE__ */ jsxs18(
         Select.Root,
         {
           onValueChange: handlePerPage,
           defaultValue: perPage.toString(),
           children: [
-            /* @__PURE__ */ jsxs19(Select.Trigger, { children: [
-              /* @__PURE__ */ jsx74(Select.Value, {}),
-              /* @__PURE__ */ jsx74(Select.Icon, {})
+            /* @__PURE__ */ jsxs18(Select.Trigger, { children: [
+              /* @__PURE__ */ jsx75(Select.Value, {}),
+              /* @__PURE__ */ jsx75(Select.Icon, {})
             ] }),
-            /* @__PURE__ */ jsx74(Select.Portal, { children: /* @__PURE__ */ jsx74(Select.Content, { children: /* @__PURE__ */ jsxs19(Select.Viewport, { children: [
-              /* @__PURE__ */ jsx74(Select.Item, { value: "10", children: "10" }),
-              /* @__PURE__ */ jsx74(Select.Item, { value: "30", children: "30" }),
-              /* @__PURE__ */ jsx74(Select.Item, { value: "50", children: "50" }),
-              /* @__PURE__ */ jsx74(Select.Item, { value: "100", children: "100" })
+            /* @__PURE__ */ jsx75(Select.Portal, { children: /* @__PURE__ */ jsx75(Select.Content, { children: /* @__PURE__ */ jsxs18(Select.Viewport, { children: [
+              /* @__PURE__ */ jsx75(Select.Item, { value: "10", children: "10" }),
+              /* @__PURE__ */ jsx75(Select.Item, { value: "30", children: "30" }),
+              /* @__PURE__ */ jsx75(Select.Item, { value: "50", children: "50" }),
+              /* @__PURE__ */ jsx75(Select.Item, { value: "100", children: "100" })
             ] }) }) })
           ]
         }
       ),
-      /* @__PURE__ */ jsx74(
+      /* @__PURE__ */ jsx75(
         "button",
         {
           onClick: firstPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx74(ChevronsLeft, { size: 14 })
+          children: /* @__PURE__ */ jsx75(ChevronsLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx74(
+      /* @__PURE__ */ jsx75(
         "button",
         {
           onClick: previousPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx74(ChevronLeft3, { size: 14 })
+          children: /* @__PURE__ */ jsx75(ChevronLeft3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx74("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ jsx74("p", { children: page }) }),
-      /* @__PURE__ */ jsx74(
+      /* @__PURE__ */ jsx75("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ jsx75("p", { children: page }) }),
+      /* @__PURE__ */ jsx75(
         "button",
         {
           onClick: nextPage,
@@ -1742,10 +1744,10 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx74(ChevronRight3, { size: 14 })
+          children: /* @__PURE__ */ jsx75(ChevronRight3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx74(
+      /* @__PURE__ */ jsx75(
         "button",
         {
           onClick: lastPage,
@@ -1753,7 +1755,7 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx74(ChevronsRight, { size: 14 })
+          children: /* @__PURE__ */ jsx75(ChevronsRight, { size: 14 })
         }
       )
     ] })

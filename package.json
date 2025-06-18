@@ -35,8 +35,9 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "build:storybook": "storybook build",
+    "deploy:storybook": "gh-pages -d storybook-static",
+    "deploy": "npm run build && npm run build:storybook && npm run deploy:storybook"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.4",
