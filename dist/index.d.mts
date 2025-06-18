@@ -25,21 +25,21 @@ type RootProps = {
     children: ReactNode;
 } & React.HTMLAttributes<HTMLElement>;
 
-declare const headerVariant$1: tailwind_variants.TVReturnType<{} | {} | {}, undefined, undefined, tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, undefined, tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+declare const headerVariant$1: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex items-start justify-between rounded-t bg-zinc-200 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex items-start justify-between rounded-t bg-zinc-200 p-4", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type HeaderProps = {
     icon?: ElementType;
-    iconColor?: 'alert' | 'info' | 'success' | 'destructive' | undefined;
+    iconColor?: "alert" | "info" | "success" | "destructive" | undefined;
     children: ReactNode;
 } & HTMLAttributes<HTMLDivElement> & VariantProps<typeof headerVariant$1>;
 
-declare const cardfooterVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
+declare const cardfooterVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex items-start justify-between rounded-b bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex items-start justify-between rounded-b bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type CardFooterProps = {} & HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardfooterVariant>;
 
 declare const Card: {
     Root: ({ children, className, ...rest }: RootProps) => react_jsx_runtime.JSX.Element;
     Header: ({ children, iconColor, icon: Icon, className, }: HeaderProps) => react_jsx_runtime.JSX.Element;
     Body: ({ children, className, ...rest }: BodyProps) => react_jsx_runtime.JSX.Element;
-    CardFooter: ({ children, className, ...rest }: CardFooterProps) => react_jsx_runtime.JSX.Element;
+    Footer: ({ children, className, ...rest }: CardFooterProps) => react_jsx_runtime.JSX.Element;
 };
 
 declare const rootVariant: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "m-auto mt-6 w-full max-w-[1120px]", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "m-auto mt-6 w-full max-w-[1120px]", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;

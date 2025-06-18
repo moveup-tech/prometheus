@@ -55,7 +55,9 @@ var Root = (_a) => {
 // src/components/ui/card/header.tsx
 import { tv as tv3 } from "tailwind-variants";
 import { jsx as jsx3, jsxs } from "react/jsx-runtime";
-var headerVariant = tv3({});
+var headerVariant = tv3({
+  base: "flex items-start justify-between rounded-t bg-zinc-200 p-4"
+});
 var iconVariant = tv3({
   base: "rounded bg-zinc-500/25 p-2 text-zinc-500",
   variants: {
@@ -73,7 +75,7 @@ var Header = ({
   icon: Icon4,
   className
 }) => {
-  return /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between rounded-t bg-zinc-200 p-4", children: [
+  return /* @__PURE__ */ jsxs("div", { className: headerVariant({ className }), children: [
     children,
     Icon4 && /* @__PURE__ */ jsx3("div", { className: iconVariant({ variant: iconColor, className }), children: /* @__PURE__ */ jsx3(Icon4, { size: 16 }) })
   ] });
@@ -83,16 +85,10 @@ var Header = ({
 import { tv as tv4 } from "tailwind-variants";
 import { jsx as jsx4 } from "react/jsx-runtime";
 var cardfooterVariant = tv4({
-  base: "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200"
+  base: "flex items-start justify-between rounded-b bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200"
 });
-var CardFooter = (_a) => {
-  var _b = _a, {
-    children,
-    className
-  } = _b, rest = __objRest(_b, [
-    "children",
-    "className"
-  ]);
+var Footer = (_a) => {
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ jsx4("div", __spreadProps(__spreadValues({ className: cardfooterVariant({ className }) }, rest), { children }));
 };
 
@@ -101,7 +97,7 @@ var Card = {
   Root,
   Header,
   Body,
-  CardFooter
+  Footer
 };
 
 // src/components/ui/table/index.tsx
@@ -1168,7 +1164,7 @@ import { jsx as jsx50 } from "react/jsx-runtime";
 var menuFooterVariant = tv17({
   base: "bg-background border-t border-t-background-light rounded-b"
 });
-function Footer(_a) {
+function Footer2(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ jsx50("div", __spreadProps(__spreadValues({ className: menuFooterVariant({ className }) }, rest), { children }));
 }
@@ -1215,12 +1211,12 @@ var Menu = {
   Header: Header2,
   Content: Content10,
   Item: Item3,
-  Footer
+  Footer: Footer2
 };
 
 // src/components/surfaces/footer/index.tsx
 import { jsxs as jsxs16 } from "react/jsx-runtime";
-function Footer2({ title }) {
+function Footer3({ title }) {
   return /* @__PURE__ */ jsxs16("footer", { className: "item-center flex w-full justify-center bg-zinc-100 p-4 text-xs text-zinc-700", children: [
     title,
     " \xA9 | ",
@@ -1459,7 +1455,7 @@ import { jsx as jsx65 } from "react/jsx-runtime";
 var variant6 = tv24({
   base: "w-full rounded-b data-[state=close]:max-w-24"
 });
-function Footer3(_a) {
+function Footer4(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
   return /* @__PURE__ */ jsx65("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
@@ -1554,7 +1550,7 @@ var Sidebar = {
   Content: Content11,
   Container,
   Header: Header4,
-  Footer: Footer3,
+  Footer: Footer4,
   FooterContent,
   Item: Item4,
   Title: Title4,
@@ -1826,7 +1822,7 @@ export {
   Checkbox,
   DatePicker,
   Dialog,
-  Footer2 as Footer,
+  Footer3 as Footer,
   Header3 as Header,
   Heading,
   Input,

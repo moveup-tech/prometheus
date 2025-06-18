@@ -1,7 +1,9 @@
 import { ElementType, HTMLAttributes, ReactNode } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
-export const headerVariant = tv({});
+export const headerVariant = tv({
+  base: "flex items-start justify-between rounded-t bg-zinc-200 p-4",
+});
 
 export const iconVariant = tv({
   base: "rounded bg-zinc-500/25 p-2 text-zinc-500",
@@ -17,7 +19,7 @@ export const iconVariant = tv({
 
 export type HeaderProps = {
   icon?: ElementType;
-  iconColor?: 'alert' | 'info' | 'success' | 'destructive' | undefined;
+  iconColor?: "alert" | "info" | "success" | "destructive" | undefined;
   children: ReactNode;
 } & HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof headerVariant>;
@@ -29,7 +31,7 @@ export const Header = ({
   className,
 }: HeaderProps) => {
   return (
-    <div className="flex items-start justify-between rounded-t bg-zinc-200 p-4">
+    <div className={headerVariant({ className })}>
       {children}
       {Icon && (
         <div className={iconVariant({ variant: iconColor, className })}>

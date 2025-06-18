@@ -67,7 +67,7 @@ __export(index_exports, {
   Checkbox: () => Checkbox,
   DatePicker: () => DatePicker,
   Dialog: () => Dialog,
-  Footer: () => Footer2,
+  Footer: () => Footer3,
   Header: () => Header3,
   Heading: () => Heading,
   Input: () => Input,
@@ -113,7 +113,9 @@ var Root = (_a) => {
 // src/components/ui/card/header.tsx
 var import_tailwind_variants3 = require("tailwind-variants");
 var import_jsx_runtime3 = require("react/jsx-runtime");
-var headerVariant = (0, import_tailwind_variants3.tv)({});
+var headerVariant = (0, import_tailwind_variants3.tv)({
+  base: "flex items-start justify-between rounded-t bg-zinc-200 p-4"
+});
 var iconVariant = (0, import_tailwind_variants3.tv)({
   base: "rounded bg-zinc-500/25 p-2 text-zinc-500",
   variants: {
@@ -131,7 +133,7 @@ var Header = ({
   icon: Icon4,
   className
 }) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "flex items-start justify-between rounded-t bg-zinc-200 p-4", children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: headerVariant({ className }), children: [
     children,
     Icon4 && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: iconVariant({ variant: iconColor, className }), children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Icon4, { size: 16 }) })
   ] });
@@ -141,16 +143,10 @@ var Header = ({
 var import_tailwind_variants4 = require("tailwind-variants");
 var import_jsx_runtime4 = require("react/jsx-runtime");
 var cardfooterVariant = (0, import_tailwind_variants4.tv)({
-  base: "flex items-start justify-between rounded-t bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200"
+  base: "flex items-start justify-between rounded-b bg-zinc-100 p-4 rounded-b border-t border-t-zinc-200"
 });
-var CardFooter = (_a) => {
-  var _b = _a, {
-    children,
-    className
-  } = _b, rest = __objRest(_b, [
-    "children",
-    "className"
-  ]);
+var Footer = (_a) => {
+  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", __spreadProps(__spreadValues({ className: cardfooterVariant({ className }) }, rest), { children }));
 };
 
@@ -159,7 +155,7 @@ var Card = {
   Root,
   Header,
   Body,
-  CardFooter
+  Footer
 };
 
 // src/components/ui/table/index.tsx
@@ -1226,7 +1222,7 @@ var import_jsx_runtime50 = require("react/jsx-runtime");
 var menuFooterVariant = (0, import_tailwind_variants17.tv)({
   base: "bg-background border-t border-t-background-light rounded-b"
 });
-function Footer(_a) {
+function Footer2(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   return /* @__PURE__ */ (0, import_jsx_runtime50.jsx)("div", __spreadProps(__spreadValues({ className: menuFooterVariant({ className }) }, rest), { children }));
 }
@@ -1273,12 +1269,12 @@ var Menu = {
   Header: Header2,
   Content: Content10,
   Item: Item3,
-  Footer
+  Footer: Footer2
 };
 
 // src/components/surfaces/footer/index.tsx
 var import_jsx_runtime54 = require("react/jsx-runtime");
-function Footer2({ title }) {
+function Footer3({ title }) {
   return /* @__PURE__ */ (0, import_jsx_runtime54.jsxs)("footer", { className: "item-center flex w-full justify-center bg-zinc-100 p-4 text-xs text-zinc-700", children: [
     title,
     " \xA9 | ",
@@ -1517,7 +1513,7 @@ var import_jsx_runtime66 = require("react/jsx-runtime");
 var variant6 = (0, import_tailwind_variants24.tv)({
   base: "w-full rounded-b data-[state=close]:max-w-24"
 });
-function Footer3(_a) {
+function Footer4(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
   return /* @__PURE__ */ (0, import_jsx_runtime66.jsx)("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
@@ -1612,7 +1608,7 @@ var Sidebar = {
   Content: Content11,
   Container,
   Header: Header4,
-  Footer: Footer3,
+  Footer: Footer4,
   FooterContent,
   Item: Item4,
   Title: Title4,
