@@ -1138,7 +1138,7 @@ var Tooltip = ({ children, value }) => {
 import { jsx as jsx47 } from "react/jsx-runtime";
 function Trigger10(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx47(Popover9.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx47(Popover9.Trigger, __spreadProps(__spreadValues({}, rest), { className: "w-full", children }));
 }
 
 // src/components/surfaces/menu/content.tsx
@@ -1251,7 +1251,7 @@ var rootVariation = tv19({
 });
 function Root12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx55("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx55("div", { className: "m-auto flex w-full max-w-6xl items-center justify-between p-4", children }) }));
+  return /* @__PURE__ */ jsx55("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx55("div", { className: "m-auto flex w-full max-w-7xl items-center justify-between p-4", children }) }));
 }
 
 // src/components/surfaces/header/index.tsx
@@ -1291,7 +1291,7 @@ import { jsx as jsx57 } from "react/jsx-runtime";
 function Icon3(_a) {
   var rest = __objRest(_a, []);
   const { toggle, state } = useSidebar();
-  return state === "open" ? /* @__PURE__ */ jsx57(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { onClick: toggle })) : /* @__PURE__ */ jsx57(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { onClick: toggle }));
+  return state === "open" ? /* @__PURE__ */ jsx57(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle })) : /* @__PURE__ */ jsx57(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle }));
 }
 
 // src/components/typograph/text/index.tsx
@@ -1329,7 +1329,7 @@ function Item4(_a) {
     "button",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
-      className: "flex w-full gap-2 bg-zinc-50 p-4 text-left transition-colors hover:bg-zinc-100 data-[state=close]:max-w-24 data-[state=close]:justify-center",
+      className: "flex w-full gap-2 bg-foreground/5 p-4 text-left transition-colors hover:bg-foreground/10 data-[state=close]:max-w-24 data-[state=close]:justify-center",
       children: [
         Icon4 && /* @__PURE__ */ jsx59(Icon4, {}),
         /* @__PURE__ */ jsx59(
@@ -1429,7 +1429,7 @@ function Header4(_a) {
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
-      className: "flex h-16 w-full items-center justify-between rounded-t border-b border-b-zinc-200 p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center",
+      className: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center",
       children
     })
   );
@@ -1451,7 +1451,7 @@ function Container(_a) {
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
-      className: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-background data-[state=close]:max-w-24",
+      className: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-foreground/5 data-[state=close]:max-w-24",
       children
     })
   );

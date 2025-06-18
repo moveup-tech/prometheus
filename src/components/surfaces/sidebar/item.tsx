@@ -15,7 +15,7 @@ export function Item({ children, icon, ...rest }: SidebarItemProps) {
     <button
       {...rest}
       data-state={state}
-      className="flex w-full gap-2 bg-zinc-50 p-4 text-left transition-colors hover:bg-zinc-100 data-[state=close]:max-w-24 data-[state=close]:justify-center"
+      className="flex w-full gap-2 bg-foreground/5 p-4 text-left transition-colors hover:bg-foreground/10 data-[state=close]:max-w-24 data-[state=close]:justify-center"
     >
       {Icon && <Icon />}
       <Text

@@ -7,8 +7,8 @@ export function Icon({ ...rest }: SidebarIconProps) {
   const { toggle, state } = useSidebar();
 
   return state === "open" ? (
-    <PanelLeftClose {...rest} onClick={toggle} />
+    <PanelLeftClose {...rest} className="cursor-pointer" onClick={toggle} />
   ) : (
-    <PanelLeftOpen {...rest} onClick={toggle} />
+    <PanelLeftOpen {...rest} className="cursor-pointer" onClick={toggle} />
   );
 }

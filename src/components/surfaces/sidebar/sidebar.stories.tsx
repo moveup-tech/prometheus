@@ -4,11 +4,14 @@ import {
   LayoutDashboard,
   LifeBuoy,
   MessageCircle,
+  Plus,
   Settings,
   Sticker,
   Ticket,
 } from "lucide-react";
 import { Menu } from "../menu";
+import { Avatar } from "@/components/ui/avatar";
+import { Text } from "@/components/typograph/text";
 
 export default {
   render: () => (
@@ -28,7 +31,7 @@ export default {
               <Menu.Portal>
                 <Menu.Content>
                   <Menu.Item>
-                    <Sidebar.Item icon={MessageCircle}>Novo</Sidebar.Item>
+                    <Sidebar.Item icon={Plus}>Novo</Sidebar.Item>
                   </Menu.Item>
                 </Menu.Content>
               </Menu.Portal>
@@ -36,15 +39,21 @@ export default {
             <Sidebar.Item icon={Ticket}>Tickets</Sidebar.Item>
             <Sidebar.Item icon={Sticker}>Feedbacks</Sidebar.Item>
           </Sidebar.Content>
-          <Sidebar.Footer
-            user={{
-              name: "Jhon Doe",
-              image: "https://placehold.jp/150x150.png",
-              role: "Administrador",
-            }}
-          >
+          <Sidebar.Footer>
             <Sidebar.Item icon={Settings}>Configuraçoes</Sidebar.Item>
             <Sidebar.Item icon={LifeBuoy}>Ajuda</Sidebar.Item>
+            <Sidebar.FooterContent>
+              <Avatar
+                image="https://github.com/moveup-tech.png"
+                username="Jhon Doe"
+              />
+              <Sidebar.UserContainer>
+                <Text as="strong">Daniel</Text>
+                <Text size="sm" className="text-foreground">
+                  Admin
+                </Text>
+              </Sidebar.UserContainer>
+            </Sidebar.FooterContent>
           </Sidebar.Footer>
         </Sidebar.Container>
       </Sidebar.Root>

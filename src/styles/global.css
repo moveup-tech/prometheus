@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #fff;
-  --foreground:
+  --background: 255 255 255;
+  --foreground: 0 0 0; 
 
-  --primary-light: #A4F4CF;
-  --primary-main: #00BC7D;
-  --primary-dark: #004F3B;
+  --primary-light: 164 244 207;
+  --primary-main: 0 188 125;
+  --primary-dark: 0 79 59;
 
-  --secondary-light: #B8E6FE;
-  --secondary-main: #00A6F4;
-  --secondary-dark: #024A70;
+  --secondary-light: 184 230 254;
+  --secondary-main: 0 166 244;
+  --secondary-dark: 2 74 112;
 }
