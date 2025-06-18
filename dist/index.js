@@ -673,7 +673,7 @@ function Button(_a) {
   var _b = _a, {
     as,
     asChild,
-    variant: variant4,
+    variant: variant5,
     children,
     disabled,
     className,
@@ -694,10 +694,10 @@ function Button(_a) {
   const IconRight = iconRight;
   if (asChild && import_react3.default.isValidElement(children)) {
     return import_react3.default.cloneElement(children, __spreadProps(__spreadValues({}, rest), {
-      className: buttonVariant({ className, variant: variant4, disabled })
+      className: buttonVariant({ className, variant: variant5, disabled })
     }));
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant4, disabled }), children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant5, disabled }), children: [
     IconLeft && /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(IconLeft, {}),
     children,
     IconRight && /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(IconRight, {})
@@ -1531,6 +1531,24 @@ function Container(_a) {
   );
 }
 
+// src/components/surfaces/sidebar/user-container.tsx
+var import_tailwind_variants22 = require("tailwind-variants");
+var import_jsx_runtime68 = require("react/jsx-runtime");
+var variant4 = (0, import_tailwind_variants22.tv)({
+  base: "flex flex-col data-[state=close]:hidden"
+});
+function UserContainer(_a) {
+  var _b = _a, {
+    children,
+    className
+  } = _b, rest = __objRest(_b, [
+    "children",
+    "className"
+  ]);
+  const { state } = useSidebar();
+  return /* @__PURE__ */ (0, import_jsx_runtime68.jsx)("div", { "data-state": state, className: variant4({ className }), children });
+}
+
 // src/components/surfaces/sidebar/index.tsx
 var Sidebar = {
   Root: Root13,
@@ -1540,49 +1558,50 @@ var Sidebar = {
   Footer: Footer3,
   Item: Item4,
   Title: Title4,
-  Icon: Icon3
+  Icon: Icon3,
+  UserContainer
 };
 
 // src/components/ui/navigation-menu/item.tsx
 var Navigation = __toESM(require("@radix-ui/react-navigation-menu"));
 var import_react14 = require("react");
-var import_jsx_runtime68 = require("react/jsx-runtime");
+var import_jsx_runtime69 = require("react/jsx-runtime");
 var Item6 = (0, import_react14.forwardRef)(
   (_a) => {
     var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
+    return /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
   }
 );
 
 // src/components/ui/navigation-menu/list.tsx
 var Navigation2 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_jsx_runtime69 = require("react/jsx-runtime");
+var import_jsx_runtime70 = require("react/jsx-runtime");
 function List2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(Navigation2.List, { id: "navigation", children });
+  return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Navigation2.List, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/root.tsx
 var Navigation3 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_jsx_runtime70 = require("react/jsx-runtime");
+var import_jsx_runtime71 = require("react/jsx-runtime");
 function Root15(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(Navigation3.Root, { id: "navigation", children });
+  return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(Navigation3.Root, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/link.tsx
 var Navigation4 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_jsx_runtime71 = require("react/jsx-runtime");
+var import_jsx_runtime72 = require("react/jsx-runtime");
 function Link2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ (0, import_jsx_runtime72.jsx)(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/navigation-menu/trigger.tsx
 var Navigation5 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_tailwind_variants22 = require("tailwind-variants");
-var import_jsx_runtime72 = require("react/jsx-runtime");
-var navigationMenuContentVariant = (0, import_tailwind_variants22.tv)({
+var import_tailwind_variants23 = require("tailwind-variants");
+var import_jsx_runtime73 = require("react/jsx-runtime");
+var navigationMenuContentVariant = (0, import_tailwind_variants23.tv)({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
 function Trigger12(_a) {
@@ -1593,7 +1612,7 @@ function Trigger12(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ (0, import_jsx_runtime72.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(
     Navigation5.Trigger,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant({ className }),
@@ -1604,9 +1623,9 @@ function Trigger12(_a) {
 
 // src/components/ui/navigation-menu/content.tsx
 var Navigation6 = __toESM(require("@radix-ui/react-navigation-menu"));
-var import_tailwind_variants23 = require("tailwind-variants");
-var import_jsx_runtime73 = require("react/jsx-runtime");
-var navigationMenuContentVariant2 = (0, import_tailwind_variants23.tv)({
+var import_tailwind_variants24 = require("tailwind-variants");
+var import_jsx_runtime74 = require("react/jsx-runtime");
+var navigationMenuContentVariant2 = (0, import_tailwind_variants24.tv)({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
 function Content13(_a) {
@@ -1617,7 +1636,7 @@ function Content13(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
     Navigation6.Content,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant2({ className }),
@@ -1638,7 +1657,7 @@ var NavigationMenu = {
 
 // src/components/ui/pagination/index.tsx
 var import_lucide_react11 = require("lucide-react");
-var import_tailwind_variants24 = require("tailwind-variants");
+var import_tailwind_variants25 = require("tailwind-variants");
 
 // src/components/ui/pagination/hooks/usePagination.tsx
 var import_react15 = require("react");
@@ -1690,8 +1709,8 @@ function usePagination({
 }
 
 // src/components/ui/pagination/index.tsx
-var import_jsx_runtime74 = require("react/jsx-runtime");
-var pageItemVariant = (0, import_tailwind_variants24.tv)({
+var import_jsx_runtime75 = require("react/jsx-runtime");
+var pageItemVariant = (0, import_tailwind_variants25.tv)({
   base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
   variants: {
     disabled: {
@@ -1722,53 +1741,53 @@ function Pagination({
     perPage: defaultPerpage
   });
   const totalPages = totalCount / perPage;
-  return /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)("div", { className: "flex w-full items-center justify-between py-4", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)("div", { className: "flex w-full items-center justify-between py-4", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
       page,
       " de ",
       Math.ceil(totalCount / perPage),
       " p\xE1ginas"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)("div", { className: "flex gap-2", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(
+    /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)("div", { className: "flex gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)(
         Select.Root,
         {
           onValueChange: handlePerPage,
           defaultValue: perPage.toString(),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(Select.Trigger, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Value, {}),
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Icon, {})
+            /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)(Select.Trigger, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Value, {}),
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Icon, {})
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(Select.Viewport, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Item, { value: "10", children: "10" }),
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Item, { value: "30", children: "30" }),
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Item, { value: "50", children: "50" }),
-              /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(Select.Item, { value: "100", children: "100" })
+            /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)(Select.Viewport, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Item, { value: "10", children: "10" }),
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Item, { value: "30", children: "30" }),
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Item, { value: "50", children: "50" }),
+              /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(Select.Item, { value: "100", children: "100" })
             ] }) }) })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
         "button",
         {
           onClick: firstPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_lucide_react11.ChevronsLeft, { size: 14 })
+          children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(import_lucide_react11.ChevronsLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
         "button",
         {
           onClick: previousPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_lucide_react11.ChevronLeft, { size: 14 })
+          children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(import_lucide_react11.ChevronLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsx)("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)("p", { children: page }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsx)("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)("p", { children: page }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
         "button",
         {
           onClick: nextPage,
@@ -1776,10 +1795,10 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_lucide_react11.ChevronRight, { size: 14 })
+          children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(import_lucide_react11.ChevronRight, { size: 14 })
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
         "button",
         {
           onClick: lastPage,
@@ -1787,7 +1806,7 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(import_lucide_react11.ChevronsRight, { size: 14 })
+          children: /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(import_lucide_react11.ChevronsRight, { size: 14 })
         }
       )
     ] })
