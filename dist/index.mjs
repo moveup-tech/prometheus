@@ -1225,20 +1225,27 @@ function Footer3({ title }) {
   ] });
 }
 
-// src/components/surfaces/header/header-item.tsx
+// src/components/surfaces/header/header-footer.tsx
 import { jsx as jsx54 } from "react/jsx-runtime";
-function HeaderMenuItem({
+function Footer4(_a) {
+  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx54(Menu.Footer, __spreadProps(__spreadValues({}, rest), { children }));
+}
+
+// src/components/surfaces/header/header-item.tsx
+import { jsx as jsx55 } from "react/jsx-runtime";
+function Item4({
   href,
   children,
   icon: Icon4,
   className
 }) {
-  return /* @__PURE__ */ jsx54(Menu.Item, { className, href, icon: Icon4, children });
+  return /* @__PURE__ */ jsx55(Menu.Item, { className, href, icon: Icon4, children });
 }
 
 // src/components/typograph/text/index.tsx
 import { tv as tv19 } from "tailwind-variants";
-import { jsx as jsx55 } from "react/jsx-runtime";
+import { jsx as jsx56 } from "react/jsx-runtime";
 var textVariant = tv19({
   variants: {
     size: {
@@ -1258,13 +1265,12 @@ var textVariant = tv19({
 function Text(_a) {
   var _b = _a, { as = "p", children, size } = _b, rest = __objRest(_b, ["as", "children", "size"]);
   const As = as;
-  return /* @__PURE__ */ jsx55(As, __spreadProps(__spreadValues({ className: textVariant({ size }) }, rest), { children }));
+  return /* @__PURE__ */ jsx56(As, __spreadProps(__spreadValues({ className: textVariant({ size }) }, rest), { children }));
 }
 
 // src/components/surfaces/header/header-menu.tsx
-import { LifeBuoy, LogOut } from "lucide-react";
-import { jsx as jsx56, jsxs as jsxs17 } from "react/jsx-runtime";
-function HeaderMenu(_a) {
+import { jsx as jsx57, jsxs as jsxs17 } from "react/jsx-runtime";
+function Menu2(_a) {
   var _b = _a, {
     role,
     image,
@@ -1277,59 +1283,57 @@ function HeaderMenu(_a) {
     "children"
   ]);
   return /* @__PURE__ */ jsxs17(Menu.Root, __spreadProps(__spreadValues({}, rest), { children: [
-    /* @__PURE__ */ jsx56(Menu.Trigger, { children: /* @__PURE__ */ jsx56(Avatar, { image, username }) }),
+    /* @__PURE__ */ jsx57(Menu.Trigger, { children: /* @__PURE__ */ jsx57(Avatar, { image, username }) }),
     /* @__PURE__ */ jsxs17(Menu.Portal, { children: [
       /* @__PURE__ */ jsxs17(Menu.Header, { children: [
-        /* @__PURE__ */ jsx56(Avatar, { image, username }),
+        /* @__PURE__ */ jsx57(Avatar, { image, username }),
         /* @__PURE__ */ jsxs17("div", { className: "flex flex-col", children: [
-          /* @__PURE__ */ jsx56(Text, { as: "strong", children: username }),
-          /* @__PURE__ */ jsx56(Text, { size: "xs", as: "small", children: role })
+          /* @__PURE__ */ jsx57(Text, { as: "strong", children: username }),
+          /* @__PURE__ */ jsx57(Text, { size: "xs", as: "small", children: role })
         ] })
       ] }),
-      /* @__PURE__ */ jsx56(Menu.Content, { children }),
-      /* @__PURE__ */ jsxs17(Menu.Footer, { children: [
-        /* @__PURE__ */ jsx56(Menu.Item, { href: "#", icon: LifeBuoy, children: "Ajuda" }),
-        /* @__PURE__ */ jsx56(
-          Button,
-          {
-            iconLeft: LogOut,
-            className: "w-full rounded-none rounded-b bg-foreground/10 text-primary-main hover:bg-foreground/25",
-            children: "Sair"
-          }
-        )
-      ] })
+      children
     ] })
   ] }));
 }
 
+// src/components/surfaces/header/header-content.tsx
+import { jsx as jsx58 } from "react/jsx-runtime";
+function Content11(_a) {
+  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx58(Menu.Content, __spreadProps(__spreadValues({}, rest), { children }));
+}
+
 // src/components/surfaces/header/image.tsx
 import { tv as tv20 } from "tailwind-variants";
-import { jsx as jsx57 } from "react/jsx-runtime";
+import { jsx as jsx59 } from "react/jsx-runtime";
 var imageVariation = tv20({
   base: "w-24"
 });
 function Image(_a) {
   var _b = _a, { className } = _b, rest = __objRest(_b, ["className"]);
-  return /* @__PURE__ */ jsx57("img", __spreadValues({ className: imageVariation({ className }) }, rest));
+  return /* @__PURE__ */ jsx59("img", __spreadValues({ className: imageVariation({ className }) }, rest));
 }
 
 // src/components/surfaces/header/root.tsx
 import { tv as tv21 } from "tailwind-variants";
-import { jsx as jsx58 } from "react/jsx-runtime";
+import { jsx as jsx60 } from "react/jsx-runtime";
 var rootVariation = tv21({
   base: "fixed left-0 top-0 w-full bg-foreground/5 border-b border-b-foreground/10"
 });
 function Root12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx58("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx58("div", { className: "m-auto flex w-full max-w-7xl items-center justify-between p-4", children }) }));
+  return /* @__PURE__ */ jsx60("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx60("div", { className: "m-auto flex w-full max-w-7xl items-center justify-between p-4", children }) }));
 }
 
 // src/components/surfaces/header/index.tsx
 var Header3 = {
   Root: Root12,
   Image,
-  Menu: HeaderMenu,
-  Item: HeaderMenuItem
+  Menu: Menu2,
+  Item: Item4,
+  Footer: Footer4,
+  Content: Content11
 };
 
 // src/components/surfaces/sidebar/icon.tsx
@@ -1350,35 +1354,35 @@ function useSidebarContext() {
 }
 
 // src/components/surfaces/sidebar/context/sidebar.tsx
-import { jsx as jsx59 } from "react/jsx-runtime";
+import { jsx as jsx61 } from "react/jsx-runtime";
 var SidebarContext = createContext({});
 function SidebarProvider({ children }) {
   const value = useSidebarContext();
-  return /* @__PURE__ */ jsx59(SidebarContext.Provider, { value, children });
+  return /* @__PURE__ */ jsx61(SidebarContext.Provider, { value, children });
 }
 var useSidebar = () => useContext(SidebarContext);
 
 // src/components/surfaces/sidebar/icon.tsx
-import { jsx as jsx60 } from "react/jsx-runtime";
+import { jsx as jsx62 } from "react/jsx-runtime";
 function Icon3(_a) {
   var rest = __objRest(_a, []);
   const { toggle, state } = useSidebar();
-  return state === "open" ? /* @__PURE__ */ jsx60(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle })) : /* @__PURE__ */ jsx60(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle }));
+  return state === "open" ? /* @__PURE__ */ jsx62(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle })) : /* @__PURE__ */ jsx62(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle }));
 }
 
 // src/components/surfaces/sidebar/item.tsx
 import { tv as tv22 } from "tailwind-variants";
-import { jsx as jsx61, jsxs as jsxs18 } from "react/jsx-runtime";
+import { jsx as jsx63, jsxs as jsxs18 } from "react/jsx-runtime";
 var variant5 = tv22({
   base: "flex w-full gap-2 p-4 text-left transition-colors data-[state=close]:max-w-24 data-[state=close]:justify-center hover:bg-foreground/5"
 });
-function Item4(_a) {
+function Item5(_a) {
   var _b = _a, { children, icon, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
   const Icon4 = icon;
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsxs18("button", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
-    Icon4 && /* @__PURE__ */ jsx61(Icon4, {}),
-    /* @__PURE__ */ jsx61(
+  return /* @__PURE__ */ jsxs18("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
+    Icon4 && /* @__PURE__ */ jsx63(Icon4, {}),
+    /* @__PURE__ */ jsx63(
       Text,
       {
         as: "strong",
@@ -1391,15 +1395,15 @@ function Item4(_a) {
 }
 
 // src/components/surfaces/sidebar/root.tsx
-import { jsx as jsx62 } from "react/jsx-runtime";
+import { jsx as jsx64 } from "react/jsx-runtime";
 function Root13(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx62(SidebarProvider, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx64(SidebarProvider, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/typograph/heading/index.tsx
 import { tv as tv23 } from "tailwind-variants";
-import { jsx as jsx63 } from "react/jsx-runtime";
+import { jsx as jsx65 } from "react/jsx-runtime";
 var headingVariant = tv23({
   variants: {
     size: {
@@ -1429,15 +1433,15 @@ function Heading(_a) {
     "className"
   ]);
   const As = as;
-  return /* @__PURE__ */ jsx63(As, __spreadProps(__spreadValues({ className: headingVariant({ size, className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx65(As, __spreadProps(__spreadValues({ className: headingVariant({ size, className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/title.tsx
-import { jsx as jsx64 } from "react/jsx-runtime";
+import { jsx as jsx66 } from "react/jsx-runtime";
 function Title4(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx64(
+  return /* @__PURE__ */ jsx66(
     Heading,
     __spreadProps(__spreadValues({
       "data-state": state,
@@ -1451,26 +1455,26 @@ function Title4(_a) {
 
 // src/components/surfaces/sidebar/footer.tsx
 import { tv as tv24 } from "tailwind-variants";
-import { jsx as jsx65 } from "react/jsx-runtime";
+import { jsx as jsx67 } from "react/jsx-runtime";
 var variant6 = tv24({
   base: "w-full rounded-b data-[state=close]:max-w-24"
 });
-function Footer4(_a) {
+function Footer5(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx65("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
+  return /* @__PURE__ */ jsx67("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/header.tsx
 import { tv as tv25 } from "tailwind-variants";
-import { jsx as jsx66 } from "react/jsx-runtime";
+import { jsx as jsx68 } from "react/jsx-runtime";
 var variant7 = tv25({
   base: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center"
 });
 function Header4(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx66(
+  return /* @__PURE__ */ jsx68(
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
@@ -1482,18 +1486,18 @@ function Header4(_a) {
 
 // src/components/surfaces/sidebar/content.tsx
 import { tv as tv26 } from "tailwind-variants";
-import { jsx as jsx67 } from "react/jsx-runtime";
+import { jsx as jsx69 } from "react/jsx-runtime";
 var variant8 = tv26({
   base: "w-full"
 });
-function Content11(_a) {
+function Content12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx67("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
+  return /* @__PURE__ */ jsx69("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/container.tsx
 import { tv as tv27 } from "tailwind-variants";
-import { jsx as jsx68 } from "react/jsx-runtime";
+import { jsx as jsx70 } from "react/jsx-runtime";
 var variant9 = tv27({
   base: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-white data-[state=close]:max-w-24"
 });
@@ -1506,12 +1510,12 @@ function Container(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx68("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
+  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/user-container.tsx
 import { tv as tv28 } from "tailwind-variants";
-import { jsx as jsx69 } from "react/jsx-runtime";
+import { jsx as jsx71 } from "react/jsx-runtime";
 var variant10 = tv28({
   base: "flex flex-col data-[state=close]:hidden"
 });
@@ -1524,12 +1528,12 @@ function UserContainer(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx69("div", { "data-state": state, className: variant10({ className }), children });
+  return /* @__PURE__ */ jsx71("div", { "data-state": state, className: variant10({ className }), children });
 }
 
 // src/components/surfaces/sidebar/footer-content.tsx
 import { tv as tv29 } from "tailwind-variants";
-import { jsx as jsx70 } from "react/jsx-runtime";
+import { jsx as jsx72 } from "react/jsx-runtime";
 var variant11 = tv29({
   base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4"
 });
@@ -1541,18 +1545,18 @@ function FooterContent(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx72("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/index.tsx
 var Sidebar = {
   Root: Root13,
-  Content: Content11,
+  Content: Content12,
   Container,
   Header: Header4,
-  Footer: Footer4,
+  Footer: Footer5,
   FooterContent,
-  Item: Item4,
+  Item: Item5,
   Title: Title4,
   Icon: Icon3,
   UserContainer
@@ -1560,43 +1564,40 @@ var Sidebar = {
 
 // src/components/ui/navigation-menu/item.tsx
 import * as Navigation from "@radix-ui/react-navigation-menu";
-import { forwardRef as forwardRef7 } from "react";
-import { jsx as jsx71 } from "react/jsx-runtime";
-var Item6 = forwardRef7(
-  (_a) => {
-    var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsx71(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
-  }
-);
+import { jsx as jsx73 } from "react/jsx-runtime";
+var Item7 = (_a) => {
+  var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ jsx73(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
+};
 
 // src/components/ui/navigation-menu/list.tsx
 import * as Navigation2 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx72 } from "react/jsx-runtime";
+import { jsx as jsx74 } from "react/jsx-runtime";
 function List2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx72(Navigation2.List, { id: "navigation", children });
+  return /* @__PURE__ */ jsx74(Navigation2.List, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/root.tsx
 import * as Navigation3 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx73 } from "react/jsx-runtime";
+import { jsx as jsx75 } from "react/jsx-runtime";
 function Root15(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx73(Navigation3.Root, { id: "navigation", children });
+  return /* @__PURE__ */ jsx75(Navigation3.Root, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/link.tsx
 import * as Navigation4 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx74 } from "react/jsx-runtime";
+import { jsx as jsx76 } from "react/jsx-runtime";
 function Link2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx74(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx76(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/navigation-menu/trigger.tsx
 import * as Navigation5 from "@radix-ui/react-navigation-menu";
 import { tv as tv30 } from "tailwind-variants";
-import { jsx as jsx75 } from "react/jsx-runtime";
+import { jsx as jsx77 } from "react/jsx-runtime";
 var navigationMenuContentVariant = tv30({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
@@ -1608,7 +1609,7 @@ function Trigger12(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx75(
+  return /* @__PURE__ */ jsx77(
     Navigation5.Trigger,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant({ className }),
@@ -1620,11 +1621,11 @@ function Trigger12(_a) {
 // src/components/ui/navigation-menu/content.tsx
 import * as Navigation6 from "@radix-ui/react-navigation-menu";
 import { tv as tv31 } from "tailwind-variants";
-import { jsx as jsx76 } from "react/jsx-runtime";
+import { jsx as jsx78 } from "react/jsx-runtime";
 var navigationMenuContentVariant2 = tv31({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
-function Content13(_a) {
+function Content14(_a) {
   var _b = _a, {
     children,
     className
@@ -1632,7 +1633,7 @@ function Content13(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx76(
+  return /* @__PURE__ */ jsx78(
     Navigation6.Content,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant2({ className }),
@@ -1644,10 +1645,10 @@ function Content13(_a) {
 // src/components/ui/navigation-menu/index.tsx
 var NavigationMenu = {
   Root: Root15,
-  Item: Item6,
+  Item: Item7,
   List: List2,
   Link: Link2,
-  Content: Content13,
+  Content: Content14,
   Trigger: Trigger12
 };
 
@@ -1710,7 +1711,7 @@ function usePagination({
 }
 
 // src/components/ui/pagination/index.tsx
-import { jsx as jsx77, jsxs as jsxs19 } from "react/jsx-runtime";
+import { jsx as jsx79, jsxs as jsxs19 } from "react/jsx-runtime";
 var pageItemVariant = tv32({
   base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
   variants: {
@@ -1757,38 +1758,38 @@ function Pagination({
           defaultValue: perPage.toString(),
           children: [
             /* @__PURE__ */ jsxs19(Select.Trigger, { children: [
-              /* @__PURE__ */ jsx77(Select.Value, {}),
-              /* @__PURE__ */ jsx77(Select.Icon, {})
+              /* @__PURE__ */ jsx79(Select.Value, {}),
+              /* @__PURE__ */ jsx79(Select.Icon, {})
             ] }),
-            /* @__PURE__ */ jsx77(Select.Portal, { children: /* @__PURE__ */ jsx77(Select.Content, { children: /* @__PURE__ */ jsxs19(Select.Viewport, { children: [
-              /* @__PURE__ */ jsx77(Select.Item, { value: "10", children: "10" }),
-              /* @__PURE__ */ jsx77(Select.Item, { value: "30", children: "30" }),
-              /* @__PURE__ */ jsx77(Select.Item, { value: "50", children: "50" }),
-              /* @__PURE__ */ jsx77(Select.Item, { value: "100", children: "100" })
+            /* @__PURE__ */ jsx79(Select.Portal, { children: /* @__PURE__ */ jsx79(Select.Content, { children: /* @__PURE__ */ jsxs19(Select.Viewport, { children: [
+              /* @__PURE__ */ jsx79(Select.Item, { value: "10", children: "10" }),
+              /* @__PURE__ */ jsx79(Select.Item, { value: "30", children: "30" }),
+              /* @__PURE__ */ jsx79(Select.Item, { value: "50", children: "50" }),
+              /* @__PURE__ */ jsx79(Select.Item, { value: "100", children: "100" })
             ] }) }) })
           ]
         }
       ),
-      /* @__PURE__ */ jsx77(
+      /* @__PURE__ */ jsx79(
         "button",
         {
           onClick: firstPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx77(ChevronsLeft, { size: 14 })
+          children: /* @__PURE__ */ jsx79(ChevronsLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx77(
+      /* @__PURE__ */ jsx79(
         "button",
         {
           onClick: previousPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx77(ChevronLeft3, { size: 14 })
+          children: /* @__PURE__ */ jsx79(ChevronLeft3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx77("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ jsx77("p", { children: page }) }),
-      /* @__PURE__ */ jsx77(
+      /* @__PURE__ */ jsx79("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ jsx79("p", { children: page }) }),
+      /* @__PURE__ */ jsx79(
         "button",
         {
           onClick: nextPage,
@@ -1796,10 +1797,10 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx77(ChevronRight3, { size: 14 })
+          children: /* @__PURE__ */ jsx79(ChevronRight3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx77(
+      /* @__PURE__ */ jsx79(
         "button",
         {
           onClick: lastPage,
@@ -1807,7 +1808,7 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx77(ChevronsRight, { size: 14 })
+          children: /* @__PURE__ */ jsx79(ChevronsRight, { size: 14 })
         }
       )
     ] })

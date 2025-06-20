@@ -2,7 +2,7 @@ import { Menu, MenuItemProps } from "../menu";
 
 export type HeaderMenuItemProps = MenuItemProps & {};
 
-export function HeaderMenuItem({
+export function Item({
   href,
   children,
   icon: Icon,

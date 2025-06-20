@@ -3,12 +3,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Header } from "./index";
 
 import Logo from "@/assets/logo.svg";
-import { Menu } from "../menu";
-import { Avatar } from "@/components/ui/avatar";
-import { Text } from "@/components/typograph/text";
+
 import { Bell, LifeBuoy, LogOut, MenuIcon, Settings, User } from "lucide-react";
 import { Button } from "@/components/ui/form/button";
-import { Heading } from "@/components/typograph/heading";
 
 export default {
   component: Header.Root,
@@ -25,15 +22,25 @@ export const Default: StoryObj<typeof Header> = {
         username="User"
         image="https://placehold.co/600x400"
       >
-        <Header.Item href="#" icon={User}>
-          Perfil
-        </Header.Item>
-        <Header.Item href="#" icon={Bell}>
-          Notificações
-        </Header.Item>
-        <Header.Item href="#" icon={Settings}>
-          Configurações
-        </Header.Item>
+        <Header.Content>
+          <Header.Item href="#" icon={User}>
+            Perfil
+          </Header.Item>
+          <Header.Item href="#" icon={Bell}>
+            Notificações
+          </Header.Item>
+          <Header.Item href="#" icon={Settings}>
+            Configurações
+          </Header.Item>
+        </Header.Content>
+        <Header.Footer>
+          <Header.Item href="#" icon={LifeBuoy}>
+            Ajuda
+          </Header.Item>
+          <Button className="w-full" iconRight={LogOut}>
+            Sair
+          </Button>
+        </Header.Footer>
       </Header.Menu>
     </Header.Root>
   ),

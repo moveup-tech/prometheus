@@ -1,8 +1,7 @@
 import { Avatar } from "@/components/ui/avatar";
-import { Menu, MenuRootProps } from "../menu";
 import { Text } from "@/components/typograph/text";
-import { LifeBuoy, LogOut } from "lucide-react";
-import { Button } from "@/components/ui/form/button";
+
+import { Menu as MenuElement, MenuRootProps } from "../menu";
 
 export type HeaderMenuProps = MenuRootProps & {
   image: string;
@@ -10,7 +9,7 @@ export type HeaderMenuProps = MenuRootProps & {
   role: string;
 };
 
-export function HeaderMenu({
+export function Menu({
   role,
   image,
   username,
@@ -18,12 +17,12 @@ export function HeaderMenu({
   ...rest
 }: HeaderMenuProps) {
   return (
-    <Menu.Root {...rest}>
-      <Menu.Trigger>
+    <MenuElement.Root {...rest}>
+      <MenuElement.Trigger>
         <Avatar image={image} username={username} />
-      </Menu.Trigger>
-      <Menu.Portal>
-        <Menu.Header>
+      </MenuElement.Trigger>
+      <MenuElement.Portal>
+        <MenuElement.Header>
           <Avatar image={image} username={username} />
           <div className="flex flex-col">
             <Text as="strong">{username}</Text>
@@ -31,20 +30,9 @@ export function HeaderMenu({
               {role}
             </Text>
           </div>
-        </Menu.Header>
-        <Menu.Content>{children}</Menu.Content>
-        <Menu.Footer>
-          <Menu.Item href="#" icon={LifeBuoy}>
-            Ajuda
-          </Menu.Item>
-          <Button
-            iconLeft={LogOut}
-            className="w-full rounded-none rounded-b bg-foreground/10 text-primary-main hover:bg-foreground/25"
-          >
-            Sair
-          </Button>
-        </Menu.Footer>
-      </Menu.Portal>
-    </Menu.Root>
+        </MenuElement.Header>
+        {children}
+      </MenuElement.Portal>
+    </MenuElement.Root>
   );
 }

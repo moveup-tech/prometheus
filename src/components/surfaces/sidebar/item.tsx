@@ -17,7 +17,7 @@ export function Item({ children, icon, className, ...rest }: SidebarItemProps) {
   const { state } = useSidebar();
 
   return (
-    <button {...rest} data-state={state} className={variant({ className })}>
+    <div {...rest} data-state={state} className={variant({ className })}>
       {Icon && <Icon />}
       <Text
         as="strong"
@@ -26,6 +26,6 @@ export function Item({ children, icon, className, ...rest }: SidebarItemProps) {
       >
         {children}
       </Text>
-    </button>
+    </div>
   );
 }

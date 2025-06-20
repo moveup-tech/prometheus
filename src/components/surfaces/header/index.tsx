@@ -1,13 +1,17 @@
-import { HeaderMenuItem, HeaderMenuItemProps } from "./header-item";
-import { HeaderMenu, HeaderMenuProps } from "./header-menu";
+import { Footer } from "./header-footer";
+import { Item, HeaderMenuItemProps } from "./header-item";
+import { Menu, HeaderMenuProps } from "./header-menu";
+import { Content, HeaderContentProps } from "./header-content";
 import { Image, ImageProps } from "./image";
 import { HeaderRootProps, Root } from "./root";
 
 export const Header = {
   Root,
   Image,
-  Menu: HeaderMenu,
-  Item: HeaderMenuItem,
+  Menu,
+  Item,
+  Footer,
+  Content,
 };
 
 export type {
@@ -15,4 +19,5 @@ export type {
   ImageProps,
   HeaderMenuProps,
   HeaderMenuItemProps,
+  HeaderContentProps,
 };
