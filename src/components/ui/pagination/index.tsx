@@ -7,13 +7,14 @@ import {
 import { tv } from "tailwind-variants";
 
 import { usePagination } from "./hooks/usePagination";
+
 import { Select } from "../form/select";
 
 const pageItemVariant = tv({
-  base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
+  base: "rounded bg-primary-main py-2 px-4 text-xs text-background",
   variants: {
     disabled: {
-      true: "bg-zinc-200 text-zinc-500 cursor-not-allowed",
+      true: "bg-foreground/10 text-foreground/30 cursor-not-allowed",
     },
   },
 });
@@ -91,7 +92,7 @@ export function Pagination({
         >
           <ChevronLeft size={14} />
         </button>
-        <div className="flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600">
+        <div className="flex items-center rounded border border-primary-main bg-primary-main/25 px-4 py-2 text-xs text-primary-main">
           <p>{page}</p>
         </div>
         <button

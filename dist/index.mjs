@@ -917,22 +917,26 @@ function Portal8(_a) {
 
 // src/components/ui/popover/content.tsx
 import * as Popover7 from "@radix-ui/react-popover";
+import { forwardRef as forwardRef5 } from "react";
 import { tv as tv13 } from "tailwind-variants";
 import { jsx as jsx42 } from "react/jsx-runtime";
 var popoverContentVariation = tv13({
   base: "bg-zinc-100 rounded shadow-lg"
 });
-function Content8(_a) {
-  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx42(
-    Popover7.Content,
-    __spreadProps(__spreadValues({}, rest), {
-      className: popoverContentVariation({ className }),
-      sideOffset: 5,
-      children
-    })
-  );
-}
+var Content8 = forwardRef5(
+  (_a, ref) => {
+    var _b = _a, { className, children } = _b, rest = __objRest(_b, ["className", "children"]);
+    return /* @__PURE__ */ jsx42(
+      Popover7.Content,
+      __spreadProps(__spreadValues({}, rest), {
+        ref,
+        sideOffset: 5,
+        className: popoverContentVariation({ className }),
+        children
+      })
+    );
+  }
+);
 
 // src/components/ui/popover/trigger.tsx
 import * as Popover8 from "@radix-ui/react-popover";
@@ -1138,9 +1142,9 @@ function Trigger10(_a) {
 }
 
 // src/components/surfaces/menu/content.tsx
-import { forwardRef as forwardRef5 } from "react";
+import { forwardRef as forwardRef6 } from "react";
 import { jsx as jsx48 } from "react/jsx-runtime";
-var Content10 = forwardRef5(
+var Content10 = forwardRef6(
   (_a, ref) => {
     var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
     return /* @__PURE__ */ jsx48("div", __spreadProps(__spreadValues({}, rest), { ref, className: "w-full bg-background", children }));
@@ -1187,13 +1191,13 @@ function Portal10(_a) {
 }
 
 // src/components/surfaces/menu/item.tsx
-import { forwardRef as forwardRef6 } from "react";
+import { forwardRef as forwardRef7 } from "react";
 import { tv as tv18 } from "tailwind-variants";
 import { jsx as jsx53, jsxs as jsxs15 } from "react/jsx-runtime";
 var variant4 = tv18({
   base: "flex w-full items-center gap-2 p-4 transition-colors hover:bg-background/75 hover:text-primary-dark"
 });
-var Item3 = forwardRef6(
+var Item3 = forwardRef7(
   (_a, ref) => {
     var _b = _a, { children, icon: Icon4, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
     return /* @__PURE__ */ jsxs15("a", __spreadProps(__spreadValues({}, rest), { ref, className: variant4({ className }), children: [
@@ -1713,10 +1717,10 @@ function usePagination({
 // src/components/ui/pagination/index.tsx
 import { jsx as jsx79, jsxs as jsxs19 } from "react/jsx-runtime";
 var pageItemVariant = tv32({
-  base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
+  base: "rounded bg-primary-main py-2 px-4 text-xs text-background",
   variants: {
     disabled: {
-      true: "bg-zinc-200 text-zinc-500 cursor-not-allowed"
+      true: "bg-foreground/10 text-foreground/30 cursor-not-allowed"
     }
   }
 });
@@ -1788,7 +1792,7 @@ function Pagination({
           children: /* @__PURE__ */ jsx79(ChevronLeft3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx79("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ jsx79("p", { children: page }) }),
+      /* @__PURE__ */ jsx79("div", { className: "flex items-center rounded border border-primary-main bg-primary-main/25 px-4 py-2 text-xs text-primary-main", children: /* @__PURE__ */ jsx79("p", { children: page }) }),
       /* @__PURE__ */ jsx79(
         "button",
         {

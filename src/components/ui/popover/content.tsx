@@ -1,4 +1,5 @@
 import * as Popover from "@radix-ui/react-popover";
+import { forwardRef } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const popoverContentVariation = tv({
@@ -8,14 +9,17 @@ const popoverContentVariation = tv({
 export type PopoverContentProps = {} & Popover.PopoverContentProps &
   VariantProps<typeof popoverContentVariation>;
 
-export function Content({ children, className, ...rest }: PopoverContentProps) {
-  return (
-    <Popover.Content
-      {...rest}
-      className={popoverContentVariation({ className })}
-      sideOffset={5}
-    >
-      {children}
-    </Popover.Content>
-  );
-}
+export const Content = forwardRef<any, PopoverContentProps>(
+  ({ className, children, ...rest }, ref) => {
+    return (
+      <Popover.Content
+        {...rest}
+        ref={ref}
+        sideOffset={5}
+        className={popoverContentVariation({ className })}
+      >
+        {children}
+      </Popover.Content>
+    );
+  }
+);

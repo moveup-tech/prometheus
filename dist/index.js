@@ -918,7 +918,7 @@ function DatePicker({
 }
 
 // src/components/ui/form/year-picker/index.tsx
-var import_react8 = require("react");
+var import_react9 = require("react");
 var import_tailwind_variants14 = require("tailwind-variants");
 var import_lucide_react8 = require("lucide-react");
 
@@ -975,22 +975,26 @@ function Portal8(_a) {
 
 // src/components/ui/popover/content.tsx
 var Popover7 = __toESM(require("@radix-ui/react-popover"));
+var import_react8 = require("react");
 var import_tailwind_variants13 = require("tailwind-variants");
 var import_jsx_runtime42 = require("react/jsx-runtime");
 var popoverContentVariation = (0, import_tailwind_variants13.tv)({
   base: "bg-zinc-100 rounded shadow-lg"
 });
-function Content8(_a) {
-  var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
-    Popover7.Content,
-    __spreadProps(__spreadValues({}, rest), {
-      className: popoverContentVariation({ className }),
-      sideOffset: 5,
-      children
-    })
-  );
-}
+var Content8 = (0, import_react8.forwardRef)(
+  (_a, ref) => {
+    var _b = _a, { className, children } = _b, rest = __objRest(_b, ["className", "children"]);
+    return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+      Popover7.Content,
+      __spreadProps(__spreadValues({}, rest), {
+        ref,
+        sideOffset: 5,
+        className: popoverContentVariation({ className }),
+        children
+      })
+    );
+  }
+);
 
 // src/components/ui/popover/trigger.tsx
 var Popover8 = __toESM(require("@radix-ui/react-popover"));
@@ -1025,8 +1029,8 @@ var YearPicker = ({
   onValueChange,
   defaultValue = (/* @__PURE__ */ new Date()).getFullYear()
 }) => {
-  const [year, setYear] = (0, import_react8.useState)(defaultValue);
-  const [years] = (0, import_react8.useState)(
+  const [year, setYear] = (0, import_react9.useState)(defaultValue);
+  const [years] = (0, import_react9.useState)(
     () => Array.from({
       length: 9
     })
@@ -1072,7 +1076,7 @@ YearPicker.displayName = "YearPicker";
 
 // src/components/ui/form/month-picker/index.tsx
 var import_tailwind_variants15 = require("tailwind-variants");
-var import_react9 = require("react");
+var import_react10 = require("react");
 var import_lucide_react9 = require("lucide-react");
 var import_date_fns2 = require("date-fns");
 var import_jsx_runtime45 = require("react/jsx-runtime");
@@ -1103,14 +1107,14 @@ var MonthPicker = ({
   mode = "month",
   defaultValue = (0, import_date_fns2.format)(/* @__PURE__ */ new Date(), "yyyy-MM")
 }) => {
-  const [year, setYear] = (0, import_react9.useState)(() => {
+  const [year, setYear] = (0, import_react10.useState)(() => {
     if (defaultValue && mode === "month-year") {
       const [defaultYear] = defaultValue.split("-");
       return Number(defaultYear);
     }
     return (/* @__PURE__ */ new Date()).getFullYear();
   });
-  const [month, setMonth] = (0, import_react9.useState)(() => {
+  const [month, setMonth] = (0, import_react10.useState)(() => {
     if (defaultValue && mode === "month-year") {
       const [_, defaultMonth] = defaultValue.split("-");
       return months.find((item) => item.value === Number(defaultMonth)).label;
@@ -1196,9 +1200,9 @@ function Trigger10(_a) {
 }
 
 // src/components/surfaces/menu/content.tsx
-var import_react10 = require("react");
+var import_react11 = require("react");
 var import_jsx_runtime48 = require("react/jsx-runtime");
-var Content10 = (0, import_react10.forwardRef)(
+var Content10 = (0, import_react11.forwardRef)(
   (_a, ref) => {
     var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
     return /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", __spreadProps(__spreadValues({}, rest), { ref, className: "w-full bg-background", children }));
@@ -1245,13 +1249,13 @@ function Portal10(_a) {
 }
 
 // src/components/surfaces/menu/item.tsx
-var import_react11 = require("react");
+var import_react12 = require("react");
 var import_tailwind_variants18 = require("tailwind-variants");
 var import_jsx_runtime53 = require("react/jsx-runtime");
 var variant4 = (0, import_tailwind_variants18.tv)({
   base: "flex w-full items-center gap-2 p-4 transition-colors hover:bg-background/75 hover:text-primary-dark"
 });
-var Item3 = (0, import_react11.forwardRef)(
+var Item3 = (0, import_react12.forwardRef)(
   (_a, ref) => {
     var _b = _a, { children, icon: Icon4, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
     return /* @__PURE__ */ (0, import_jsx_runtime53.jsxs)("a", __spreadProps(__spreadValues({}, rest), { ref, className: variant4({ className }), children: [
@@ -1398,12 +1402,12 @@ var Header3 = {
 var import_lucide_react10 = require("lucide-react");
 
 // src/components/surfaces/sidebar/context/sidebar.tsx
-var import_react13 = require("react");
+var import_react14 = require("react");
 
 // src/components/surfaces/sidebar/context/hooks/useSidebarContext.tsx
-var import_react12 = require("react");
+var import_react13 = require("react");
 function useSidebarContext() {
-  const [state, setState] = (0, import_react12.useState)("open");
+  const [state, setState] = (0, import_react13.useState)("open");
   const toggle = () => setState(state === "open" ? "close" : "open");
   return {
     state,
@@ -1413,12 +1417,12 @@ function useSidebarContext() {
 
 // src/components/surfaces/sidebar/context/sidebar.tsx
 var import_jsx_runtime62 = require("react/jsx-runtime");
-var SidebarContext = (0, import_react13.createContext)({});
+var SidebarContext = (0, import_react14.createContext)({});
 function SidebarProvider({ children }) {
   const value = useSidebarContext();
   return /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(SidebarContext.Provider, { value, children });
 }
-var useSidebar = () => (0, import_react13.useContext)(SidebarContext);
+var useSidebar = () => (0, import_react14.useContext)(SidebarContext);
 
 // src/components/surfaces/sidebar/icon.tsx
 var import_jsx_runtime63 = require("react/jsx-runtime");
@@ -1715,7 +1719,7 @@ var import_lucide_react11 = require("lucide-react");
 var import_tailwind_variants32 = require("tailwind-variants");
 
 // src/components/ui/pagination/hooks/usePagination.tsx
-var import_react14 = require("react");
+var import_react15 = require("react");
 function usePagination({
   currentPage = 1,
   perPage: currentPerPage = 10,
@@ -1723,8 +1727,8 @@ function usePagination({
   onPageChange,
   onPerPageChange
 }) {
-  const [page, setPage] = (0, import_react14.useState)(currentPage);
-  const [perPage, setPerPage] = (0, import_react14.useState)(currentPerPage);
+  const [page, setPage] = (0, import_react15.useState)(currentPage);
+  const [perPage, setPerPage] = (0, import_react15.useState)(currentPerPage);
   const nextPage = () => {
     if (page >= Math.ceil(totalCount / currentPerPage)) {
       return;
@@ -1766,10 +1770,10 @@ function usePagination({
 // src/components/ui/pagination/index.tsx
 var import_jsx_runtime80 = require("react/jsx-runtime");
 var pageItemVariant = (0, import_tailwind_variants32.tv)({
-  base: "rounded bg-yellow-700 py-2 px-4 text-xs text-zinc-50",
+  base: "rounded bg-primary-main py-2 px-4 text-xs text-background",
   variants: {
     disabled: {
-      true: "bg-zinc-200 text-zinc-500 cursor-not-allowed"
+      true: "bg-foreground/10 text-foreground/30 cursor-not-allowed"
     }
   }
 });
@@ -1841,7 +1845,7 @@ function Pagination({
           children: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)(import_lucide_react11.ChevronLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("div", { className: "flex items-center rounded border border-yellow-600 bg-yellow-600/25 px-4 py-2 text-xs text-yellow-600", children: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("p", { children: page }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("div", { className: "flex items-center rounded border border-primary-main bg-primary-main/25 px-4 py-2 text-xs text-primary-main", children: /* @__PURE__ */ (0, import_jsx_runtime80.jsx)("p", { children: page }) }),
       /* @__PURE__ */ (0, import_jsx_runtime80.jsx)(
         "button",
         {

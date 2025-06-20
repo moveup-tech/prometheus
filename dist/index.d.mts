@@ -146,7 +146,7 @@ type AlertDialogCancelProps = {} & AlertDialogPrimitive.AlertDialogCancelProps;
 declare function Cancel({ children, ...rest }: AlertDialogCancelProps): react_jsx_runtime.JSX.Element;
 
 type AlertDialogContentProps = {} & AlertDialogPrimitive.AlertDialogContentProps;
-declare function Content$5({ children, ...rest }: AlertDialogContentProps): react_jsx_runtime.JSX.Element;
+declare function Content$4({ children, ...rest }: AlertDialogContentProps): react_jsx_runtime.JSX.Element;
 
 type AlertDialogDescriptionProps = {} & AlertDialogPrimitive.AlertDialogDescriptionProps;
 declare function Description({ children, ...rest }: AlertDialogDescriptionProps): react_jsx_runtime.JSX.Element;
@@ -175,7 +175,7 @@ declare const AlertDialog: {
     Description: typeof Description;
     Action: typeof Action;
     Cancel: typeof Cancel;
-    Content: typeof Content$5;
+    Content: typeof Content$4;
 };
 
 declare const variants$1: tailwind_variants.TVReturnType<{
@@ -315,7 +315,7 @@ type SelectPortalProps = {} & SelectPrimitive.SelectPortalProps;
 declare function Portal$2({ children, ...rest }: SelectPortalProps): react_jsx_runtime.JSX.Element;
 
 type SelectContentProps = {} & SelectPrimitive.SelectContentProps;
-declare function Content$4({ children, ...rest }: SelectContentProps): react_jsx_runtime.JSX.Element;
+declare function Content$3({ children, ...rest }: SelectContentProps): react_jsx_runtime.JSX.Element;
 
 type SelectTriggerProps = {} & SelectPrimitive.SelectTriggerProps;
 declare function Trigger$3({ children, ...rest }: SelectTriggerProps): react_jsx_runtime.JSX.Element;
@@ -333,7 +333,7 @@ declare const Select: {
     Root: typeof Root$5;
     Portal: typeof Portal$2;
     Trigger: typeof Trigger$3;
-    Content: typeof Content$4;
+    Content: typeof Content$3;
     Viewport: typeof Viewport;
     Group: typeof Group;
     ItemIndicator: typeof ItemIndicator;
@@ -551,7 +551,6 @@ declare function Portal$1({ children, ...rest }: PopoverPortalProps): react_jsx_
 
 declare const popoverContentVariation: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "bg-zinc-100 rounded shadow-lg", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "bg-zinc-100 rounded shadow-lg", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>;
 type PopoverContentProps = {} & Popover$1.PopoverContentProps & VariantProps<typeof popoverContentVariation>;
-declare function Content$3({ children, className, ...rest }: PopoverContentProps): react_jsx_runtime.JSX.Element;
 
 type PopoverTriggerProps = {} & Popover$1.PopoverTriggerProps;
 declare function Trigger$2({ children, ...rest }: PopoverTriggerProps): react_jsx_runtime.JSX.Element;
@@ -560,7 +559,7 @@ declare const Popover: {
     Anchor: typeof Anchor;
     Arrow: typeof Arrow;
     Close: typeof Close;
-    Content: typeof Content$3;
+    Content: react.ForwardRefExoticComponent<Popover$1.PopoverContentProps & tailwind_variants.VariantProps<tailwind_variants.TVReturnType<{} | {} | {}, undefined, "bg-zinc-100 rounded shadow-lg", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "bg-zinc-100 rounded shadow-lg", tailwind_variants_dist_config.TVConfig<unknown, {} | {}>, unknown, unknown, undefined>>> & react.RefAttributes<any>>;
     Portal: typeof Portal$1;
     Root: typeof Root$4;
     Trigger: typeof Trigger$2;
