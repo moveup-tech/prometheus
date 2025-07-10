@@ -60,3 +60,10 @@ export const IconRight: StoryObj<ButtonProps> = {
     iconRight: ArrowRight,
   },
 };
+
+export const Sloading: StoryObj<ButtonProps> = {
+  args: {
+    children: "Button",
+    isLoading: true,
+  },
+};

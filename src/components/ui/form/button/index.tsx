@@ -1,10 +1,7 @@
 import { tv } from "tailwind-variants";
 import { VariantProps } from "tailwind-variants";
-import React, {
-  ButtonHTMLAttributes,
-  ElementType,
-  isValidElement,
-} from "react";
+import React, { ButtonHTMLAttributes, ElementType } from "react";
+import { Spinner } from "./spinner";
 
 const buttonVariant = tv({
   base: "px-4 py-2 rounded text-zinc-50 transition-colors flex gap-2 items-center justify-center",
@@ -28,6 +25,7 @@ const buttonVariant = tv({
 export type ButtonProps = {
   as?: ElementType;
   asChild?: boolean;
+  isLoading?: boolean;
   iconLeft?: React.ElementType;
   iconRight?: React.ElementType;
 } & ButtonHTMLAttributes<HTMLButtonElement> &
@@ -36,6 +34,7 @@ export type ButtonProps = {
 
 export function Button({
   as,
+  isLoading = false,
   asChild,
   variant,
   children,
@@ -45,7 +44,7 @@ export function Button({
   iconRight,
   ...rest
 }: ButtonProps) {
-  const As = as || "button";
+  const As: ElementType = as || "button";
 
   const IconLeft = iconLeft;
   const IconRight = iconRight;
@@ -57,11 +56,19 @@ export function Button({
     } as any);
   }
 
+  if (isLoading) {
+    return (
+      <As {...rest} className={buttonVariant({ className, variant, disabled })}>
+        <Spinner />
+      </As>
+    );
+  }
+
   return (
     <As {...rest} className={buttonVariant({ className, variant, disabled })}>
-      {IconLeft && <IconLeft />}
+      {IconLeft && <IconLeft size={16} />}
       {children}
-      {IconRight && <IconRight />}
+      {IconRight && <IconRight size={16} />}
     </As>
   );
 }
