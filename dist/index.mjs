@@ -588,7 +588,44 @@ var Select = {
 // src/components/ui/form/button/index.tsx
 import { tv as tv9 } from "tailwind-variants";
 import React from "react";
+
+// src/components/ui/form/button/spinner.tsx
 import { jsx as jsx31, jsxs as jsxs7 } from "react/jsx-runtime";
+function Spinner() {
+  return /* @__PURE__ */ jsxs7(
+    "svg",
+    {
+      className: "size-5 animate-spin text-white",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: [
+        /* @__PURE__ */ jsx31(
+          "circle",
+          {
+            className: "opacity-25",
+            cx: "12",
+            cy: "12",
+            r: "10",
+            stroke: "currentColor",
+            strokeWidth: "4"
+          }
+        ),
+        /* @__PURE__ */ jsx31(
+          "path",
+          {
+            className: "opacity-75",
+            fill: "currentColor",
+            d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          }
+        )
+      ]
+    }
+  );
+}
+
+// src/components/ui/form/button/index.tsx
+import { jsx as jsx32, jsxs as jsxs8 } from "react/jsx-runtime";
 var buttonVariant = tv9({
   base: "px-4 py-2 rounded text-zinc-50 transition-colors flex gap-2 items-center justify-center",
   variants: {
@@ -610,6 +647,7 @@ var buttonVariant = tv9({
 function Button(_a) {
   var _b = _a, {
     as,
+    isLoading = false,
     asChild,
     variant: variant12,
     children,
@@ -619,6 +657,7 @@ function Button(_a) {
     iconRight
   } = _b, rest = __objRest(_b, [
     "as",
+    "isLoading",
     "asChild",
     "variant",
     "children",
@@ -635,10 +674,13 @@ function Button(_a) {
       className: buttonVariant({ className, variant: variant12, disabled })
     }));
   }
-  return /* @__PURE__ */ jsxs7(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant12, disabled }), children: [
-    IconLeft && /* @__PURE__ */ jsx31(IconLeft, {}),
+  if (isLoading) {
+    return /* @__PURE__ */ jsx32(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant12, disabled }), children: /* @__PURE__ */ jsx32(Spinner, {}) }));
+  }
+  return /* @__PURE__ */ jsxs8(As, __spreadProps(__spreadValues({}, rest), { className: buttonVariant({ className, variant: variant12, disabled }), children: [
+    IconLeft && /* @__PURE__ */ jsx32(IconLeft, { size: 16 }),
     children,
-    IconRight && /* @__PURE__ */ jsx31(IconRight, {})
+    IconRight && /* @__PURE__ */ jsx32(IconRight, { size: 16 })
   ] }));
 }
 Button.displayName = "Button";
@@ -647,7 +689,7 @@ Button.displayName = "Button";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { tv as tv10 } from "tailwind-variants";
-import { jsx as jsx32 } from "react/jsx-runtime";
+import { jsx as jsx33 } from "react/jsx-runtime";
 var variants2 = tv10({
   base: "w-5 h-5 rounded border border-zinc-200 bg-zinc-100",
   variants: {
@@ -677,14 +719,14 @@ function Checkbox({
       onValueChange(!isChecked);
     }
   };
-  return /* @__PURE__ */ jsx32(
+  return /* @__PURE__ */ jsx33(
     "button",
     {
       type: "button",
       disabled,
       onClick: toggleCheck,
       className: variants2({ checked: isChecked, disabled }),
-      children: isChecked && /* @__PURE__ */ jsx32(Check, { size: 18 })
+      children: isChecked && /* @__PURE__ */ jsx33(Check, { size: 18 })
     }
   );
 }
@@ -692,7 +734,7 @@ function Checkbox({
 // src/components/ui/form/textarea/index.tsx
 import { tv as tv11 } from "tailwind-variants";
 import { forwardRef as forwardRef3 } from "react";
-import { Fragment as Fragment2, jsx as jsx33, jsxs as jsxs8 } from "react/jsx-runtime";
+import { Fragment as Fragment2, jsx as jsx34, jsxs as jsxs9 } from "react/jsx-runtime";
 var variants3 = tv11({
   base: "w-full p-2 bg-zinc-50 border border-zinc-100 rounded outline-primary-dark",
   variants: {
@@ -707,8 +749,8 @@ var variants3 = tv11({
 var TextArea = forwardRef3(
   (_a, ref) => {
     var _b = _a, { error, name, className } = _b, rest = __objRest(_b, ["error", "name", "className"]);
-    return /* @__PURE__ */ jsxs8(Fragment2, { children: [
-      /* @__PURE__ */ jsx33("div", { className: variants3({ className }), children: /* @__PURE__ */ jsx33(
+    return /* @__PURE__ */ jsxs9(Fragment2, { children: [
+      /* @__PURE__ */ jsx34("div", { className: variants3({ className }), children: /* @__PURE__ */ jsx34(
         "textarea",
         __spreadProps(__spreadValues({
           ref
@@ -717,7 +759,7 @@ var TextArea = forwardRef3(
           className: "w-full bg-transparent outline-none"
         })
       ) }),
-      error && /* @__PURE__ */ jsx33("p", { className: "mt-1 text-xs text-red-600", children: error })
+      error && /* @__PURE__ */ jsx34("p", { className: "mt-1 text-xs text-red-600", children: error })
     ] });
   }
 );
@@ -726,38 +768,38 @@ TextArea.displayName = "TextArea";
 // src/components/ui/form/input-file/index.tsx
 import { UploadIcon } from "lucide-react";
 import { forwardRef as forwardRef4, useState as useState2 } from "react";
-import { jsx as jsx34, jsxs as jsxs9 } from "react/jsx-runtime";
+import { jsx as jsx35, jsxs as jsxs10 } from "react/jsx-runtime";
 var InputFile = forwardRef4(
   (_a, ref) => {
     var _b = _a, { accept = ".pdf" } = _b, rest = __objRest(_b, ["accept"]);
     const [files, setFiles] = useState2(null);
     const onInputChange = (e) => setFiles(e.currentTarget.files);
-    return /* @__PURE__ */ jsxs9("div", { className: "flex w-full items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100 text-zinc-950", children: [
-      /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsxs10("div", { className: "flex w-full items-center justify-center rounded border border-dashed border-zinc-200 bg-zinc-100 text-zinc-950", children: [
+      /* @__PURE__ */ jsx35(
         "label",
         {
           htmlFor: "file",
           className: "flex h-full w-full cursor-pointer items-center justify-center text-center",
-          children: /* @__PURE__ */ jsx34("div", { className: "flex w-full items-center justify-center", children: /* @__PURE__ */ jsx34("small", { children: !files ? /* @__PURE__ */ jsxs9("div", { className: "p-4", children: [
-            /* @__PURE__ */ jsx34("p", { children: "Clique aqui para inserir um documento" }),
-            /* @__PURE__ */ jsx34("div", { className: "flex items-center justify-center p-4", children: /* @__PURE__ */ jsx34(UploadIcon, { className: "text-zinc-400" }) }),
-            /* @__PURE__ */ jsxs9("small", { className: "text-zinc-500", children: [
+          children: /* @__PURE__ */ jsx35("div", { className: "flex w-full items-center justify-center", children: /* @__PURE__ */ jsx35("small", { children: !files ? /* @__PURE__ */ jsxs10("div", { className: "p-4", children: [
+            /* @__PURE__ */ jsx35("p", { children: "Clique aqui para inserir um documento" }),
+            /* @__PURE__ */ jsx35("div", { className: "flex items-center justify-center p-4", children: /* @__PURE__ */ jsx35(UploadIcon, { className: "text-zinc-400" }) }),
+            /* @__PURE__ */ jsxs10("small", { className: "text-zinc-500", children: [
               "(Somente arquivos ",
               accept,
               ")"
             ] })
-          ] }) : /* @__PURE__ */ jsxs9("div", { className: "p-4", children: [
-            /* @__PURE__ */ jsx34("p", { children: "Arquivos selecionados:" }),
-            /* @__PURE__ */ jsx34("div", { className: "mt-4", children: Array.from(files).map((item, index) => /* @__PURE__ */ jsxs9("small", { children: [
+          ] }) : /* @__PURE__ */ jsxs10("div", { className: "p-4", children: [
+            /* @__PURE__ */ jsx35("p", { children: "Arquivos selecionados:" }),
+            /* @__PURE__ */ jsx35("div", { className: "mt-4", children: Array.from(files).map((item, index) => /* @__PURE__ */ jsxs10("small", { children: [
               item.name,
               " ",
               index > 0 && ", "
             ] }, item.name)) }),
-            /* @__PURE__ */ jsx34("small", { className: "text-zinc-500" })
+            /* @__PURE__ */ jsx35("small", { className: "text-zinc-500" })
           ] }) }) })
         }
       ),
-      /* @__PURE__ */ jsx34(
+      /* @__PURE__ */ jsx35(
         "input",
         __spreadProps(__spreadValues({
           id: "file",
@@ -782,10 +824,10 @@ import * as Popover from "@radix-ui/react-popover";
 // src/components/surfaces/calendar/index.tsx
 import { ptBR } from "react-day-picker/locale";
 import { DayPicker } from "react-day-picker";
-import { jsx as jsx35 } from "react/jsx-runtime";
+import { jsx as jsx36 } from "react/jsx-runtime";
 function Calendar(_a) {
   var rest = __objRest(_a, []);
-  return /* @__PURE__ */ jsx35(
+  return /* @__PURE__ */ jsx36(
     DayPicker,
     __spreadProps(__spreadValues({}, rest), {
       locale: ptBR,
@@ -807,7 +849,7 @@ function Calendar(_a) {
 }
 
 // src/components/ui/form/date-picker/index.tsx
-import { jsx as jsx36, jsxs as jsxs10 } from "react/jsx-runtime";
+import { jsx as jsx37, jsxs as jsxs11 } from "react/jsx-runtime";
 function DatePicker({
   defaultValue,
   onValueChange,
@@ -833,20 +875,20 @@ function DatePicker({
       onValueChange(data);
     }
   };
-  return /* @__PURE__ */ jsxs10(Popover.Root, { children: [
-    /* @__PURE__ */ jsx36(Popover.Trigger, { children: /* @__PURE__ */ jsxs10(
+  return /* @__PURE__ */ jsxs11(Popover.Root, { children: [
+    /* @__PURE__ */ jsx37(Popover.Trigger, { children: /* @__PURE__ */ jsxs11(
       Button,
       {
         variant: "ghost",
         className: "w-full border border-zinc-300",
         type: "button",
         children: [
-          /* @__PURE__ */ jsx36(Calendar1, { size: 14 }),
+          /* @__PURE__ */ jsx37(Calendar1, { size: 14 }),
           mode === "single" ? format(selected, "dd/LL/yyyy") : format(selected.from || /* @__PURE__ */ new Date(), "dd/LL/yyyy") + " - " + format(selected.to || /* @__PURE__ */ new Date(), "dd/LL/yyyy")
         ]
       }
     ) }),
-    /* @__PURE__ */ jsx36(Popover.Portal, { children: /* @__PURE__ */ jsx36(Popover.Content, { align: "start", children: /* @__PURE__ */ jsx36(
+    /* @__PURE__ */ jsx37(Popover.Portal, { children: /* @__PURE__ */ jsx37(Popover.Content, { align: "start", children: /* @__PURE__ */ jsx37(
       Calendar,
       {
         required: true,
@@ -866,30 +908,30 @@ import { Calendar1 as Calendar12, ChevronLeft, ChevronRight } from "lucide-react
 
 // src/components/ui/popover/root.tsx
 import * as Popover2 from "@radix-ui/react-popover";
-import { jsx as jsx37 } from "react/jsx-runtime";
+import { jsx as jsx38 } from "react/jsx-runtime";
 function Root9(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx37(Popover2.Root, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx38(Popover2.Root, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/popover/arrow.tsx
 import * as Popover3 from "@radix-ui/react-popover";
-import { jsx as jsx38 } from "react/jsx-runtime";
+import { jsx as jsx39 } from "react/jsx-runtime";
 function Arrow2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx38(Popover3.Arrow, __spreadProps(__spreadValues({}, rest), { className: "fill-zinc-50", children }));
+  return /* @__PURE__ */ jsx39(Popover3.Arrow, __spreadProps(__spreadValues({}, rest), { className: "fill-zinc-50", children }));
 }
 
 // src/components/ui/popover/close.tsx
 import * as Popover4 from "@radix-ui/react-popover";
 import { tv as tv12 } from "tailwind-variants";
-import { jsx as jsx39 } from "react/jsx-runtime";
+import { jsx as jsx40 } from "react/jsx-runtime";
 var popoverCloseVariant = tv12({
   base: "absolute right-2 top-2 inline-flex cursor-pointer items-center justify-center text-zinc-400 outline-none border border-zinc-400 rounded hover:bg-zinc-100 transition-colors"
 });
 function Close3(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx39(
+  return /* @__PURE__ */ jsx40(
     Popover4.Close,
     __spreadProps(__spreadValues({}, rest), {
       className: popoverCloseVariant({ className }),
@@ -901,32 +943,32 @@ function Close3(_a) {
 
 // src/components/ui/popover/anchor.tsx
 import * as Popover5 from "@radix-ui/react-popover";
-import { jsx as jsx40 } from "react/jsx-runtime";
+import { jsx as jsx41 } from "react/jsx-runtime";
 function Anchor2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx40(Popover5.Anchor, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx41(Popover5.Anchor, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/popover/portal.tsx
 import * as Popover6 from "@radix-ui/react-popover";
-import { jsx as jsx41 } from "react/jsx-runtime";
+import { jsx as jsx42 } from "react/jsx-runtime";
 function Portal8(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx41(Popover6.Portal, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx42(Popover6.Portal, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/popover/content.tsx
 import * as Popover7 from "@radix-ui/react-popover";
 import { forwardRef as forwardRef5 } from "react";
 import { tv as tv13 } from "tailwind-variants";
-import { jsx as jsx42 } from "react/jsx-runtime";
+import { jsx as jsx43 } from "react/jsx-runtime";
 var popoverContentVariation = tv13({
   base: "bg-zinc-100 rounded shadow-lg"
 });
 var Content8 = forwardRef5(
   (_a, ref) => {
     var _b = _a, { className, children } = _b, rest = __objRest(_b, ["className", "children"]);
-    return /* @__PURE__ */ jsx42(
+    return /* @__PURE__ */ jsx43(
       Popover7.Content,
       __spreadProps(__spreadValues({}, rest), {
         ref,
@@ -940,10 +982,10 @@ var Content8 = forwardRef5(
 
 // src/components/ui/popover/trigger.tsx
 import * as Popover8 from "@radix-ui/react-popover";
-import { jsx as jsx43 } from "react/jsx-runtime";
+import { jsx as jsx44 } from "react/jsx-runtime";
 function Trigger8(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx43(Popover8.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx44(Popover8.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/popover/index.tsx
@@ -958,7 +1000,7 @@ var Popover9 = {
 };
 
 // src/components/ui/form/year-picker/index.tsx
-import { jsx as jsx44, jsxs as jsxs11 } from "react/jsx-runtime";
+import { jsx as jsx45, jsxs as jsxs12 } from "react/jsx-runtime";
 var variant2 = tv14({
   base: "rounded bg-zinc-100 p-2 transition-colors hover:bg-zinc-200",
   variants: {
@@ -985,25 +1027,25 @@ var YearPicker = ({
   };
   const handleNextYearChange = () => setYear(year + 1);
   const handlePreviousYearChange = () => setYear(year - 1);
-  return /* @__PURE__ */ jsxs11(Popover9.Root, { children: [
-    /* @__PURE__ */ jsx44(Popover9.Trigger, { children: /* @__PURE__ */ jsxs11(
+  return /* @__PURE__ */ jsxs12(Popover9.Root, { children: [
+    /* @__PURE__ */ jsx45(Popover9.Trigger, { children: /* @__PURE__ */ jsxs12(
       Button,
       {
         variant: "ghost",
         className: "w-full border border-zinc-300",
         type: "button",
         children: [
-          /* @__PURE__ */ jsx44(Calendar12, { size: 14 }),
-          /* @__PURE__ */ jsx44("p", { children: year })
+          /* @__PURE__ */ jsx45(Calendar12, { size: 14 }),
+          /* @__PURE__ */ jsx45("p", { children: year })
         ]
       }
     ) }),
-    /* @__PURE__ */ jsx44(Popover9.Portal, { children: /* @__PURE__ */ jsx44(Popover9.Content, { align: "start", children: /* @__PURE__ */ jsxs11("div", { children: [
-      /* @__PURE__ */ jsxs11("div", { className: "flex items-center justify-between border-b border-b-zinc-200 p-2", children: [
-        /* @__PURE__ */ jsx44("button", { onClick: handlePreviousYearChange, children: /* @__PURE__ */ jsx44(ChevronLeft, {}) }),
-        /* @__PURE__ */ jsx44("button", { onClick: handleNextYearChange, children: /* @__PURE__ */ jsx44(ChevronRight, {}) })
+    /* @__PURE__ */ jsx45(Popover9.Portal, { children: /* @__PURE__ */ jsx45(Popover9.Content, { align: "start", children: /* @__PURE__ */ jsxs12("div", { children: [
+      /* @__PURE__ */ jsxs12("div", { className: "flex items-center justify-between border-b border-b-zinc-200 p-2", children: [
+        /* @__PURE__ */ jsx45("button", { onClick: handlePreviousYearChange, children: /* @__PURE__ */ jsx45(ChevronLeft, {}) }),
+        /* @__PURE__ */ jsx45("button", { onClick: handleNextYearChange, children: /* @__PURE__ */ jsx45(ChevronRight, {}) })
       ] }),
-      /* @__PURE__ */ jsx44("div", { className: "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2", children: years.map((_, index) => /* @__PURE__ */ jsx44(
+      /* @__PURE__ */ jsx45("div", { className: "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2", children: years.map((_, index) => /* @__PURE__ */ jsx45(
         "button",
         {
           onClick: () => handleYearChange(year + index),
@@ -1021,7 +1063,7 @@ import { tv as tv15 } from "tailwind-variants";
 import { useState as useState5 } from "react";
 import { Calendar1 as Calendar13, ChevronLeft as ChevronLeft2, ChevronRight as ChevronRight2 } from "lucide-react";
 import { format as format2 } from "date-fns";
-import { jsx as jsx45, jsxs as jsxs12 } from "react/jsx-runtime";
+import { jsx as jsx46, jsxs as jsxs13 } from "react/jsx-runtime";
 var months = [
   { label: "Janeiro", value: 1 },
   { label: "Fevereiro", value: 2 },
@@ -1083,16 +1125,16 @@ var MonthPicker = ({
   };
   const handleNextYearChange = () => setYear(year + 1);
   const handlePreviousYearChange = () => setYear(year - 1);
-  return /* @__PURE__ */ jsxs12(Popover9.Root, { children: [
-    /* @__PURE__ */ jsx45(Popover9.Trigger, { children: /* @__PURE__ */ jsxs12(
+  return /* @__PURE__ */ jsxs13(Popover9.Root, { children: [
+    /* @__PURE__ */ jsx46(Popover9.Trigger, { children: /* @__PURE__ */ jsxs13(
       Button,
       {
         variant: "ghost",
         className: "w-full border border-zinc-300",
         type: "button",
         children: [
-          /* @__PURE__ */ jsx45(Calendar13, { size: 14 }),
-          /* @__PURE__ */ jsxs12("p", { children: [
+          /* @__PURE__ */ jsx46(Calendar13, { size: 14 }),
+          /* @__PURE__ */ jsxs13("p", { children: [
             month,
             " ",
             mode === "month-year" && " - " + year
@@ -1100,13 +1142,13 @@ var MonthPicker = ({
         ]
       }
     ) }),
-    /* @__PURE__ */ jsx45(Popover9.Portal, { children: /* @__PURE__ */ jsx45(Popover9.Content, { align: "start", children: /* @__PURE__ */ jsxs12("div", { children: [
-      mode === "month-year" && /* @__PURE__ */ jsxs12("div", { className: "flex items-center justify-between border-b border-b-zinc-200 p-2", children: [
-        /* @__PURE__ */ jsx45("button", { onClick: handlePreviousYearChange, children: /* @__PURE__ */ jsx45(ChevronLeft2, {}) }),
-        /* @__PURE__ */ jsx45("p", { children: year }),
-        /* @__PURE__ */ jsx45("button", { onClick: handleNextYearChange, children: /* @__PURE__ */ jsx45(ChevronRight2, {}) })
+    /* @__PURE__ */ jsx46(Popover9.Portal, { children: /* @__PURE__ */ jsx46(Popover9.Content, { align: "start", children: /* @__PURE__ */ jsxs13("div", { children: [
+      mode === "month-year" && /* @__PURE__ */ jsxs13("div", { className: "flex items-center justify-between border-b border-b-zinc-200 p-2", children: [
+        /* @__PURE__ */ jsx46("button", { onClick: handlePreviousYearChange, children: /* @__PURE__ */ jsx46(ChevronLeft2, {}) }),
+        /* @__PURE__ */ jsx46("p", { children: year }),
+        /* @__PURE__ */ jsx46("button", { onClick: handleNextYearChange, children: /* @__PURE__ */ jsx46(ChevronRight2, {}) })
       ] }),
-      /* @__PURE__ */ jsx45("div", { className: "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2", children: months.map((item) => /* @__PURE__ */ jsx45(
+      /* @__PURE__ */ jsx46("div", { className: "grid w-fit grid-cols-3 gap-2 rounded bg-zinc-50 p-2", children: months.map((item) => /* @__PURE__ */ jsx46(
         "button",
         {
           onClick: () => handleMonthChange(item.value),
@@ -1123,85 +1165,85 @@ MonthPicker.displayName = "MonthPicker";
 
 // src/components/ui/tooltip/index.tsx
 import * as Primitive from "@radix-ui/react-tooltip";
-import { jsx as jsx46, jsxs as jsxs13 } from "react/jsx-runtime";
+import { jsx as jsx47, jsxs as jsxs14 } from "react/jsx-runtime";
 var Tooltip = ({ children, value }) => {
-  return /* @__PURE__ */ jsx46(Primitive.Provider, { children: /* @__PURE__ */ jsxs13(Primitive.Root, { children: [
-    /* @__PURE__ */ jsx46(Primitive.Trigger, { className: "w-full", children }),
-    /* @__PURE__ */ jsx46(Primitive.Portal, { children: /* @__PURE__ */ jsxs13(Primitive.Content, { className: "w-full select-none rounded bg-white px-[15px] py-2.5 text-[15px] leading-none shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity]", children: [
+  return /* @__PURE__ */ jsx47(Primitive.Provider, { children: /* @__PURE__ */ jsxs14(Primitive.Root, { children: [
+    /* @__PURE__ */ jsx47(Primitive.Trigger, { className: "w-full", children }),
+    /* @__PURE__ */ jsx47(Primitive.Portal, { children: /* @__PURE__ */ jsxs14(Primitive.Content, { className: "w-full select-none rounded bg-white px-[15px] py-2.5 text-[15px] leading-none shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity]", children: [
       value,
-      /* @__PURE__ */ jsx46(Primitive.Arrow, { className: "fill-white" })
+      /* @__PURE__ */ jsx47(Primitive.Arrow, { className: "fill-white" })
     ] }) })
   ] }) });
 };
 
 // src/components/surfaces/menu/trigger.tsx
-import { jsx as jsx47 } from "react/jsx-runtime";
+import { jsx as jsx48 } from "react/jsx-runtime";
 function Trigger10(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx47(Popover9.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx48(Popover9.Trigger, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/surfaces/menu/content.tsx
 import { forwardRef as forwardRef6 } from "react";
-import { jsx as jsx48 } from "react/jsx-runtime";
+import { jsx as jsx49 } from "react/jsx-runtime";
 var Content10 = forwardRef6(
   (_a, ref) => {
     var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-    return /* @__PURE__ */ jsx48("div", __spreadProps(__spreadValues({}, rest), { ref, className: "w-full bg-background", children }));
+    return /* @__PURE__ */ jsx49("div", __spreadProps(__spreadValues({}, rest), { ref, className: "w-full bg-background", children }));
   }
 );
 
 // src/components/surfaces/menu/header.tsx
 import { tv as tv16 } from "tailwind-variants";
-import { jsx as jsx49 } from "react/jsx-runtime";
+import { jsx as jsx50 } from "react/jsx-runtime";
 var menuHeaderVariant = tv16({
   base: "p-4 flex gap-4 items-center border-b border-b-zinc-200 rounded-t bg-bakcground"
 });
 function Header2(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx49("div", __spreadProps(__spreadValues({ className: menuHeaderVariant({ className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx50("div", __spreadProps(__spreadValues({ className: menuHeaderVariant({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/menu/footer.tsx
 import { tv as tv17 } from "tailwind-variants";
-import { jsx as jsx50 } from "react/jsx-runtime";
+import { jsx as jsx51 } from "react/jsx-runtime";
 var menuFooterVariant = tv17({
   base: "bg-background border-t border-t-background-light rounded-b"
 });
 function Footer2(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx50("div", __spreadProps(__spreadValues({ className: menuFooterVariant({ className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx51("div", __spreadProps(__spreadValues({ className: menuFooterVariant({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/menu/root.tsx
-import { jsx as jsx51 } from "react/jsx-runtime";
+import { jsx as jsx52 } from "react/jsx-runtime";
 function Root11(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx51(Popover9.Root, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx52(Popover9.Root, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/surfaces/menu/portal.tsx
-import { jsx as jsx52, jsxs as jsxs14 } from "react/jsx-runtime";
+import { jsx as jsx53, jsxs as jsxs15 } from "react/jsx-runtime";
 function Portal10(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx52(Popover9.Portal, __spreadProps(__spreadValues({}, rest), { children: /* @__PURE__ */ jsxs14(Popover9.Content, __spreadProps(__spreadValues({}, rest), { className: "w-[276px]", children: [
+  return /* @__PURE__ */ jsx53(Popover9.Portal, __spreadProps(__spreadValues({}, rest), { children: /* @__PURE__ */ jsxs15(Popover9.Content, __spreadProps(__spreadValues({}, rest), { className: "w-[276px]", children: [
     children,
-    /* @__PURE__ */ jsx52(Popover9.Arrow, {})
+    /* @__PURE__ */ jsx53(Popover9.Arrow, {})
   ] })) }));
 }
 
 // src/components/surfaces/menu/item.tsx
 import { forwardRef as forwardRef7 } from "react";
 import { tv as tv18 } from "tailwind-variants";
-import { jsx as jsx53, jsxs as jsxs15 } from "react/jsx-runtime";
+import { jsx as jsx54, jsxs as jsxs16 } from "react/jsx-runtime";
 var variant4 = tv18({
   base: "flex w-full items-center gap-2 p-4 transition-colors hover:bg-background/75 hover:text-primary-dark"
 });
 var Item3 = forwardRef7(
   (_a, ref) => {
     var _b = _a, { children, icon: Icon4, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
-    return /* @__PURE__ */ jsxs15("a", __spreadProps(__spreadValues({}, rest), { ref, className: variant4({ className }), children: [
-      Icon4 && /* @__PURE__ */ jsx53(Icon4, { size: 14 }),
+    return /* @__PURE__ */ jsxs16("a", __spreadProps(__spreadValues({}, rest), { ref, className: variant4({ className }), children: [
+      Icon4 && /* @__PURE__ */ jsx54(Icon4, { size: 14 }),
       children
     ] }));
   }
@@ -1219,9 +1261,9 @@ var Menu = {
 };
 
 // src/components/surfaces/footer/index.tsx
-import { jsxs as jsxs16 } from "react/jsx-runtime";
+import { jsxs as jsxs17 } from "react/jsx-runtime";
 function Footer3({ title }) {
-  return /* @__PURE__ */ jsxs16("footer", { className: "item-center flex w-full justify-center bg-zinc-100 p-4 text-xs text-zinc-700", children: [
+  return /* @__PURE__ */ jsxs17("footer", { className: "item-center flex w-full justify-center bg-zinc-100 p-4 text-xs text-zinc-700", children: [
     title,
     " \xA9 | ",
     (/* @__PURE__ */ new Date()).getFullYear(),
@@ -1230,26 +1272,26 @@ function Footer3({ title }) {
 }
 
 // src/components/surfaces/header/header-footer.tsx
-import { jsx as jsx54 } from "react/jsx-runtime";
+import { jsx as jsx55 } from "react/jsx-runtime";
 function Footer4(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx54(Menu.Footer, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx55(Menu.Footer, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/surfaces/header/header-item.tsx
-import { jsx as jsx55 } from "react/jsx-runtime";
+import { jsx as jsx56 } from "react/jsx-runtime";
 function Item4({
   href,
   children,
   icon: Icon4,
   className
 }) {
-  return /* @__PURE__ */ jsx55(Menu.Item, { className, href, icon: Icon4, children });
+  return /* @__PURE__ */ jsx56(Menu.Item, { className, href, icon: Icon4, children });
 }
 
 // src/components/typograph/text/index.tsx
 import { tv as tv19 } from "tailwind-variants";
-import { jsx as jsx56 } from "react/jsx-runtime";
+import { jsx as jsx57 } from "react/jsx-runtime";
 var textVariant = tv19({
   variants: {
     size: {
@@ -1269,11 +1311,11 @@ var textVariant = tv19({
 function Text(_a) {
   var _b = _a, { as = "p", children, size } = _b, rest = __objRest(_b, ["as", "children", "size"]);
   const As = as;
-  return /* @__PURE__ */ jsx56(As, __spreadProps(__spreadValues({ className: textVariant({ size }) }, rest), { children }));
+  return /* @__PURE__ */ jsx57(As, __spreadProps(__spreadValues({ className: textVariant({ size }) }, rest), { children }));
 }
 
 // src/components/surfaces/header/header-menu.tsx
-import { jsx as jsx57, jsxs as jsxs17 } from "react/jsx-runtime";
+import { jsx as jsx58, jsxs as jsxs18 } from "react/jsx-runtime";
 function Menu2(_a) {
   var _b = _a, {
     role,
@@ -1286,14 +1328,14 @@ function Menu2(_a) {
     "username",
     "children"
   ]);
-  return /* @__PURE__ */ jsxs17(Menu.Root, __spreadProps(__spreadValues({}, rest), { children: [
-    /* @__PURE__ */ jsx57(Menu.Trigger, { children: /* @__PURE__ */ jsx57(Avatar, { image, username }) }),
-    /* @__PURE__ */ jsxs17(Menu.Portal, { children: [
-      /* @__PURE__ */ jsxs17(Menu.Header, { children: [
-        /* @__PURE__ */ jsx57(Avatar, { image, username }),
-        /* @__PURE__ */ jsxs17("div", { className: "flex flex-col", children: [
-          /* @__PURE__ */ jsx57(Text, { as: "strong", children: username }),
-          /* @__PURE__ */ jsx57(Text, { size: "xs", as: "small", children: role })
+  return /* @__PURE__ */ jsxs18(Menu.Root, __spreadProps(__spreadValues({}, rest), { children: [
+    /* @__PURE__ */ jsx58(Menu.Trigger, { children: /* @__PURE__ */ jsx58(Avatar, { image, username }) }),
+    /* @__PURE__ */ jsxs18(Menu.Portal, { children: [
+      /* @__PURE__ */ jsxs18(Menu.Header, { children: [
+        /* @__PURE__ */ jsx58(Avatar, { image, username }),
+        /* @__PURE__ */ jsxs18("div", { className: "flex flex-col", children: [
+          /* @__PURE__ */ jsx58(Text, { as: "strong", children: username }),
+          /* @__PURE__ */ jsx58(Text, { size: "xs", as: "small", children: role })
         ] })
       ] }),
       children
@@ -1302,32 +1344,32 @@ function Menu2(_a) {
 }
 
 // src/components/surfaces/header/header-content.tsx
-import { jsx as jsx58 } from "react/jsx-runtime";
+import { jsx as jsx59 } from "react/jsx-runtime";
 function Content11(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx58(Menu.Content, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx59(Menu.Content, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/surfaces/header/image.tsx
 import { tv as tv20 } from "tailwind-variants";
-import { jsx as jsx59 } from "react/jsx-runtime";
+import { jsx as jsx60 } from "react/jsx-runtime";
 var imageVariation = tv20({
   base: "w-24"
 });
 function Image(_a) {
   var _b = _a, { className } = _b, rest = __objRest(_b, ["className"]);
-  return /* @__PURE__ */ jsx59("img", __spreadValues({ className: imageVariation({ className }) }, rest));
+  return /* @__PURE__ */ jsx60("img", __spreadValues({ className: imageVariation({ className }) }, rest));
 }
 
 // src/components/surfaces/header/root.tsx
 import { tv as tv21 } from "tailwind-variants";
-import { jsx as jsx60 } from "react/jsx-runtime";
+import { jsx as jsx61 } from "react/jsx-runtime";
 var rootVariation = tv21({
   base: "fixed left-0 top-0 w-full bg-foreground/5 border-b border-b-foreground/10"
 });
 function Root12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx60("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx60("div", { className: "m-auto flex w-full max-w-7xl items-center justify-between p-4", children }) }));
+  return /* @__PURE__ */ jsx61("header", __spreadProps(__spreadValues({ className: rootVariation({ className }) }, rest), { children: /* @__PURE__ */ jsx61("div", { className: "m-auto flex w-full max-w-7xl items-center justify-between p-4", children }) }));
 }
 
 // src/components/surfaces/header/index.tsx
@@ -1358,25 +1400,25 @@ function useSidebarContext() {
 }
 
 // src/components/surfaces/sidebar/context/sidebar.tsx
-import { jsx as jsx61 } from "react/jsx-runtime";
+import { jsx as jsx62 } from "react/jsx-runtime";
 var SidebarContext = createContext({});
 function SidebarProvider({ children }) {
   const value = useSidebarContext();
-  return /* @__PURE__ */ jsx61(SidebarContext.Provider, { value, children });
+  return /* @__PURE__ */ jsx62(SidebarContext.Provider, { value, children });
 }
 var useSidebar = () => useContext(SidebarContext);
 
 // src/components/surfaces/sidebar/icon.tsx
-import { jsx as jsx62 } from "react/jsx-runtime";
+import { jsx as jsx63 } from "react/jsx-runtime";
 function Icon3(_a) {
   var rest = __objRest(_a, []);
   const { toggle, state } = useSidebar();
-  return state === "open" ? /* @__PURE__ */ jsx62(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle })) : /* @__PURE__ */ jsx62(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle }));
+  return state === "open" ? /* @__PURE__ */ jsx63(PanelLeftClose, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle })) : /* @__PURE__ */ jsx63(PanelLeftOpen, __spreadProps(__spreadValues({}, rest), { className: "cursor-pointer", onClick: toggle }));
 }
 
 // src/components/surfaces/sidebar/item.tsx
 import { tv as tv22 } from "tailwind-variants";
-import { jsx as jsx63, jsxs as jsxs18 } from "react/jsx-runtime";
+import { jsx as jsx64, jsxs as jsxs19 } from "react/jsx-runtime";
 var variant5 = tv22({
   base: "flex w-full gap-2 p-4 text-left transition-colors data-[state=close]:max-w-24 data-[state=close]:justify-center hover:bg-foreground/5"
 });
@@ -1384,9 +1426,9 @@ function Item5(_a) {
   var _b = _a, { children, icon, className } = _b, rest = __objRest(_b, ["children", "icon", "className"]);
   const Icon4 = icon;
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsxs18("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
-    Icon4 && /* @__PURE__ */ jsx63(Icon4, {}),
-    /* @__PURE__ */ jsx63(
+  return /* @__PURE__ */ jsxs19("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant5({ className }), children: [
+    Icon4 && /* @__PURE__ */ jsx64(Icon4, {}),
+    /* @__PURE__ */ jsx64(
       Text,
       {
         as: "strong",
@@ -1399,15 +1441,15 @@ function Item5(_a) {
 }
 
 // src/components/surfaces/sidebar/root.tsx
-import { jsx as jsx64 } from "react/jsx-runtime";
+import { jsx as jsx65 } from "react/jsx-runtime";
 function Root13(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx64(SidebarProvider, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx65(SidebarProvider, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/typograph/heading/index.tsx
 import { tv as tv23 } from "tailwind-variants";
-import { jsx as jsx65 } from "react/jsx-runtime";
+import { jsx as jsx66 } from "react/jsx-runtime";
 var headingVariant = tv23({
   variants: {
     size: {
@@ -1437,15 +1479,15 @@ function Heading(_a) {
     "className"
   ]);
   const As = as;
-  return /* @__PURE__ */ jsx65(As, __spreadProps(__spreadValues({ className: headingVariant({ size, className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx66(As, __spreadProps(__spreadValues({ className: headingVariant({ size, className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/title.tsx
-import { jsx as jsx66 } from "react/jsx-runtime";
+import { jsx as jsx67 } from "react/jsx-runtime";
 function Title4(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx66(
+  return /* @__PURE__ */ jsx67(
     Heading,
     __spreadProps(__spreadValues({
       "data-state": state,
@@ -1459,26 +1501,26 @@ function Title4(_a) {
 
 // src/components/surfaces/sidebar/footer.tsx
 import { tv as tv24 } from "tailwind-variants";
-import { jsx as jsx67 } from "react/jsx-runtime";
+import { jsx as jsx68 } from "react/jsx-runtime";
 var variant6 = tv24({
   base: "w-full rounded-b data-[state=close]:max-w-24"
 });
 function Footer5(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx67("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
+  return /* @__PURE__ */ jsx68("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant6({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/header.tsx
 import { tv as tv25 } from "tailwind-variants";
-import { jsx as jsx68 } from "react/jsx-runtime";
+import { jsx as jsx69 } from "react/jsx-runtime";
 var variant7 = tv25({
   base: "border-b-foreground/10 flex h-16 w-full items-center justify-between rounded-t border-b p-4 data-[state=close]:max-w-24 data-[state=close]:justify-center"
 });
 function Header4(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx68(
+  return /* @__PURE__ */ jsx69(
     "div",
     __spreadProps(__spreadValues({}, rest), {
       "data-state": state,
@@ -1490,18 +1532,18 @@ function Header4(_a) {
 
 // src/components/surfaces/sidebar/content.tsx
 import { tv as tv26 } from "tailwind-variants";
-import { jsx as jsx69 } from "react/jsx-runtime";
+import { jsx as jsx70 } from "react/jsx-runtime";
 var variant8 = tv26({
   base: "w-full"
 });
 function Content12(_a) {
   var _b = _a, { children, className } = _b, rest = __objRest(_b, ["children", "className"]);
-  return /* @__PURE__ */ jsx69("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
+  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({}, rest), { className: variant8({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/container.tsx
 import { tv as tv27 } from "tailwind-variants";
-import { jsx as jsx70 } from "react/jsx-runtime";
+import { jsx as jsx71 } from "react/jsx-runtime";
 var variant9 = tv27({
   base: "parent group grid h-full w-full max-w-60 grid-rows-[auto,1fr,auto] gap-4 rounded bg-white data-[state=close]:max-w-24"
 });
@@ -1514,12 +1556,12 @@ function Container(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx70("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
+  return /* @__PURE__ */ jsx71("div", __spreadProps(__spreadValues({}, rest), { "data-state": state, className: variant9({ className }), children }));
 }
 
 // src/components/surfaces/sidebar/user-container.tsx
 import { tv as tv28 } from "tailwind-variants";
-import { jsx as jsx71 } from "react/jsx-runtime";
+import { jsx as jsx72 } from "react/jsx-runtime";
 var variant10 = tv28({
   base: "flex flex-col data-[state=close]:hidden"
 });
@@ -1532,12 +1574,12 @@ function UserContainer(_a) {
     "className"
   ]);
   const { state } = useSidebar();
-  return /* @__PURE__ */ jsx71("div", { "data-state": state, className: variant10({ className }), children });
+  return /* @__PURE__ */ jsx72("div", { "data-state": state, className: variant10({ className }), children });
 }
 
 // src/components/surfaces/sidebar/footer-content.tsx
 import { tv as tv29 } from "tailwind-variants";
-import { jsx as jsx72 } from "react/jsx-runtime";
+import { jsx as jsx73 } from "react/jsx-runtime";
 var variant11 = tv29({
   base: "flex items-center gap-2 rounded-b border-t border-t-zinc-200 bg-white p-4"
 });
@@ -1549,7 +1591,7 @@ function FooterContent(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx72("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
+  return /* @__PURE__ */ jsx73("div", __spreadProps(__spreadValues({ className: variant11({ className }) }, rest), { children }));
 }
 
 // src/components/surfaces/sidebar/index.tsx
@@ -1568,40 +1610,40 @@ var Sidebar = {
 
 // src/components/ui/navigation-menu/item.tsx
 import * as Navigation from "@radix-ui/react-navigation-menu";
-import { jsx as jsx73 } from "react/jsx-runtime";
+import { jsx as jsx74 } from "react/jsx-runtime";
 var Item7 = (_a) => {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx73(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx74(Navigation.Item, __spreadProps(__spreadValues({}, rest), { children }));
 };
 
 // src/components/ui/navigation-menu/list.tsx
 import * as Navigation2 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx74 } from "react/jsx-runtime";
+import { jsx as jsx75 } from "react/jsx-runtime";
 function List2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx74(Navigation2.List, { id: "navigation", children });
+  return /* @__PURE__ */ jsx75(Navigation2.List, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/root.tsx
 import * as Navigation3 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx75 } from "react/jsx-runtime";
+import { jsx as jsx76 } from "react/jsx-runtime";
 function Root15(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx75(Navigation3.Root, { id: "navigation", children });
+  return /* @__PURE__ */ jsx76(Navigation3.Root, { id: "navigation", children });
 }
 
 // src/components/ui/navigation-menu/link.tsx
 import * as Navigation4 from "@radix-ui/react-navigation-menu";
-import { jsx as jsx76 } from "react/jsx-runtime";
+import { jsx as jsx77 } from "react/jsx-runtime";
 function Link2(_a) {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ jsx76(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
+  return /* @__PURE__ */ jsx77(Navigation4.Link, __spreadProps(__spreadValues({}, rest), { children }));
 }
 
 // src/components/ui/navigation-menu/trigger.tsx
 import * as Navigation5 from "@radix-ui/react-navigation-menu";
 import { tv as tv30 } from "tailwind-variants";
-import { jsx as jsx77 } from "react/jsx-runtime";
+import { jsx as jsx78 } from "react/jsx-runtime";
 var navigationMenuContentVariant = tv30({
   base: "bg-zinc-200 flex gap-4 items-center p-2 rounded"
 });
@@ -1613,7 +1655,7 @@ function Trigger12(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx77(
+  return /* @__PURE__ */ jsx78(
     Navigation5.Trigger,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant({ className }),
@@ -1625,7 +1667,7 @@ function Trigger12(_a) {
 // src/components/ui/navigation-menu/content.tsx
 import * as Navigation6 from "@radix-ui/react-navigation-menu";
 import { tv as tv31 } from "tailwind-variants";
-import { jsx as jsx78 } from "react/jsx-runtime";
+import { jsx as jsx79 } from "react/jsx-runtime";
 var navigationMenuContentVariant2 = tv31({
   base: "bg-zinc-50 mt-4 rounded h-fit"
 });
@@ -1637,7 +1679,7 @@ function Content14(_a) {
     "children",
     "className"
   ]);
-  return /* @__PURE__ */ jsx78(
+  return /* @__PURE__ */ jsx79(
     Navigation6.Content,
     __spreadProps(__spreadValues({}, rest), {
       className: navigationMenuContentVariant2({ className }),
@@ -1715,7 +1757,7 @@ function usePagination({
 }
 
 // src/components/ui/pagination/index.tsx
-import { jsx as jsx79, jsxs as jsxs19 } from "react/jsx-runtime";
+import { jsx as jsx80, jsxs as jsxs20 } from "react/jsx-runtime";
 var pageItemVariant = tv32({
   base: "rounded bg-primary-main py-2 px-4 text-xs text-background",
   variants: {
@@ -1747,53 +1789,53 @@ function Pagination({
     perPage: defaultPerpage
   });
   const totalPages = totalCount / perPage;
-  return /* @__PURE__ */ jsxs19("div", { className: "flex w-full items-center justify-between py-4", children: [
-    /* @__PURE__ */ jsxs19("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
+  return /* @__PURE__ */ jsxs20("div", { className: "flex w-full items-center justify-between py-4", children: [
+    /* @__PURE__ */ jsxs20("p", { className: "whitespace-nowrap text-sm text-zinc-950", children: [
       page,
       " de ",
       Math.ceil(totalCount / perPage),
       " p\xE1ginas"
     ] }),
-    /* @__PURE__ */ jsxs19("div", { className: "flex gap-2", children: [
-      /* @__PURE__ */ jsxs19(
+    /* @__PURE__ */ jsxs20("div", { className: "flex gap-2", children: [
+      /* @__PURE__ */ jsxs20(
         Select.Root,
         {
           onValueChange: handlePerPage,
           defaultValue: perPage.toString(),
           children: [
-            /* @__PURE__ */ jsxs19(Select.Trigger, { children: [
-              /* @__PURE__ */ jsx79(Select.Value, {}),
-              /* @__PURE__ */ jsx79(Select.Icon, {})
+            /* @__PURE__ */ jsxs20(Select.Trigger, { children: [
+              /* @__PURE__ */ jsx80(Select.Value, {}),
+              /* @__PURE__ */ jsx80(Select.Icon, {})
             ] }),
-            /* @__PURE__ */ jsx79(Select.Portal, { children: /* @__PURE__ */ jsx79(Select.Content, { children: /* @__PURE__ */ jsxs19(Select.Viewport, { children: [
-              /* @__PURE__ */ jsx79(Select.Item, { value: "10", children: "10" }),
-              /* @__PURE__ */ jsx79(Select.Item, { value: "30", children: "30" }),
-              /* @__PURE__ */ jsx79(Select.Item, { value: "50", children: "50" }),
-              /* @__PURE__ */ jsx79(Select.Item, { value: "100", children: "100" })
+            /* @__PURE__ */ jsx80(Select.Portal, { children: /* @__PURE__ */ jsx80(Select.Content, { children: /* @__PURE__ */ jsxs20(Select.Viewport, { children: [
+              /* @__PURE__ */ jsx80(Select.Item, { value: "10", children: "10" }),
+              /* @__PURE__ */ jsx80(Select.Item, { value: "30", children: "30" }),
+              /* @__PURE__ */ jsx80(Select.Item, { value: "50", children: "50" }),
+              /* @__PURE__ */ jsx80(Select.Item, { value: "100", children: "100" })
             ] }) }) })
           ]
         }
       ),
-      /* @__PURE__ */ jsx79(
+      /* @__PURE__ */ jsx80(
         "button",
         {
           onClick: firstPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx79(ChevronsLeft, { size: 14 })
+          children: /* @__PURE__ */ jsx80(ChevronsLeft, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx79(
+      /* @__PURE__ */ jsx80(
         "button",
         {
           onClick: previousPage,
           disabled: page === 1,
           className: pageItemVariant({ disabled: page === 1 }),
-          children: /* @__PURE__ */ jsx79(ChevronLeft3, { size: 14 })
+          children: /* @__PURE__ */ jsx80(ChevronLeft3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx79("div", { className: "flex items-center rounded border border-primary-main bg-primary-main/25 px-4 py-2 text-xs text-primary-main", children: /* @__PURE__ */ jsx79("p", { children: page }) }),
-      /* @__PURE__ */ jsx79(
+      /* @__PURE__ */ jsx80("div", { className: "flex items-center rounded border border-primary-main bg-primary-main/25 px-4 py-2 text-xs text-primary-main", children: /* @__PURE__ */ jsx80("p", { children: page }) }),
+      /* @__PURE__ */ jsx80(
         "button",
         {
           onClick: nextPage,
@@ -1801,10 +1843,10 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx79(ChevronRight3, { size: 14 })
+          children: /* @__PURE__ */ jsx80(ChevronRight3, { size: 14 })
         }
       ),
-      /* @__PURE__ */ jsx79(
+      /* @__PURE__ */ jsx80(
         "button",
         {
           onClick: lastPage,
@@ -1812,7 +1854,7 @@ function Pagination({
           className: pageItemVariant({
             disabled: page >= totalPages
           }),
-          children: /* @__PURE__ */ jsx79(ChevronsRight, { size: 14 })
+          children: /* @__PURE__ */ jsx80(ChevronsRight, { size: 14 })
         }
       )
     ] })
