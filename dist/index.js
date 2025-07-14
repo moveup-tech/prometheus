@@ -777,6 +777,9 @@ function Checkbox({
       onValueChange(!isChecked);
     }
   };
+  (0, import_react4.useEffect)(() => {
+    setIsChecked(checked);
+  }, [checked]);
   return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
     "button",
     {

@@ -686,7 +686,7 @@ function Button(_a) {
 Button.displayName = "Button";
 
 // src/components/ui/form/checkbox/index.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { tv as tv10 } from "tailwind-variants";
 import { jsx as jsx33 } from "react/jsx-runtime";
@@ -719,6 +719,9 @@ function Checkbox({
       onValueChange(!isChecked);
     }
   };
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
   return /* @__PURE__ */ jsx33(
     "button",
     {
