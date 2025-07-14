@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { tv, VariantProps } from "tailwind-variants";
 
@@ -37,6 +37,10 @@ export function Checkbox({
       onValueChange(!isChecked);
     }
   };
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
 
   return (
     <button
